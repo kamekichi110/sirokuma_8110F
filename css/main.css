@@ -19,7 +19,7 @@ article {
     background-color: #99ff99;
 }
 main {
-    width: 96%;
+    width: 100%;
     background-color: burlywood;
 }
 div.fotter {
@@ -27,6 +27,6 @@ div.fotter {
     height: 75px;
 }
 div.content {
-    width: 80%;
+    width: 100%;
     background-color: coral;
 }
