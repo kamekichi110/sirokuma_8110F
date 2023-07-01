@@ -3,71 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>さくさく！-HOME</title>
+    <title>さくさく日記</title>
+    <link rel="stylesheet" href="./css/layout.css">
+    <script src="./js/script00.js"></script>
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <img src="../img/icon.png" alt="icon">
-        <h1>さくさく！</h1>
-    </header>
-    <div class="content">
-        <article>
-            <main>
-                <h2>さくさく！</h2>
-                <h4>さくさく！へようこそ。</h4>
-                <p>このサイトは鉄道に関することについて掲載
-                   <br>
-                   について掲載しています。
-                   <br>
-                   このページは2023年7月1日更新です。
-                   <br>
-                   <br>
-                   最後まで閲覧していただけると嬉しいです。
-                </p>
-                <h5>利用規約</h5>
-                <iframe src="./readme.txt" frameborder="0.5">読み込みに失敗したか、この機能に対応していない可能性があります。</iframe>
-                <hr>
-                <div class="text">
-                    <div class="color0"></div>
-                    <div class="main">
-                        <h3>画像置き場</h3>
-                        <p>ここは画像置き場です。</p>
-                        <p>以下のリストから画像を閲覧できます。</p>
-                        <table>
-                            <th>会社</th>
-                            <th>車両形式</th>
-                            <th>撮影日</th>
-                            <th>view</th>
-                            <tr>
-                                <td>JR</td>
-                                <td>EF65-1115</td>
-                                <td>2023/06/15</td>
-                                <td><a href="./view/JR_005.html">view</a></td>
-                            </tr>
-                            <tr>
-                                <td>東武鉄道</td>
-                                <td>東武8000系</td>
-                                <td>2023/06/26</td>
-                                <td><a href=".view/Tobu_004.html">view</a></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </main>
-            <sub>
-                <div class="list">
-                    <h4>さくさくの自由帳</h4>
-                    <p><a href="https://bit.ly/sirokuma8110F">view</a></p>
-                </div>
-                <div class="list">not content</div>
-                <div class="list">notcontent</div>
-                <div class="list">not content</div>
-            </sub>
-            <footer>
-                <p>&copy;sirokuma_8110F</p>
-            </footer>
-        </article>
+    <div class="page">
+  <div class="header">
+    <img src="https://nitter.net/pic/pbs.twimg.com%2Fprofile_images%2F1666929897204498433%2Fci9LqGBG.jpg" class="icon">
+    <h1>さくさく<br>日記</h1>
+    <button class="menu" onclick="menuOpen()">menu</button>
+  </div>
+  <div class="menu" id="menu">
+    <h2>menu<button onclick="menuClose()" class="close">close</button></h2>
+    <details>
+      <summary>目次</summary>
+      <ul>
+        <li><a href="#top">top</a></li>
+      </ul>
+    </details>
+  </div>
+  <div class="content">
+    <div class="top" id="top">
+      <h2>さくさく日記へようこそ！</h2>
+      <p>このサイトは鉄道に関することを</p>
+      <p>掲載しております。</p>
+      <h3>各種提供サービス</h3>
+      <p>スジ情報カレンダー<a href="https://bit.ly/sirokuma8110F">link</a>(外部)</p>
+      <p>発車標ジェネレーター<a href="http://sirokuma2468.starfree.jp/data/index.html">link</a>(外部)</p>
+      <p>saku-saku Photo<a href="#photo">link</a>(ページ内)</p>
+      <p>&copy;sirokuma_8110F</p>
     </div>
+    <div class="article">
+      <h1>Home</h1>
+      <h3>日記一覧</h3>
+      <div class="list" id="photo">
+      <table>
+        <th>date</th>
+        <th>title</th>
+        <th>view-link</th>
+        <tr>
+          <td>2023/07/01</td>
+          <td>東武10000系</td>
+          <td><a href="#ctx0">view</a></td>
+        </tr>
+        </table>
+          <hr>
+          <div class="bord">
+            <div class="bord-head"></div>
+            <div class="bord-content">
+              <br>
+              <h3>東武10000系</h3>
+              <p>10000系の編成写真です</p>
+              <p>画像データ</p>
+              <p><img class="img-0" src="https://drive.google.com/uc?id=1udRwtCrG7_mVmAR3SJesa0Eiii0bObKD&export=download"</p>
+            </div>
+          </div>
+        <div class="bord">
+            <div class="bord-head"></div>
+            <div class="bord-content">
+              <br>
+              <h3>東武8000系</h3>
+              <p>8000系の編成写真です</p>
+              <p>画像データ</p>
+              <p><img class="img-0" src="https://drive.google.com/uc?id=1WtMBOj9Y_PDeLbnsTtsyFVLtMyWGAPyH&export=download"</p>
+            </div>
+          </div>
+        <br>
+    </div>
+  </div>
+  <div class="fotter">
+    <h5>&copy;sirokuma_8110F</h5>
+  </div>
+</div>
 </body>
 </html>

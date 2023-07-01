@@ -1,9 +1,8 @@
-function sideOpen() {
-    var elem = document.getElementById("side");
-    elem.style.display = "block";
+function menuOpen() {
+  var menu = document.getElementById("menu");
+  menu.style.display = "block";
 }
-
-function sideClose() {
-    var elem = document.getElementById("side");
-    elem.style.display = "none";
+function menuClose() {
+  var menu = document.getElementById("menu");
+  menu.style.display = "none";
 }
