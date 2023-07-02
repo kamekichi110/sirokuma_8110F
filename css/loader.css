@@ -11,8 +11,6 @@
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
-    width: 100%;
-    height: 100vh;
     display: block;
 }
 
