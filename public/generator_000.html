@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 <style>
 body {
-  background: #99FF99;
+  background: #d5ffe5;
 }
 div.display {
   background: gray;
@@ -90,6 +90,14 @@ div.sub {
   top: 20px;
   left: 120px;
 }
+.btn {
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: chartreuse;
+  color: darkgreen;
+  border: black solid 2px;
+}
 </style>
 <script>
 function change() {
@@ -154,7 +162,7 @@ sub.style.display = ch0;
       <h2>時間：<input type="text" id="txt-time"></h2>
       <h2>行き先：<input type="text" id="txt-place"></h2>
       <h2>両数：<input type="text" id="txt-car"><input type="color" id="car-color"></h2>
-      <h1><button onclick="change()">実行</button></h1>
+      <h1><button onclick="change()" class="btn">実行</button></h1>
     </div>
 </body>
 </html>
