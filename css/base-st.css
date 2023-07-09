@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Kosugi+Maru&display=swap');
 body {
     background-color: lightslategray;
     min-width: 300px;
 }
 header {
+    font-family: 'DotGothic16', sans-serif;
     width: 90%;
     height: 100px;
     position: relative;
@@ -15,6 +17,7 @@ img.icon {
     border-radius: 30px;
 }
 article {
+    font-family: 'Kosugi Maru', sans-serif;
     text-align: center;
     width: 90%;
     border-radius: 20px;
