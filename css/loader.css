@@ -3,6 +3,8 @@ div.loader {
     height: 100vh;
     background: gray;
     display: block;
+    position: absolute;
+    top: 0px;
 }
 img.loader {
     width: 80%;
