@@ -1,0 +1,12 @@
+header {
+    width: 90%;
+    height: 100px;
+    position: relative;
+    left: 5%;
+    background-color: black;
+    border-radius: 20px;
+}
+img.icon {
+    border-radius: 20px;
+    height: 100px;
+}
