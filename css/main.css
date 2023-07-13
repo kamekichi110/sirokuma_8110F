@@ -5,6 +5,7 @@ header {
     left: 5%;
     background-color: black;
     border-radius: 20px;
+    display: flex;
 }
 img.icon {
     border-radius: 20px;
