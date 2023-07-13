@@ -3,7 +3,7 @@ div.loader {
     height: 2000px;
     background: gray;
     display: block;
-    position: absolute;
+    position: relative;
     top: 0px;
 }
 img.loader {
