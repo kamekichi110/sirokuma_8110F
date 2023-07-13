@@ -10,3 +10,11 @@ img.icon {
     border-radius: 20px;
     height: 100px;
 }
+button.btn-up {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    position: sticky;
+}
