@@ -7,7 +7,5 @@ div.loader {
     top: 0px;
 }
 img.loader {
-    width: 80%;
-    position: relative;
-    left: 10%;
+    width: 100%;
 }
