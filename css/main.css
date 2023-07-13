@@ -9,3 +9,15 @@ img.icon {
     border-radius: 20px;
     height: 100px;
 }
+section {
+    width: 90%;
+    margin: 5%;
+    border-radius: 20px;
+    background-color: bisque;
+}
+main {
+    width: 80%;
+    margin: 10%;
+    background-color: coral;
+    border-radius: 20px;
+}
