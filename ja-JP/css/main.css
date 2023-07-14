@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+div.content {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+header {
+    width: 90%;
+    position: relative;
+    left: 5%;
+    background: black;
+    color: white;
+    height: 100px;
+    border-radius: 20px;
+    font-size: 32px
+}
+article {
+    width: 80%;
+    position: relative;
+    left: 10%;
+    color: white;
+    border: white solid 2px;
+    border-radius: 30px;
+    margin-top: 12px;
+}
+
+main {
+    margin-top: 18px;
+    border: black solid 2px;
+    border-radius: 30px;
+}
