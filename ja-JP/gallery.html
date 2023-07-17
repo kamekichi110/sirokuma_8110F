@@ -8,8 +8,13 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/gallery.css">
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <script src="./js/loader.js"></script>
 </head>
 <body>
+  <div class="loader" id="loader">
+    <img src="../img/Loading.gif" alt="loading..." class="loader">
+  </div>
+  <div class="html" id="html">
     <div class="background">
    <span></span>
    <span></span>
@@ -44,11 +49,18 @@
   <main>
     <h1>image view</h1>
     <p class="image"><img src="./lib/Tobu_004.jpg" alt="001" class="image"></p>
+    <details>
+      <summary>詳細情報</summary>
+      <p>81110F編成</p>
+      <p>撮影路線：東武野田線<br>(アーバンパークライン)</p>
+    </details>
+    <hr>
     <br>
     <br>
     <p><a href="./index.html">ホームに戻る</a></p>
   </main>
 </article>
+</div>
 </div>
 </body>
 </html>

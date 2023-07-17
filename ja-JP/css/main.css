@@ -31,3 +31,19 @@ main {
     border: black solid 2px;
     border-radius: 30px;
 }
+div.sec {
+    width: 80%;
+    position: relative;
+    left: 10%;
+    border: black solid 4px;
+    border-radius: 30px;
+}
+div.html {
+    display: none;
+}
+div.loader {
+    display: block;
+}
+img.loader {
+    width: 100%;
+}

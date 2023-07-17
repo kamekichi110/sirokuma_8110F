@@ -1,0 +1,16 @@
+button.on {
+    width: 120px;
+    height: 120px;
+    background-color: red;
+    color: white;
+}
+button.off {
+    width: 120px;
+    height: 120px;
+    background-color: black;
+    color: white;
+}
+div.kit {
+    width: 100%;
+    text-align: center;
+}
