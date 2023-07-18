@@ -20,8 +20,12 @@ header {
     color: whitesmoke;
     text-align: center;
 }
+section {
+    display: none;
+}
 article {
     width: 100%;
+    display: none;
 }
 details {
     border: 1px solid #aaa;
