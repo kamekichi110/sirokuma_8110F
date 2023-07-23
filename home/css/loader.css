@@ -8,7 +8,7 @@ img.loader {
     position: relative;
     top: 40%;
     align-items: center;
-    animation: 3s linear infinite rotation3;
+    animation: 3s linear infinite rotation;
 }
 @keyframes rotation {
     0% {
