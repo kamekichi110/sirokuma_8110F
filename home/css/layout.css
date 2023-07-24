@@ -19,21 +19,24 @@ img.icon {
 }
 img.image {
     width: 80%;
-    align-items: center;
+    margin: 0 auto;
 }
 div.image {
     width: 90%;
-    align-items: center;
+    margin: 0 auto;
     border: black solid 2px;
     border-radius: 20px;
 }
 section.top {
     background-color: aquamarine;
     border-radius: 20px;
-    align-items: center;
+    margin: 0 auto;
     width: 98%;
 }
 main section {
     width: 98%;
-    align-items: center;
+    margin: 0 auto;
+}
+div.html {
+    display: none;
 }
