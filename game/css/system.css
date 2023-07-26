@@ -23,3 +23,35 @@ div.control {
     background-color: gray;
     margin: 0 auto;
 }
+img.entity0 {
+    height: 72px;
+    position: relative;
+    top: 0px;
+    left: 8px;
+}
+
+img.entity1 {
+    height: 72px;
+    position: relative;
+    top: 0px;
+    left: 142px;
+}
+
+div.text {
+    background: black;
+    color: white;
+    width: 284px;
+    height: 64px;
+    position: relative;
+    top: -12px;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+}
+
+button.btn {
+    width: 120px;
+    height: 64px;
+    position: relative;
+    top: 8px;
+    left: 120px;
+}
