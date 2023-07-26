@@ -13,6 +13,8 @@ div.display {
     height: 200px;
     background: lightgrey;
     margin: 0 auto;
+    position: relative;
+    top: 4px;
 }
 div.control {
     width: 300px;
