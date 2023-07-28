@@ -12,4 +12,5 @@ img.icon {
 div.html {
     width: 100%;
     display: none;
+    background-color: lightgray;
 }
