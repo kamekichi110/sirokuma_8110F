@@ -5,3 +5,56 @@ div.video {
 iframe {
     margin: 0 auto;
 }
+.btn-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    border-radius: 0px;
+    width: 120px;
+    height: 40px;
+    font-weight: bold;
+    border: 2px solid #050505;
+    transition: 0.3s;
+    box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    background-color: #82b8ee;
+}
+
+.btn-view:hover {
+    box-shadow: 0 0 #333;
+    color: #fff;
+    background-color: #333
+}
+section.text {
+    width: 80%;
+    height: 240px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: black;
+    color: whitesmoke;
+}
+div.mp4-list {
+    width: 96%;
+    margin: 0 auto;
+    height: 320px;
+    overflow-y: scroll;
+    display: flex;
+}
+div.mp4-text {
+    width: 60%;
+    overflow-y: scroll;
+}
+img.mp4-list {
+    width: 40%;
+}
+div.html {
+    width: 360px;
+    margin: 0 auto;
+}
+p {
+    font-size: 12px;
+}
