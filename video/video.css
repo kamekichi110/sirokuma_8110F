@@ -38,18 +38,19 @@ section.text {
     color: whitesmoke;
 }
 div.mp4-list {
-    width: 96%;
+    width: 300px;
     margin: 0 auto;
     height: 320px;
     overflow-y: scroll;
     display: flex;
 }
 div.mp4-text {
-    width: 60%;
+    width: 180px;
     overflow-y: scroll;
 }
 img.mp4-list {
-    width: 40%;
+    width: 108px;
+    height: 72px;
 }
 div.html {
     width: 360px;

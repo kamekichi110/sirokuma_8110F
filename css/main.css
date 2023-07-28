@@ -4,6 +4,7 @@ header {
     background-color: black;
     border-radius: 20px;
     display: flex;
+    color: aliceblue;
 }
 img.icon {
     border-radius: 20px;
