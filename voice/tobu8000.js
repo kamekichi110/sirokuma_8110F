@@ -1,51 +1,51 @@
 function SETdef() {
   var img = document.getElementById("image");
-  var def = "./lib/def.png";
+  var def = "https://kamekichi110.github.io/sirokuma_8110F/voice/lib/def.png";
   img.src = def;
 }
 function SEThappy() {
   var img = document.getElementById("image");
-  var happy = "./lib/happy.png";
+  var happy = "https://kamekichi110.github.io/sirokuma_8110F/voice/lib/happy.png";
   img.src = happy;
 }
 function SETangry() {
   var img = document.getElementById("image");
-  var angry = "./lib/angry.png";
+  var angry = "https://kamekichi110.github.io/sirokuma_8110F/voice/lib/angry.png";
   img.src = angry;
 }
 function SETdeath() {
   var img = document.getElementById("image");
-  var death = "./lib/death.png";
+  var death = "https://kamekichi110.github.io/sirokuma_8110F/voice/lib/death.png";
   img.src = death;
 }
 function SETguruguru() {
   var img = document.getElementById("image");
-  var guruguru = "./lib/guruguru.png";
+  var guruguru = "https://kamekichi110.github.io/sirokuma_8110F/voice/lib/guruguru.png";
   img.src = guruguru;
 }
 function SEThou() {
   var img = document.getElementById("image");
-  var hou = "./lib/hou.png";
+  var hou = "https://kamekichi110.github.io/sirokuma_8110F/voice/lib/hou.png";
   img.src = hou;
 }
 function SETodoroku() {
   var img = document.getElementById("image");
-  var odoroku = "./lib/odoroku.png";
+  var odoroku = "https://kamekichi110.github.io/sirokuma_8110F/voice/lib/odoroku.png";
   img.src = odoroku;
 }
 function SETpokan() {
   var img = document.getElementById("image");
-  var pokan = "./lib/pokan.png";
+  var pokan = "https://kamekichi110.github.io/sirokuma_8110F/voice/lib/pokan.png";
   img.src = pokan;
 }
 function SETsleep() {
   var img = document.getElementById("image");
-  var sleep = "./lib/sleep.png";
+  var sleep = "https://kamekichi110.github.io/sirokuma_8110F/voice/lib/sleep.png";
   img.src = sleep;
 }
 function smile() {
   var img = document.getElementById("image");
-  var smile = "./lib/smile.png";
+  var smile = "https://kamekichi110.github.io/sirokuma_8110F/voice/lib/smile.png";
   img.src = smile;
 }
 function reset() {
