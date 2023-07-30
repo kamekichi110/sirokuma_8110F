@@ -1,0 +1,35 @@
+body {
+    background: lightgreen;
+}
+
+p {
+    text-align: center;
+}
+
+button {
+    font-size: 10px
+}
+
+div.display {
+    width: 220px;
+    height: 320px;
+    margin: 0 auto;
+    border: black solid 2px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+div.display img {
+    height: 300px;
+    width: 200px;
+}
+
+div.controll {
+    width: 90%;
+    margin: 0 auto;
+    height: 118px;
+    background: green;
+    margin-top: 12px;
+    border-radius: 12px;
+    overflow-y: scroll;
+}
