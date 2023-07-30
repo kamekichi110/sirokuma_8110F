@@ -66,4 +66,80 @@ function doumo() {
   var music002 = document.getElementById("doumo");
   music002.play();
 }
-{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
+function yorosiku() {
+  SEThappy();
+  var music003 = document.getElementById("yorosiku");
+  music003.play();
+}
+function konkai() {
+  SETpokan();
+  var music004 = document.getElementById("konkai");
+  music004.play();
+}
+function my_name() {
+  SETguruguru();
+  var music005 = document.getElementById("aisatu");
+  music005.play();
+}
+function happy0() {
+  SEThappy();
+  var music006 = document.getElementById("happy0");
+  music006.play();
+}
+function happy1() {
+  SEThappy();
+  var music007 = document.getElementById("happy1");
+  music007.play();
+}
+function uwaa() {
+  SETguruguru();
+  var music008 = document.getElementById("uwaa");
+  music008.play();
+}
+function sugoi() {
+  SEThou();
+  var music009 = document.getElementById("sugoi");
+  music009.play();
+}
+function come() {
+  SEThappy();
+  var music010 = document.getElementById("come");
+  music010.play();
+}
+function sitteru() {
+  SEThappy();
+  var music011 = document.getElementById("sitteru");
+  music011.play();
+}
+function siranai() {
+  SETguruguru();
+  document.getElementById("siranai").play();
+}
+function know() {
+  SEThou();
+  document.getElementById("know").play();
+}
+function unknown() {
+  SETguruguru();
+  document.getElementById("unknown").play();
+}
+function asoko() {
+  SEThou();
+  document.getElementById("asoko").play();
+}
+function koko() {
+  SEThappy();
+  document.getElementById("koko").play();
+}
+function kore() {
+  SEThou();
+  document.getElementById("kore").play();
+}
+function let_go() {
+  SEThappy();
+  document.getElementById("let_go").play();
+}
+function iru() {
+  SETodoroku();
+  document.getElementById("iru").play();
+}
