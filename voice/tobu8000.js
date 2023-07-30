@@ -56,3 +56,14 @@ function hello() {
   var music000 = document.getElementById("music000");
   music000.play();
 }
+function night() {
+  SEThappy();
+  var music001 = document.getElementById("night");
+  music001.play();
+}
+function doumo() {
+  SEThappy();
+  var music002 = document.getElementById("doumo");
+  music002.play();
+}
+{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
