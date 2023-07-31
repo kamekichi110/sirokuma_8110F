@@ -17,9 +17,9 @@
   result.innerHTML = text.value;
   image.src = happy;
   image.alt = "happy";
+  sound.play();
   btn.disabled = "disabled";
   btn0.disabled = "disabled";
-    sound.play();
   setTimeout(() => {
     image.src = def;
     image.alt = "def";
@@ -40,10 +40,10 @@ function preview_guruguru() {
   var btn0 = document.getElementById("send0");
   result.innerHTML = text.value;
   image.src = guruguru;
+  sound.play();
   image.alt = "guruguru";
   btn.disabled = "disabled";
   btn0.disabled = "disabled";
-    sound.play();
   setTimeout(() => {
     image.src = def;
     image.alt = "def";
