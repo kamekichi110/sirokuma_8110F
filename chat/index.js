@@ -1,4 +1,4 @@
-  var text = document.getElementById("input").value;
+  var text = document.getElementById("input");
   var result = document.getElementById("output");
   var image = document.getElementById("preview");
   var def = "./img/def.png";
@@ -6,7 +6,7 @@
   var guruguru = "./img/guruguru.png";
   var sound = document.getElementById("sound");
   function preview() {
-    var text = document.getElementById("input").value;
+    var text = document.getElementById("input");
     var result = document.getElementById("output");
     var image = document.getElementById("preview");
     var def = "./img/def.png";
@@ -14,7 +14,7 @@
     var sound = document.getElementById("sound");
     var btn = document.getElementById("send");
     var btn0 = document.getElementById("send0");
-  result.innerHTML = text;
+  result.innerHTML = text.value;
   image.src = happy;
   image.alt = "happy";
   btn.disabled = "disabled";
@@ -28,11 +28,11 @@
     result.innerHTML = "";
     btn.disabled = null;
     btn0.disabled = null;
-    text = "";
+    text.value = "";
   }, 5200);
 }
 function preview_guruguru() {
-  var text = document.getElementById("input").value;
+  var text = document.getElementById("input");
   var result = document.getElementById("output");
   var image = document.getElementById("preview");
   var def = "./img/def.png";
@@ -40,7 +40,7 @@ function preview_guruguru() {
   var sound = document.getElementById("sound");
   var btn = document.getElementById("send");
   var btn0 = document.getElementById("send0");
-  result.innerHTML = text;
+  result.innerHTML = text.value;
   image.src = guruguru;
   image.alt = "guruguru";
   btn.disabled = "disabled";
@@ -54,6 +54,6 @@ function preview_guruguru() {
     result.innerHTML = "";
     btn.disabled = null;
     btn0.disabled = null;
-    text = "";
+    text.value = "";
   }, 5200);
 }
