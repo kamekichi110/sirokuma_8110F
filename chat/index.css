@@ -37,12 +37,12 @@ div.system {
 }
 @keyframes move {
     0% {
-        top: 80px;
+        top: 92px;
     }
     50% {
-        top: 88px;
+        top: 100px;
     }
     100% {
-        top: 80px;
+        top: 92px;
     }
 }
