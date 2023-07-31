@@ -12,7 +12,7 @@ img.preview {
     height: 128px;
     width: 96px;
     position: relative;
-    top: 80px;
+    top: 72px;
     left: 82px;
     animation-name: move;
         animation-duration: 1.2s;
@@ -37,12 +37,12 @@ div.system {
 }
 @keyframes move {
     0% {
-        top: 92px;
+        top: 72px;
     }
     50% {
-        top: 100px;
+        top: 80px;
     }
     100% {
-        top: 92px;
+        top: 72px;
     }
 }
