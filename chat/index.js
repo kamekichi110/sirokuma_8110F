@@ -12,7 +12,7 @@
     var def = "./img/def.png";
     var happy = "./img/happy.png";
     var sound = document.getElementById("sound");
-    var btn = Document.getElementById("send");
+    var btn = document.getElementById("send");
   result.innerHTML = text;
   image.src = happy;
   image.alt = "happy";
