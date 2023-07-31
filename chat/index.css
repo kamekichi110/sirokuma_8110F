@@ -1,7 +1,6 @@
 body {
     background: #00FF00;
 }
-
 div.display {
     width: 315px;
     margin: 0 auto;
@@ -30,10 +29,14 @@ div.output {
     white-space: pre-wrap;
     color: black;
     border-radius: 12px;
+    font-family: 'DotGothic16', sans-serif;
 }
 
 div.system {
     margin-top: 80px;
+}
+textarea.input {
+    font-family: 'DotGothic16', sans-serif;
 }
 @keyframes move {
     0% {
