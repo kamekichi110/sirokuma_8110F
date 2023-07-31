@@ -1,0 +1,34 @@
+body {
+    background: #00FF00;
+}
+
+div.display {
+    width: 315px;
+    height: 420px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+img.preview {
+    height: 128px;
+    width: 96px;
+    position: relative;
+    top: 80px;
+    left: 82px;
+}
+
+div.output {
+    background: white;
+    border: gray solid 8px;
+    width: 300px;
+    height: 128px;
+    position: relative;
+    top: 64px;
+    white-space: pre-wrap;
+    color: black;
+    border-radius: 12px;
+}
+
+div.system {
+    margin-top: 32px;
+}
