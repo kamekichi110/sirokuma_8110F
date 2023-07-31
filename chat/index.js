@@ -19,9 +19,7 @@
   image.alt = "happy";
   btn.disabled = "disabled";
   btn0.disabled = "disabled";
-  setTimeout(() => {
     sound.play();
-  }, 250);
   setTimeout(() => {
     image.src = def;
     image.alt = "def";
@@ -45,9 +43,7 @@ function preview_guruguru() {
   image.alt = "guruguru";
   btn.disabled = "disabled";
   btn0.disabled = "disabled";
-  setTimeout(() => {
     sound.play();
-  }, 250);
   setTimeout(() => {
     image.src = def;
     image.alt = "def";
