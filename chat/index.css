@@ -15,7 +15,7 @@ img.preview {
     top: 72px;
     left: 82px;
     animation-name: move;
-        animation-duration: 1s;
+        animation-duration: 2s;
         animation-iteration-count: infinite;
         animation-timing-function: ease;
 }
