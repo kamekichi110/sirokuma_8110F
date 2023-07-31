@@ -15,7 +15,7 @@ img.preview {
     top: 72px;
     left: 82px;
     animation-name: move;
-        animation-duration: 1.2s;
+        animation-duration: 1s;
         animation-iteration-count: infinite;
         animation-timing-function: ease;
 }
@@ -39,8 +39,32 @@ div.system {
     0% {
         top: 72px;
     }
+    10% {
+        top: 82px;
+    }
+    20% {
+        top: 72px;
+    }
+    30% {
+        top: 82px;
+    }
+    40% {
+        top: 72px
+    }
     50% {
-        top: 80px;
+        top: 82px;
+    }
+    60% {
+        top: 72px;
+    }
+    70% {
+        top: 82px;
+    }
+    80% {
+        top: 72px;
+    }
+    90% {
+        top: 82px;
     }
     100% {
         top: 72px;
