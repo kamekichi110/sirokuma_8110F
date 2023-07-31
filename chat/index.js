@@ -28,6 +28,7 @@
     result.innerHTML = "";
     btn.disabled = null;
     btn0.disabled = null;
+    text.value = "";
   }, 5200);
 }
 function preview_guruguru() {
@@ -53,5 +54,6 @@ function preview_guruguru() {
     result.innerHTML = "";
     btn.disabled = null;
     btn0.disabled = null;
+    text.value = "";
   }, 5200);
 }
