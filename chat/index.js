@@ -12,9 +12,11 @@
     var def = "./img/def.png";
     var happy = "./img/happy.png";
     var sound = document.getElementById("sound");
+    var btn = Document.getElementById("send");
   result.innerHTML = text;
   image.src = happy;
   image.alt = "happy";
+  btn.setAttribute("disabled", true);
   setTimeout(() => {
     sound.play();
   }, 250);
@@ -22,6 +24,7 @@
     image.src = def;
     image.alt = "def";
     result.innerHTML = "";
+    btn.removeAttribute("disabled");
   }, 5200);
 }
 function preview_guruguru() {
@@ -31,9 +34,11 @@ function preview_guruguru() {
   var def = "./img/def.png";
   var guruguru = "./img/guruguru.png";
   var sound = document.getElementById("sound");
+  var btn = document.getElementById("send");
   result.innerHTML = text;
   image.src = guruguru;
   image.alt = "guruguru";
+  btn.setAttribute("disabled", true);
   setTimeout(() => {
     sound.play();
   }, 250);
@@ -41,5 +46,6 @@ function preview_guruguru() {
     image.src = def;
     image.alt = "def";
     result.innerHTML = "";
+    btn.removeAttribute("disabled");
   }, 5200);
 }
