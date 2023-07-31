@@ -8,7 +8,9 @@ function preview() {
   result.innerHTML = text;
   image.src = happy;
   image.alt = "happy";
-  sound.play();
+  setTimeout(() => {
+    sound.play();
+  }, 250);
   setTimeout(() => {
     image.src = def;
     image.alt = "def";
