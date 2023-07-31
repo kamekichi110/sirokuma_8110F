@@ -10,7 +10,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <script src="./index.js"></script>
-    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="manifest" href="./manifest.json">
+    <script src="./serviceworker.js"></script>
+    <script>
+      if('serviceWorker' in navigator){
+        	navigator.serviceWorker.register('/serviceworker.js').then(function(){
+          		console.log("Service Worker is registered!!");
+              	});
+                }
+    </script>
 </head>
 <body>
     <div class="display">
@@ -18,7 +26,7 @@
   <img class="preview" id="preview" src="./img/def.png">
 </div>
 <div class="system">
-  <textarea rows="5" cols="32" id="input" class="input"></textarea>
+  <textarea rows="5" cols="28" id="input" class="input"></textarea>
   <button type="button" class="btn" id="send" onclick="preview()">送信(happy)</button>
   <button type="button" class="btn" id="send" onclick="preview_guruguru()">送信(guruguru)</button>
   <audio src="./mp3/send.mp3" id="sound" preload="auto">
