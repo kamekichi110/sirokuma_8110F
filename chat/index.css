@@ -36,11 +36,11 @@ div.system {
     margin-top: 80px;
 }
 @keyframes move {
-    33% {
-        top: 70px;
+    0% {
+        top: 80px;
     }
-    66% {
-        top: 90px;
+    50% {
+        top: 88px;
     }
     100% {
         top: 80px;
