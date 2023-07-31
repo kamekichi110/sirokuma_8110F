@@ -15,5 +15,5 @@ function preview() {
     image.src = def;
     image.alt = "def";
     result.innerHTML = "";
-  }, 4200);
+  }, 5200);
 }
