@@ -58,6 +58,9 @@ function next1() {
     text.innerHTML = inner;
     var btn = document.getElementBy("btn");
     var data = "<button onclick='sec21()'>北陸新幹線</button><br><button onclick='sec21()'>山陽新幹線</button><br><button onclick='sec20()'>東海道新幹線</button>";
+    btn.innerHTML = data;
+    var comment = document.getElementById("comment");
+    comment.innerHTML = "";
 }
 function sec20() {
   alert('正解！');
