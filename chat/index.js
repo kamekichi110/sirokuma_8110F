@@ -19,6 +19,7 @@
   image.alt = "happy";
   sound.play();
   text.value = "";
+  text.focus();
   btn.disabled = "disabled";
   btn0.disabled = "disabled";
   setTimeout(() => {
@@ -42,6 +43,7 @@ function preview_guruguru() {
   image.src = guruguru;
   sound.play();
   text.value = "";
+  text.focus();
   image.alt = "guruguru";
   btn.disabled = "disabled";
   btn0.disabled = "disabled";
@@ -51,5 +53,26 @@ function preview_guruguru() {
     result.innerHTML = "";
     btn.disabled = null;
     btn0.disabled = null;
+  }, 5200);
+}
+function text_000() {
+  var input = "こんにちは。<br>ゆっくり8000です！<br>よろしくお願いします。";
+  var textarea = document.getElementById("input");
+  var output = document.getElementById("output");
+  var image = document.getElementById("preview");
+  var def = "./img/def.png";
+  var guruguru = "./img/guruguru.png"
+  var sound = document.getElementById("sound");
+  var btn1 = document.getElementById("btn1");
+  output.innerHTML = input;
+  image.src = guruguru;
+  image.alt = "guruguru";
+  sound.play();
+  setTimeout(() => {
+    output.innerHTML = "";
+    btn1.disabled = null;
+    image.src = def;
+    image.alt = "default";
+    textarea.focus();
   }, 5200);
 }
