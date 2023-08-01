@@ -56,7 +56,7 @@ function next1() {
     var text = document.getElementById("content");
     var inner = "富士山が見える場所を<br>走っている新幹線は？";
     text.innerHTML = inner;
-    var btn = document.getElementBy("btn");
+    var btn = document.getElementById("btn");
     var data = "<button onclick='sec21()'>北陸新幹線</button><br><button onclick='sec21()'>山陽新幹線</button><br><button onclick='sec20()'>東海道新幹線</button>";
     btn.innerHTML = data;
     var comment = document.getElementById("comment");
