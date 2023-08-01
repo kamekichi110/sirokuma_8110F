@@ -59,6 +59,34 @@ function next1() {
     var btn = document.getElementBy("btn");
     var data = "<button onclick='sec21()'>北陸新幹線</button><br><button onclick='sec21()'>山陽新幹線</button><br><button onclick='sec20()'>東海道新幹線</button>";
 }
+function sec20() {
+  alert('正解！');
+  var img = document.getElementById("entity");
+  img.src = "./img/happy.png";
+  img.alt = "happy";
+  var comment = document.getElementById("comment");
+  comment.innerHTML = "すごい！<br>よくわかったね！";
+  setTimeout(() => {
+    img.src = "./img/def.png";
+    img.alt = "default";
+    var btn = document.getElementById("btn");
+    btn.innerHTML = "<button onclick='end()'>NEXT</button>";
+  },2000);
+}
+function sec21() {
+  alert('不正解…答えは「東海道新幹線」でした！');
+  var img = document.getElementById("entity");
+  img.src = "./img/happy.png";
+  img.alt = "happy";
+  var comment = document.getElementById("comment");
+  comment.innerHTML = "残念…<br>次の問題は正解できるように<br>頑張ろう！"
+  setTimeout(() => {
+    img.src = "./img/def.png";
+    img.alt = "default";
+    var btn = document.getElementById("btn");
+    btn.innerHTML = "<button onclick='end()'>NEXT</button>";
+  },2000);
+}
 function end() {
   var text = document.getElementById("content");
   var inner = "遊んでくれてありがとう！<br>また来てね！";
