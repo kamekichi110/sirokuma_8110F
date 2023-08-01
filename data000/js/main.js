@@ -35,7 +35,7 @@ function sec10() {
     img.src = "./img/def.png";
     img.alt = "default";
     var btn = document.getElementById("btn");
-    btn.innerHTML = "<button onclick='end()'>NEXT</button>";
+    btn.innerHTML = "<button onclick='next1()'>NEXT</button>";
   }, 2000);
 }
 function sec11() {
@@ -49,8 +49,15 @@ function sec11() {
     img.src = "./img/def.png";
     img.alt = "default";
     var btn = document.getElementById("btn");
-    btn.innerHTML = "<button onclick='end()'>NEXT</button>";
+    btn.innerHTML = "<button onclick='next1()'>NEXT</button>";
   }, 2000);
+}
+function next1() {
+    var text = document.getElementById("content");
+    var inner = "富士山が見える場所を<br>走っている新幹線は？";
+    text.innerHTML = inner;
+    var btn = document.getElementBy("btn");
+    var data = "<button onclick='sec21()'>北陸新幹線</button><br><button onclick='sec21()'>山陽新幹線</button><br><button onclick='sec20()'>東海道新幹線</button>";
 }
 function end() {
   var text = document.getElementById("content");
