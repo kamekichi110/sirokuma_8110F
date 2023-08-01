@@ -37,7 +37,7 @@ img.entity {
 }
 div.content {
     width: 290px;
-    height: 240px;
+    height: 200px;
     background: gold;
     margin: 0 auto;
     border: orange solid 5px;
@@ -46,10 +46,13 @@ div.content {
 
 div.btn {
     width: 280px;
-    height: 200px;
+    height: 180px;
     background: black;
     margin: 0 auto;
     border: white solid 5px;
     border-radius: 30px;
-    margin-top: 12px;
+    margin-top: 4px;
+}
+p#comment {
+    color: skyblue;
 }
