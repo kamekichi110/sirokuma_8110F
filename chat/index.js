@@ -18,6 +18,7 @@
   image.src = happy;
   image.alt = "happy";
   sound.play();
+  text.value = "";
   btn.disabled = "disabled";
   btn0.disabled = "disabled";
   setTimeout(() => {
@@ -26,7 +27,6 @@
     result.innerHTML = "";
     btn.disabled = null;
     btn0.disabled = null;
-    text.value = "";
   }, 5200);
 }
 function preview_guruguru() {
@@ -41,6 +41,7 @@ function preview_guruguru() {
   result.innerHTML = text.value;
   image.src = guruguru;
   sound.play();
+  text.value = "";
   image.alt = "guruguru";
   btn.disabled = "disabled";
   btn0.disabled = "disabled";
@@ -50,6 +51,5 @@ function preview_guruguru() {
     result.innerHTML = "";
     btn.disabled = null;
     btn0.disabled = null;
-    text.value = "";
   }, 5200);
 }
