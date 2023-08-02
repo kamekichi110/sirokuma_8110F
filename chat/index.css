@@ -74,6 +74,9 @@ textarea.input {
         top: 72px;
     }
 }
+div.loaded {
+    display: none;
+}
 div.loader {
     width: 100%;
     height: 100dvh;
@@ -81,6 +84,7 @@ div.loader {
     display: block;
 }
 img.loader {
+    width: 160px;
     animation-name: loader;
     animation-duration: 5s;
     animation-iteration-count: infinite;
