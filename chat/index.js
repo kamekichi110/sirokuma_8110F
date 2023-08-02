@@ -5,6 +5,22 @@
   var happy = "./img/happy.png";
   var guruguru = "./img/guruguru.png";
   var sound = document.getElementById("sound");
+
+  window.onload = load();
+  function load() {
+    var screen = document.getElementById("loader");
+    var loaded = document.getElementById("loaded");
+    var version = document.getElementById("ver");
+    var BINtext = "ver[1.2.0(w53a)]----{data_point='56d38w3a'}"
+    setTimeout(() => {
+      screen.style.display = "none";
+      loaded.style.display = "block";
+      version.innerHTML = BINtext;
+      alert('プログラムデータロード完了');
+    }, 5000);
+  }
+
+
   function preview() {
     var text = document.getElementById("input");
     var result = document.getElementById("output");
