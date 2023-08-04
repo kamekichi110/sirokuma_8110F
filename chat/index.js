@@ -40,7 +40,8 @@ function preview_guruguru() {
   var image = document.getElementById("preview");
   var def = "./img/def.png";
   var guruguru = "./img/guruguru.png";
-  var sound = document.getElementById("sound");
+  var list = document.getElementById("list").value;
+  var sound = document.getElementById(list);
   var btn = document.getElementById("send");
   var btn0 = document.getElementById("send0");
   result.innerHTML = text.value;
@@ -66,7 +67,8 @@ function text_000() {
   var image = document.getElementById("preview");
   var def = "./img/def.png";
   var guruguru = "./img/guruguru.png"
-  var sound = document.getElementById("sound");
+  var list = document.getElementById("list").value;
+  var sound = document.getElementById(list);
   var btn1 = document.getElementById("btn1");
   output.innerHTML = input;
   image.src = guruguru;
