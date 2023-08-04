@@ -1,14 +1,4 @@
-  var text = document.getElementById("input");
-  var result = document.getElementById("output");
-  var image = document.getElementById("preview");
-  var def = "./img/def.png";
-  var happy = "./img/happy.png";
-  var guruguru = "./img/guruguru.png";
-  var sound = document.getElementById("sound");
-
-
-
-  function preview() {
+function preview() {
     var text = document.getElementById("input");
     var result = document.getElementById("output");
     var image = document.getElementById("preview");
