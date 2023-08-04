@@ -14,7 +14,8 @@
     var image = document.getElementById("preview");
     var def = "./img/def.png";
     var happy = "./img/happy.png";
-    var sound = document.getElementById("sound");
+    var list = document.getElementById("list").value;
+    var sound = document.getElementById(list);
     var btn = document.getElementById("send");
     var btn0 = document.getElementById("send0");
   result.innerHTML = text.value;
