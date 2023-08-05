@@ -8,10 +8,10 @@ div.display {
 }
 
 img.preview {
-    height: 160px;
-    width: 120px;
+    height: 300px;
+    width: 200px;
     position: relative;
-    top: 12px;
+    top: 8px;
     left: 82px;
     animation-name: move;
         animation-duration: 5s;
@@ -25,7 +25,7 @@ div.output {
     width: 300px;
     height: 96px;
     position: relative;
-    top: 32px;
+    top: 12px;
     white-space: pre-wrap;
     color: black;
     border-radius: 12px;
