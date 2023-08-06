@@ -50,7 +50,13 @@ function hello() {
     input.focus();
     setTimeout(() => {
         img.src = def;
-        output.innerHTML = blank;
+        output.innerHTML = "";
         input.focus();
     }, 4200);
+}
+function reset() {
+    var img = document.getElementById("entity");
+    var def = "./asset/entity-def.png";
+    document.getElementById("text").innerHTML = "";
+    img.src = def;
 }
