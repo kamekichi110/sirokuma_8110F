@@ -7,15 +7,15 @@ div.display {
     width: 320px;
     margin: 0 auto;
 }
-div.display {
-    margin-top: 8px;
+div.text {
     margin: 0 auto;
     width: 310px;
     border: black solid 2px;
     border-radius: 20px;
-    height: 128px;
+    height: 96px;
     background-color: white;
     text-align: center;
+    font-size: 12px;
 }
 img.entity {
     width: 225px;
