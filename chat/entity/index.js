@@ -51,5 +51,6 @@ function hello() {
     setTimeout(() => {
         img.src = def;
         output.innerHTML = blank;
+        input.focus();
     }, 4200);
 }
