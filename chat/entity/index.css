@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
-boby {
+body {
     background-color: #00FF00;
     font-family: 'DotGothic16', sans-serif;
 }
@@ -20,6 +20,11 @@ div.display {
 img.entity {
     width: 225px;
     height: 300px;
-    margin-top: 8px;
+    margin-top: 132px;
+    margin: 0 auto;
+}
+div.control {
+    width: 100%;
+    margin-top: 12px;
     margin: 0 auto;
 }
