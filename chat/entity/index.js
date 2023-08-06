@@ -10,11 +10,11 @@ function happy() {
     img.src = happy;
     text.innerHTML = input.value;
     sound.play();
+    input.focus();
     setTimeout(() => {
         img.src = def;
         input.value = blank;
         text.innerHTML = blank;
-        input.focus();
     }, 4200);
 }
 function guruguru() {
@@ -29,10 +29,10 @@ function guruguru() {
     img.src = guruguru;
     output.innerHTML = input.value;
     sound.play();
+    input.focus();
     setTimeout(() => {
         img.src = def;
         output.innerHTML = blank;
         input.value = blank;
-        input.focus();
     }, 4200);
 }
