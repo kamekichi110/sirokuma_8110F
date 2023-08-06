@@ -11,9 +11,9 @@ function happy() {
     text.innerHTML = input.value;
     sound.play();
     input.focus();
+    input.value = blank;
     setTimeout(() => {
         img.src = def;
-        input.value = blank;
         text.innerHTML = blank;
     }, 4200);
 }
@@ -30,9 +30,26 @@ function guruguru() {
     output.innerHTML = input.value;
     sound.play();
     input.focus();
+    input.value = blank;
     setTimeout(() => {
         img.src = def;
         output.innerHTML = blank;
-        input.value = blank;
+    }, 4200);
+}
+function hello() {
+    var img = document.getElementById("entity");
+    var happy = "./asset/entity-happy.png";
+    var def = "./asset/entity-def.png";
+    var input = "こんにちは！<br>まどかです！";
+    var output = document.getElementById("text");
+    var sound = document.getElementById("SE0");
+    var blank = "";
+    img.src = happy;
+    output.innerHTML = input;
+    sound.play();
+    input.focus();
+    setTimeout(() => {
+        img.src = def;
+        output.innerHTML = blank;
     }, 4200);
 }
