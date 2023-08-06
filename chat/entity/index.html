@@ -15,8 +15,18 @@
     </div>
     <div class="control">
         <textarea name="input" id="input" cols="30" rows="10"></textarea>
+        <select name="list" id="list">
+            <option value="SE0">標準</option>
+            <option value="SE1">チーン</option>
+            <option value="SE2">パフ</option>
+            <option value="SE3">ドドン</option>
+        </select>
         <button type="button" onclick="happy()">送信(笑顔)</button>
         <button type="button" onclick="guruguru()">送信(困った)</button>
     </div>
+    <audio src="../mp3/send.mp3" id="SE0" preload="auto"></audio>
+    <audio src="../mp3/チーン1.mp3" id="SE1" preload="auto"></audio>
+    <audio src="../mp3/パフ.mp3" id="SE2" preload="auto"></audio>
+    <audio src="../mp3/和太鼓でドドン.mp3" id="SE3" preload="auto"></audio>
 </body>
 </html>
