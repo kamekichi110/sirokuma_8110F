@@ -130,3 +130,16 @@ img.loader {
         top: 0px;
     }
 }
+img.bg {
+    width: 320px;
+    height: 480px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    position: absolute;
+}
+
+input.file {
+    position: relative;
+}

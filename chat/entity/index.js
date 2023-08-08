@@ -60,3 +60,20 @@ function reset() {
     document.getElementById("text").innerHTML = "";
     img.src = def;
 }
+const input_file = document.getElementById("bg_img");
+input_file.addEventListener("change", function (e) {
+  const file = e.target.files[0]; //複数ファイルはfiles配列をループで回す
+  const reader = new FileReader();
+  const image = document.getElementById("bg");
+  reader.addEventListener(
+    "load",
+    function () {
+      image.src = reader.result;
+    },
+    false
+  );
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+});
