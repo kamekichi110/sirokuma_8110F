@@ -18,7 +18,7 @@ function preview() {
   btn0.disabled = "disabled";
   setTimeout(() => {
     image.src = def;
-    image.alt = "def";
+    image.alt = "default";
     result.innerHTML = "";
     btn.disabled = null;
     btn0.disabled = null;
@@ -44,7 +44,7 @@ function preview_guruguru() {
   btn0.disabled = "disabled";
   setTimeout(() => {
     image.src = def;
-    image.alt = "def";
+    image.alt = "default";
     result.innerHTML = "";
     btn.disabled = null;
     btn0.disabled = null;
@@ -63,12 +63,32 @@ function text_000() {
   output.innerHTML = input;
   image.src = guruguru;
   image.alt = "guruguru";
+  textarea.focus();
   sound.play();
   setTimeout(() => {
     output.innerHTML = "";
     btn1.disabled = null;
     image.src = def;
     image.alt = "default";
-    textarea.focus();
   }, 5200);
+}
+function end() {
+  var img = document.getElementById("preview");
+  var input = document.getElementById("input");
+  var output = document.getElementById("output");
+  var def = "./img/def.png";
+  var happy = "./img/happy.png";
+  var text = "ご視聴、ありがとう<br>ございました！！";
+  var select = document.getElementById("list").value;
+  var sound = document.getElementById(select);
+  output.innerHTML = text;
+  img.src = happy;
+  img.alt = "happy";
+  input.focus();
+  sound.play();
+  setTimeout(() => {
+    img.src = def;
+    img.alt = "default";
+    output.innerHTML = "";
+  }, 5200)
 }
