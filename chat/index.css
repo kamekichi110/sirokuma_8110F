@@ -9,8 +9,8 @@ div.display {
 }
 
 img.preview {
-    height: 240px;
-    width: 180px;
+    height: 160px;
+    width: 120px;
     position: relative;
     top: 8px;
     left: 16px;
