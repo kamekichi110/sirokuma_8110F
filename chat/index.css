@@ -2,8 +2,8 @@ body {
     background: #00FF00;
 }
 div.display {
-    width: 288px;
-    height: 162px;
+    width: 320px;
+    height: 180px;
     margin: 0 auto;
     text-align: center;
 }
