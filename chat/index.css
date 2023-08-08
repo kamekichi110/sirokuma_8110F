@@ -2,15 +2,15 @@ body {
     background: #00FF00;
 }
 div.display {
-    width: 320px;
-    height: 225px;
+    width: 288px;
+    height: 162px;
     margin: 0 auto;
     text-align: center;
 }
 
 img.preview {
-    height: 160px;
-    width: 120px;
+    height: 120px;
+    width: 90px;
     position: relative;
     top: 8px;
     left: 16px;
@@ -24,7 +24,7 @@ div.output {
     background: white;
     border: gray solid 8px;
     width: 288px;
-    height: 82px;
+    height: 64px;
     position: relative;
     left: 4px;
     top: 8px;
@@ -32,7 +32,7 @@ div.output {
     color: black;
     border-radius: 12px;
     font-family: 'DotGothic16', sans-serif;
-    font-size: 15px;
+    font-size: 12px;
 }
 p.ver {
     position: absolute;
