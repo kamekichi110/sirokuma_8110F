@@ -2,7 +2,8 @@ body {
     background: #00FF00;
 }
 div.display {
-    width: 315px;
+    width: 320px;
+    height: 480px;
     margin: 0 auto;
     text-align: center;
 }
