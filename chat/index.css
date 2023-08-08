@@ -3,14 +3,14 @@ body {
 }
 div.display {
     width: 320px;
-    height: 180px;
+    height: 480px;
     margin: 0 auto;
     text-align: center;
 }
 
 img.preview {
-    height: 120px;
-    width: 90px;
+    height: 240px;
+    width: 180px;
     position: relative;
     top: 8px;
     left: 16px;
