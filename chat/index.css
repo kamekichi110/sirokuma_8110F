@@ -26,6 +26,7 @@ div.output {
     width: 288px;
     height: 82px;
     position: relative;
+    left: 4px;
     top: 8px;
     white-space: pre-wrap;
     color: black;
