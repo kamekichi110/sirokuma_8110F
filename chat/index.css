@@ -13,7 +13,7 @@ img.preview {
     width: 240px;
     position: relative;
     top: 8px;
-    left: 82px;
+    left: 72px;
     animation-name: move;
         animation-duration: 5s;
         animation-iteration-count: infinite;
