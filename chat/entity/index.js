@@ -55,6 +55,44 @@ function big() {
         output.innerHTML = blank;
     },4200);
 }
+function small() {
+    var img = document.getElementById("entity");
+    var small = "./img/small_mouse.jpeg";
+    var def = document.getElementById("default").value;
+    var input = document.getElementById("input");
+    var output = document.getElementById("text");
+    var select = document.getElementById("list").value;
+    var sound = document.getElementById(select);
+    var blank = "";
+    img.src = small;
+    output.innerHTML = input.value;
+    sound.play();
+    input.value = blank;
+    input.focus();
+    setTimeout(() => {
+        img.src = def;
+        output.innerHTML = blank;
+    },4200);
+}
+function sad() {
+    var img = document.getElementById("entity");
+    var sad = "./img/sad.jpeg";
+    var def = document.getElementById("default").value;
+    var input = document.getElementById("input");
+    var output = document.getElementById("text");
+    var select = document.getElementById("list").value;
+    var sound = document.getElementById(select);
+    var blank = "";
+    img.src = sad;
+    output.innerHTML = input.value;
+    sound.play();
+    input.value = blank;
+    input.focus();
+    setTimeout(() => {
+        img.src = def;
+        output.innerHTML = blank;
+    })
+}
 function hello() {
     var img = document.getElementById("entity");
     var happy = "./img/smile.jpeg";
