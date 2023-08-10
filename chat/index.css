@@ -84,37 +84,37 @@ textarea.input {
 }
 @keyframes move {
     0% {
-        top: 2px;
+        top: 52px;
     }
     10% {
-        top: 8px;
+        top: 48px;
     }
     20% {
-        top: 2px;
+        top: 52px;
     }
     30% {
-        top: 8px;
+        top: 48px;
     }
     40% {
-        top: 2px;
+        top: 52px;
     }
     50% {
-        top: 8px;
+        top: 48px;
     }
     60% {
-        top: 2px;
+        top: 52px;
     }
     70% {
-        top: 8px;
+        top: 48px;
     }
     80% {
-        top: 2px;
+        top: 52px;
     }
     90% {
-        top: 8px;
+        top: 48px;
     }
     100% {
-        top: 2px;
+        top: 52px;
     }
 }
 div.loaded {
