@@ -1,6 +1,6 @@
 function happy() {
     var img = document.getElementById("entity");
-    var happy = "./img/smile.jpeg";
+    var happy = "./img/smile.jpg";
     var input = document.getElementById("input");
     var text = document.getElementById("text");
     var select = document.getElementById("list").value;
@@ -19,7 +19,7 @@ function happy() {
 }
 function guruguru() {
     var img = document.getElementById("entity");
-    var guruguru = "./img/hekomu.jpeg";
+    var guruguru = "./img/hekomu.jpg";
     var def = document.getElementById("default").value;
     var input = document.getElementById("input");
     var output = document.getElementById("text");
@@ -38,7 +38,7 @@ function guruguru() {
 }
 function big() {
     var img = document.getElementById("entity");
-    var big = "./img/big_mouse.jpeg";
+    var big = "./img/big_mouse.jpg";
     var def = document.getElementById("default").value;
     var input = document.getElementById("input");
     var output = document.getElementById("text");
@@ -57,7 +57,7 @@ function big() {
 }
 function small() {
     var img = document.getElementById("entity");
-    var small = "./img/small_mouse.jpeg";
+    var small = "./img/small_mouse.jpg";
     var def = document.getElementById("default").value;
     var input = document.getElementById("input");
     var output = document.getElementById("text");
@@ -76,7 +76,7 @@ function small() {
 }
 function sad() {
     var img = document.getElementById("entity");
-    var sad = "./img/sad.jpeg";
+    var sad = "./img/sad.jpg";
     var def = document.getElementById("default").value;
     var input = document.getElementById("input");
     var output = document.getElementById("text");
@@ -95,7 +95,7 @@ function sad() {
 }
 function hello() {
     var img = document.getElementById("entity");
-    var happy = "./img/smile.jpeg";
+    var happy = "./img/smile.jpg";
     var def = document.getElementById("default").value;
     var input = "こんにちは！<br>まどかです！";
     var output = document.getElementById("text");
