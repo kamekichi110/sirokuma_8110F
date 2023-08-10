@@ -26,10 +26,13 @@
         <button type="button" onclick="hello()">挨拶</button>
         <button type="button" onclick="reset()">表示リセット</button>
         <br>
-        <label for="bg_img">
-            背景選択
-        <input type="file" id="bg_img" name="bg" class="file" accept="image/png, image/jpeg" />
-        </label>
+        <select name="def" id="default">
+            <option value="./img/big_mouse.jpeg">大きい口</option>
+            <option value="./img/small_mouse">小さい口</option>
+            <option value="./img/hekomu.jpeg">へこむ</option>
+            <option value="./img/sad.jpeg">悲しい</option>
+            <option value="./img/smile.jpeg">笑顔</option>
+        </select>
     </div>
     <audio src="../mp3/send.mp3" id="SE0" preload="auto"></audio>
     <audio src="../mp3/チーン1.mp3" id="SE1" preload="auto"></audio>

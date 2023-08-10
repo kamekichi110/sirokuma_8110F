@@ -1,11 +1,11 @@
 function happy() {
     var img = document.getElementById("entity");
-    var happy = "./asset/entity-happy.png";
+    var happy = "./img/smile.jpeg";
     var input = document.getElementById("input");
     var text = document.getElementById("text");
     var select = document.getElementById("list").value;
     var sound = document.getElementById(select);
-    var def = "./asset/entity-def.png";
+    var def = document.getElementById("default").value;
     var blank = "";
     img.src = happy;
     text.innerHTML = input.value;
@@ -19,8 +19,8 @@ function happy() {
 }
 function guruguru() {
     var img = document.getElementById("entity");
-    var guruguru = "./asset/entity-guruguru.png";
-    var def = "./asset/entity-def.png";
+    var guruguru = "./img/hekomu.jpeg";
+    var def = document.getElementById("default").value;
     var input = document.getElementById("input");
     var output = document.getElementById("text");
     var select = document.getElementById("list").value;
@@ -36,13 +36,33 @@ function guruguru() {
         output.innerHTML = blank;
     }, 4200);
 }
+function big() {
+    var img = document.getElementById("entity");
+    var big = "./img/big_mouse.jpeg";
+    var def = document.getElementById("default").value;
+    var input = document.getElementById("input");
+    var output = document.getElementById("text");
+    var select = document.getElementById("list").value;
+    var sound = document.getElementById(select);
+    var blank = "";
+    img.src = big;
+    output.innerHTML = input.value;
+    sound.play();
+    input.value = blank;
+    input.focus();
+    setTimeout(() => {
+        img.src = def;
+        output.innerHTML = blank;
+    },4200);
+}
 function hello() {
     var img = document.getElementById("entity");
-    var happy = "./asset/entity-happy.png";
-    var def = "./asset/entity-def.png";
+    var happy = "./img/smile.jpeg";
+    var def = document.getElementById("default").value;
     var input = "こんにちは！<br>まどかです！";
     var output = document.getElementById("text");
-    var sound = document.getElementById("SE0");
+    var select = document.getElementById("list").value;
+    var sound = document.getElementById(select);
     var blank = "";
     img.src = happy;
     output.innerHTML = input;
@@ -52,11 +72,12 @@ function hello() {
         img.src = def;
         output.innerHTML = "";
         input.focus();
+        reset();
     }, 4200);
 }
 function reset() {
     var img = document.getElementById("entity");
-    var def = "./asset/entity-def.png";
+    var def = document.getElementById("default").value;
     document.getElementById("text").innerHTML = "";
     img.src = def;
 }
