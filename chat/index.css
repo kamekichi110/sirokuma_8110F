@@ -29,7 +29,7 @@ div.header {
 }
 div.sns {
     width: 160px;
-    height: 14px;
+    height: 18px;
     font-size: 12px;
     text-align: center;
     background: blue;
@@ -48,6 +48,8 @@ div.output {
     bottom: -70px;
     right: -120px;
     white-space: pre-wrap;
+    font-size: 18px;
+    color: white;
 }
 
 img.preview {
