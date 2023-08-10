@@ -97,3 +97,13 @@ function bgChange() {
   var change = document.getElementById("bg");
   change.style.backgroundImage = `url(${data})`;
 }
+function header() {
+  var header = document.getElementById("header");
+  var ct_header = document.getElementById("ct_header");
+  header.innerHTML = ct_header.value;
+}
+function topic() {
+  var topic = document.getElementById("topic");
+  var ct_topic = document.getElementById("ct_topic");
+  topic.innerHTML = ct_topic.value;
+}
