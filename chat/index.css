@@ -47,6 +47,7 @@ div.output {
     position: relative;
     bottom: -70px;
     right: -120px;
+    white-space: pre-wrap;
 }
 
 img.preview {
