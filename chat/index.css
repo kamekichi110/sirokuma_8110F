@@ -54,6 +54,10 @@ img.preview {
     position: relative;
     bottom: 48px;
     left: 8px;
+    animation-name: move;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
 }
 div.topic {
     width: 160px;
@@ -67,32 +71,6 @@ div.topic {
     text-align: center;
     font-size: 12px;
     color: white;
-}
-img.preview {
-    height: 240px;
-    width: 180px;
-    position: relative;
-    top: 8px;
-    left: 16px;
-    animation-name: move;
-        animation-duration: 5s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease;
-}
-
-div.output {
-    background: white;
-    border: gray solid 8px;
-    width: 288px;
-    height: 64px;
-    position: relative;
-    left: 4px;
-    top: 8px;
-    white-space: pre-wrap;
-    color: black;
-    border-radius: 12px;
-    font-family: 'DotGothic16', sans-serif;
-    font-size: 12px;
 }
 p.ver {
     position: absolute;
