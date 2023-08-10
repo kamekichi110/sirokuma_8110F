@@ -10,7 +10,8 @@ div.display {
     background-repeat: repeat;
     width: 100%;
     max-width: 320px;
-    aspect-ratio: 16 / 9;
+    height: 180px;
+    font-family: 'DotGothic16', sans-serif;
 }
 
 div.header {
