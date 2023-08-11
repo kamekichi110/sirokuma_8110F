@@ -31,6 +31,7 @@
                 }
     </script>
     <script src="./cache.js"></script>
+    <script src="./html2canvas.js"></script>
 </head>
 <body>
   <div class="display" id="bg">
@@ -61,6 +62,12 @@
   <button type="button" class="btn" id="send0" onclick="preview_guruguru()">送信(guruguru)</button>
   <button type="button" class="btn" id="btn1" onclick="text_000()">挨拶</button>
   <button type="button" class="btn" id="btn2" onclick="end()">終了</button>
+  <br>
+  <br>
+  <br>
+  <canvas id="result"></canvas>
+  <button type="button" onclick="start()">start</button>
+  <button type="button" onclick="stop()">stop</button>
   <audio src="./mp3/send.mp3" id="SE0"></audio>
     <audio src="./mp3/チーン1.mp3" id="SE1"></audio>
     <audio src="./mp3/パフ.mp3" id="SE2"></audio>
