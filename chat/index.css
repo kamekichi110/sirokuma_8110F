@@ -8,8 +8,7 @@ div.display {
     background-position: 40px 0, 40px 0, 0 0, 0 0;
     background-size: 40px 40px;
     background-repeat: repeat;
-    width: 100%;
-    max-width: 320px;
+    width: 320px
     height: 180px;
     font-family: 'DotGothic16', sans-serif;
 }
@@ -83,6 +82,7 @@ p.ver {
 }
 div.system {
     margin-top: 24px;
+    width: 100%;
 }
 textarea.input {
     font-family: 'DotGothic16', sans-serif;
