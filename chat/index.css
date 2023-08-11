@@ -48,7 +48,7 @@ div.output {
     bottom: -70px;
     right: -120px;
     white-space: pre-wrap;
-    font-size: 18px;
+    font-size: 12px;
     color: white;
 }
 
@@ -75,6 +75,7 @@ div.topic {
     text-align: center;
     font-size: 12px;
     color: white;
+    white-space: pre-wrap;
 }
 p.ver {
     position: absolute;
