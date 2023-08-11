@@ -1,6 +1,75 @@
 body {
     background: #00FF00;
 }
+@media screen and(max-width: 1280px) {
+    div.display {
+            background-color: #a0c7ff;
+            opacity: 1;
+            background-image: linear-gradient(135deg, #a6feff 25%, transparent 25%), linear-gradient(225deg, #a6feff 25%, transparent 25%), linear-gradient(45deg, #a6feff 25%, transparent 25%), linear-gradient(315deg, #a6feff 25%, #a0c7ff 25%);
+            background-position: 40px 0, 40px 0, 0 0, 0 0;
+            background-size: 40px 40px;
+            background-repeat: repeat;
+            width: 480px;
+            height: 270px;
+        }
+                div.header {
+                    width: 120px;
+                    height: 30px;
+                    background: skyblue;
+                    text-align: center;
+                    color: white;
+                    border-radius: 18px;
+                    border: white solid 2px;
+                    position: relative;
+                    top: 8px;
+                    left: 8px;
+                    font-size: 20px;
+                }
+        
+                div.sns {
+                    width: 160px;
+                    height: 14px;
+                    font-size: 12px;
+                    text-align: center;
+                    background: blue;
+                    border-radius: 16px;
+                    position: relative;
+                    top: -24px;
+                    left: 144px;
+                    color: white;
+                }
+                                div.output {
+                                    width: 60%;
+                                    background: grey;
+                                    aspect-ratio: 4 / 1.2;
+                                    position: relative;
+                                    bottom: -128px;
+                                    right: -180px;
+                                }
+                
+                                img.preview {
+                                    width: 150px;
+                                    height: 200px;
+                                    position: relative;
+                                    bottom: 82px;
+                                    left: 8px;
+                                }
+                
+                                div.topic {
+                                    width: 240px;
+                                    height: 120px;
+                                    background: green;
+                                    position: relative;
+                                    bottom: 300px;
+                                    left: 200px;
+                                    border: gold solid 3px;
+                                    border-radius: 16px;
+                                    text-align: center;
+                                    font-size: 12px;
+                                    color: white;
+                                }
+}
+@media screen and(max-width: 480px) {
 div.display {
     background-color: #a0c7ff;
     opacity: 1;
@@ -121,6 +190,7 @@ textarea.input {
     100% {
         bottom: 52px;
     }
+}
 }
 div.loaded {
     display: none;
