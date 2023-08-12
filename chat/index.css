@@ -11,6 +11,7 @@ body {
             background-repeat: repeat;
             width: 480px;
             height: 270px;
+            font-family: 'DotGothic16', sans-serif;
         }
                 div.header {
                     width: 120px;
