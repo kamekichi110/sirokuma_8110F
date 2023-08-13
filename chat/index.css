@@ -54,6 +54,7 @@ body {
                                     position: relative;
                                     bottom: -128px;
                                     right: -180px;
+                                    font-size: 12px;
                                 }
                 
                                 img.preview {
