@@ -62,8 +62,46 @@ body {
                                     position: relative;
                                     bottom: 82px;
                                     left: 8px;
+                                    animation-name: move;
+                                    animation-duration: 5s;
+                                    animation-timing-function: ease;
+                                    animation-iteration-count: infinite;
                                 }
-                
+                                @keyframes move {
+                                    0% {
+                                        bottom: 82px;
+                                    }
+                                    10% {
+                                        bottom: 90px;
+                                    }
+                                    20% {
+                                        bottom: 82px;
+                                    }
+                                    30% {
+                                        bottom: 90px;
+                                    }
+                                    40% {
+                                        bottom: 82px;
+                                    }
+                                    50% {
+                                        bottom: 90px;
+                                    }
+                                    60% {
+                                        bottom: 82px;
+                                    }
+                                    70% {
+                                        bottom: 90px;
+                                    }
+                                    80% {
+                                        bottom: 82px;
+                                    }
+                                    90% {
+                                        bottom: 90px;
+                                    }
+                                    100% {
+                                        bottom: 82px;
+                                    }
+                                }
                                 div.topic {
                                     width: 240px;
                                     height: 120px;
