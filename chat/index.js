@@ -107,3 +107,12 @@ function topic() {
   var ct_topic = document.getElementById("ct_topic");
   topic.innerHTML = ct_topic.value;
 }
+function op_st() {
+  document.getElementById("op").style.display = "block";
+  document.getElementById("op").play();
+  setTimeout(() => {
+    document.getElementById("op").style.display = "none";
+    document.getElementById("op").pause();
+    document.getElementById("op").currentTime = 0;
+  },5050);
+}
