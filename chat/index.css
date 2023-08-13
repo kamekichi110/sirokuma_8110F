@@ -2,6 +2,14 @@ body {
     background: #00FF00;
 }
 @media screen and (max-width: 1280px) {
+    video#op {
+        width: 480px;
+        height: 270px;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        display: none;
+    }
     div.display {
             background-color: #a0c7ff;
             opacity: 1;
@@ -78,6 +86,14 @@ body {
                                 }
 }
 @media screen and (max-width: 480px) {
+    video#op {
+        width: 320px;
+        height: 180px;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        display: none;
+    }
 div.display {
     background-color: #a0c7ff;
     opacity: 1;
