@@ -11,7 +11,7 @@ function ImageReset() {
   document.getElementById("topicImage").src = "./topic.png";
 }
 
-document.querySelector('#inputImage').addEventListener('change', (event) => {
+document.getElementById("inputImage").addEventListener('change', (event) => {
     const file = event.target.files[0]
 
       // fileがundefinedの時にreader.readAsDataURL(file)がエラーになるため、
