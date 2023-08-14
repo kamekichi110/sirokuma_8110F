@@ -7,3 +7,13 @@ function BGM_stop() {
   BGM.pause();
   BGM.currentTime = 0;
 }
+function ImageReset() {
+  document.getElementById("topicImage").src = "./topic.png";
+}
+$("#myImage").on("change", function (e) {
+  var reader = new FileReader();
+  reader.onload = function (e) {
+    $("#topicImage").attr("src", e.target.result);
+  };
+  reader.readAsDataURL(e.target.files[0]);
+});

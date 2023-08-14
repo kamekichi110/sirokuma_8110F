@@ -2,6 +2,13 @@ body {
     background: #00FF00;
 }
 @media screen and (max-width: 1280px) {
+    img#topicImage {
+            position: absolute;
+            top: 64px;
+            left: 272px;
+            width: 120px;
+            height: 90px;
+        }
     video#op {
         width: 480px;
         height: 270px;
@@ -126,6 +133,13 @@ body {
                                 }
 }
 @media screen and (max-width: 480px) {
+    img#topicImage {
+            position: absolute;
+            top: 54px;
+            left: 192px;
+            width: 80px;
+            height: 60px;
+        }
     video#op {
         width: 320px;
         height: 180px;
