@@ -10,7 +10,7 @@ function BGM_stop() {
 function ImageReset() {
   document.getElementById("topicImage").src = "./topic.png";
 }
-
+function inputImage() {
 document.getElementById("inputImage").addEventListener('change', (event) => {
     const file = event.target.files[0]
 
@@ -26,3 +26,4 @@ document.getElementById("inputImage").addEventListener('change', (event) => {
 
                       reader.readAsDataURL(file)
                       })
+                    }
