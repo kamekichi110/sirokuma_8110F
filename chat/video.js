@@ -10,10 +10,20 @@ function BGM_stop() {
 function ImageReset() {
   document.getElementById("topicImage").src = "./topic.png";
 }
-$("#myImage").on("change", function (e) {
-  var reader = new FileReader();
-  reader.onload = function (e) {
-    $("#topicImage").attr("src", e.target.result);
-  };
-  reader.readAsDataURL(e.target.files[0]);
-});
+
+document.querySelector('#inputImage').addEventListener('change', (event) => {
+    const file = event.target.files[0]
+
+      // fileがundefinedの時にreader.readAsDataURL(file)がエラーになるため、
+        // !fileがfalseの場合にreturnする。
+          if (!file) return
+
+            const reader = new FileReader()
+
+              reader.onload = (event) => {
+                  document.querySelector('#outputImage').src = event.target.result
+                    }
+
+                      reader.readAsDataURL(file)
+                      })
+})
