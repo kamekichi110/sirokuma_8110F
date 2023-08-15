@@ -1,5 +1,5 @@
 'use strict';
-const CACHE_NAME = '＜キャッシュ名＞';
+const CACHE_NAME = 'system-data';
 const urlsToCache = [
   "./img/def.png",
     "./img/happy.png",
@@ -8,7 +8,9 @@ const urlsToCache = [
     "./index.css",
     "./index.html",
     "index.js",
-    "./cache.js"
+    "./cache.js",
+    "./video.js",
+    "./op.mp4"
         ];
         //installイベントの場合
         //前述のファイルパスをすべてキャッシュに登録する
