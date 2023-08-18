@@ -5,6 +5,7 @@ const urlsToCache = [
     "./img/happy.png",
     "./img/guruguru.png",
     "./mp3/send.mp3",
+    "./serviceworker.js",
     "./index.css",
     "./index.html",
     "index.js",

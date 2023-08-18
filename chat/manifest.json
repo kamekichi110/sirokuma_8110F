@@ -4,8 +4,8 @@
     "display": "standalone",
     "scope": "/chat-program",
     "start_url": "https://kamekichi110.github.io/sirokuma_8110F/chat/index.html",
-    "name": "チャット<8000系>",
-    "short_name": "チャット<8000系>",
+    "name": "Chat-2D",
+    "short_name": "Chat-2D",
     "description": "Live\u7528",
     "icons": [
         {
