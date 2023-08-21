@@ -7,6 +7,63 @@ function BGM_stop() {
   BGM.pause();
   BGM.currentTime = 0;
 }
+
+
+const cameraInit1 = () => {
+  const video = document.getElementById("camera");
+
+  const cameraSetting = {
+    audio: false,
+    video: {
+      width: 90,
+      height: 160,
+      facingMode: "environment",
+    },
+  };
+
+  navigator.mediaDevices
+    .getUserMedia(cameraSetting)
+    .then((mediaStream) => {
+      video.srcObject = mediaStream;
+    })
+    .catch((err) => {
+      console.log(err.toString());
+    });
+};
+
+const cameraInit0 = () => {
+  const video = document.getElementById("camera");
+
+  const cameraSetting = {
+    audio: false,
+    video: {
+      width: 160,
+      height: 90,
+      facingMode: "environment",
+    },
+  };
+
+  navigator.mediaDevices
+    .getUserMedia(cameraSetting)
+    .then((mediaStream) => {
+      video.srcObject = mediaStream;
+    })
+    .catch((err) => {
+      console.log(err.toString());
+    });
+};
+
+function hide() {
+  document.getElementById("cam").style.display = "none";
+}
+function display() {
+  document.getElementById("cam").style.display = "block";
+}
+
+
+
+
+
 function ImageReset() {
   document.getElementById("topicImage").src = "./topic.png";
 }

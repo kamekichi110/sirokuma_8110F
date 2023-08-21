@@ -48,6 +48,9 @@
   </div>
   <img class="preview" id="preview" src="./img/def.png">
   <div class="topic" id="topic"></div>
+  <div class="camera" id="cam">
+      <video id="camera" autoplay muted playsinline></video>
+    </div>
 </div>
 <div class="system">
   <textarea rows="5" cols="13" id="input" class="input" placeholder="comment"></textarea>
@@ -72,6 +75,11 @@
   <button type="button" onclick="BGM_stop()">BGM-stop</button>
   <button type="button" onclick="op_st()">op-start</button>
   <br>
+  <input type="button" value="カメラ起動-縦画面" onclick="cameraInit1()">
+  <input type="button" value="カメラ起動-横画面" onclick="cameraInit0()">
+  <br>
+  <button onclick="hide()">hide</button>
+  <button onclick="display()">display</button>
   <audio src="./mp3/send.mp3" id="SE0"></audio>
     <audio src="./mp3/チーン1.mp3" id="SE1"></audio>
     <audio src="./mp3/パフ.mp3" id="SE2"></audio>
