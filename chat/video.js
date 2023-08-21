@@ -9,7 +9,7 @@ function BGM_stop() {
 }
 
 
-const cameraInit1 = () => {
+const camera1 = () => {
   const video = document.getElementById("camera");
 
   const cameraSetting = {
@@ -31,7 +31,7 @@ const cameraInit1 = () => {
     });
 };
 
-const cameraInit0 = () => {
+const camera0 = () => {
   const video = document.getElementById("camera");
 
   const cameraSetting = {
