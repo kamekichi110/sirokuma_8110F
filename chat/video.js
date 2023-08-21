@@ -15,7 +15,7 @@ const camera1 = () => {
   const cameraSetting = {
     audio: false,
     video: {
-      width: 90,
+      width: 160,
       height: 90,
       facingMode: "environment",
     },
@@ -38,7 +38,7 @@ const camera0 = () => {
     audio: false,
     video: {
       width: 90,
-      height: 90,
+      height: 160,
       facingMode: "environment",
     },
   };
