@@ -51,7 +51,7 @@ function preview_guruguru() {
   }, 5200);
 }
 function text_000() {
-  var input = "こんにちは。<br>しーくまです！<br>よろしくお願いします。";
+  var input = "こんにちは。<br>ゆっくり8000です！<br>よろしくお願いします。";
   var textarea = document.getElementById("input");
   var output = document.getElementById("output");
   var image = document.getElementById("preview");
@@ -78,7 +78,7 @@ function end() {
   var output = document.getElementById("output");
   var def = "./img/def.png";
   var happy = "./img/happy.png";
-  var text = "ご視聴、ありがとう<br>ございました！！";
+  var text = "ご視聴、ありがとう<br>ございました！！<br>また見てね！";
   var select = document.getElementById("list").value;
   var sound = document.getElementById(select);
   output.innerHTML = text;
@@ -116,8 +116,8 @@ function op_st() {
     document.getElementById("op").currentTime = 0;
   },5050);
 }
-function co_topic() {
-  var color = document.getElementById("co_topic").value;
-  var div = document.getElementById("topic");
+function color_header() {
+  var color = document.getElementById("color_header").value;
+  var div = document.getElementById("header");
   div.style.color = color;
 }
