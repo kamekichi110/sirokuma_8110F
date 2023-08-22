@@ -1,0 +1,10 @@
+body,html {
+    margin: 0;
+    background-color: #00FF00;
+}
+img.entity {
+    width: 80%;
+}
+p {
+    text-align: center;
+}
