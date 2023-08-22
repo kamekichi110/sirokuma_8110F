@@ -68,9 +68,9 @@ body {
                 
                                 img.preview {
                                     width: 150px;
-                                    height: 200px;
+                                    height: 150px;
                                     position: relative;
-                                    bottom: 82px;
+                                    bottom: 14px;
                                     left: 8px;
                                 }
                                 @keyframes move {
@@ -197,9 +197,9 @@ div.output {
 
 img.preview {
     width: 90px;
-    height: 120px;
+    height: 90px;
     position: relative;
-    bottom: 48px;
+    bottom: 20px;
     left: 8px;
 }
 div.topic {
