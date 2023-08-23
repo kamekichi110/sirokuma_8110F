@@ -28,3 +28,9 @@ function ho() {
     entity.src = ho;
     entity.alt = "hou";
 }
+function hand() {
+    var entity = document.getElementById("entity");
+    var hand = "./asset/hand.png";
+    entity.src = hand;
+    entity.alt = "hand";
+}

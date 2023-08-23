@@ -56,7 +56,7 @@ function text_000() {
   var output = document.getElementById("output");
   var image = document.getElementById("preview");
   var def = "./img2/def.png";
-  var guruguru = "./img2/guruguru.png"
+  var guruguru = "./img2/hand.png"
   var list = document.getElementById("list").value;
   var sound = document.getElementById(list);
   var btn1 = document.getElementById("btn1");
@@ -91,6 +91,28 @@ function end() {
     img.alt = "default";
     output.innerHTML = "";
   }, 5200)
+}
+function hand() {
+  var text = document.getElementById("input");
+  var result = document.getElementById("output");
+  var image = document.getElementById("preview");
+  var def = "./img2/def.png";
+  var hand = "./img2/hand.png";
+  var list = document.getElementById("list").value;
+  var sound = document.getElementById(list);
+  var btn = document.getElementById("send");
+  var btn0 = document.getElementById("send0");
+  result.innerHTML = text.value;
+  image.src = hand;
+  image.alt = "hand";
+  sound.play();
+  text.value = "";
+  text.focus();
+  setTimeout(() => {
+    image.src = def;
+    image.alt = "default";
+    result.innerHTML = "";
+  }, 5200);
 }
 function bgChange() {
   var data = document.getElementById("bg_img").value;
