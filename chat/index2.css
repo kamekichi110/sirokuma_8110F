@@ -47,7 +47,6 @@ body {
                     height: 18px;
                     font-size: 12px;
                     text-align: center;
-                    background: blue;
                     border-radius: 16px;
                     position: relative;
                     top: -24px;
@@ -175,7 +174,6 @@ div.sns {
     height: 18px;
     font-size: 12px;
     text-align: center;
-    background: blue;
     border-radius: 16px;
     position: relative;
     top: -24px;
