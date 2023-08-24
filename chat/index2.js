@@ -56,7 +56,7 @@ function text_000() {
   var output = document.getElementById("output");
   var image = document.getElementById("preview");
   var def = "./img2/def.png";
-  var guruguru = "./img2/hand.png"
+  var guruguru = "./img2/happy.png"
   var list = document.getElementById("list").value;
   var sound = document.getElementById(list);
   var btn1 = document.getElementById("btn1");
