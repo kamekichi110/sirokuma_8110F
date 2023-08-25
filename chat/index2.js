@@ -51,7 +51,7 @@ function preview_guruguru() {
   }, 5200);
 }
 function text_000() {
-  var input = "こんにちは。<br>しーくまです！<br>よろしくお願いします。";
+  var input = "こんにちは！！<br>ぱにっくこれくしょん、<br>緑クローバーのしーくまです！";
   var textarea = document.getElementById("input");
   var output = document.getElementById("output");
   var image = document.getElementById("preview");
