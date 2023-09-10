@@ -3,13 +3,9 @@ body {
 }
 @media screen and (max-width: 1280px) {
     .camera {
-            display: none;
+        display: block;
             margin: 0;
-        }
-    
-        video#camera {
-            display: none;
-        }
+    }
     img#outputImage {
             position: absolute;
             top: 64px;
