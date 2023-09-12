@@ -152,7 +152,7 @@ body {
 }
 @media screen and (max-width: 480px) {
     .camera {
-        width: 136px;
+        width: 120px;
         height: 64px;
         position: absolute;
         top: 50px;
@@ -165,7 +165,7 @@ body {
 
     video#camera {
         display: block;
-        width: 136px;
+        width: 120px;
         height: 64px;
     }
     img#outputImage {
