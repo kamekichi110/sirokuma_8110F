@@ -3,11 +3,11 @@ body {
 }
 @media screen and (max-width: 1280px) {
     .camera {
-        width: 220px;
+        width: 160px;
         height: 90px;
         position: absolute;
         top: 64px;
-        left: 220px;
+        left: 250px;
         display: block;
         overflow: hidden;
         background-color: grey;
@@ -16,7 +16,7 @@ body {
 
     video#camera {
         display: block;
-        width: 220px;
+        width: 160px;
         height: 90px;
     }
     img#outputImage {
