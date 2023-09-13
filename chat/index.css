@@ -16,7 +16,7 @@ body {
 
     video#camera {
         display: block;
-        width: 160px;
+        width: 220px;
         height: 90px;
     }
     img#outputImage {
