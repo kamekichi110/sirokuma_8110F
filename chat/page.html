@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat2D-8000</title>
+    <link rel="preload" href="./manifest.json">
+    <link rel="preload" href="./cache.js" as="script">
+    <link rel="preload" href="./index.js" as="script">
+    <link rel="preload" href="./img/def.png" as="image">
+    <link rel="preload" href="./img/guruguru.png" as="image">
+    <link rel="preload" href="./img/happy.png" as="image">
+    <link rel="preload" href="./serviceworker.js" as="script">
+    <link rel="preload" href="./mp3/send.mp3" as="audio">
+    <link rel="preload" href="./mp3/チーン1.mp3" as="audio">
+    <link rel="preload" href="./mp3/パフ.mp3" as="audio">
+    <link rel="preload" href="./mp3/和太鼓でドドン.mp3" as="audio">
+    <link rel="preload" href="./mp3/のんきな日常.mp3" as="audio">
+    <link rel="preload" href="./op.mp4" as="video">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <script src="./index.js"></script>
+    <link rel="manifest" href="./manifest.json">
+    <script src="./serviceworker.js"></script>
+    <script>
+      if('serviceWorker' in navigator){
+        	navigator.serviceWorker.register('/serviceworker.js').then(function(){
+          		console.log("Service Worker is registered!!");
+              	});
+                }
+    </script>
+    <script src="./cache.js"></script>
+    <script src="./html2canvas.js"></script>
+    <script src="./video.js"></script>
+    <script src="./cam.js"></script>
+    <link rel="stylesheet" href="./canvas.css">
+</head>
+<body>
+  <div class="display" id="bg">
+  <div class="header" id="header">
+    〇REC
+  </div>
+  <div class="sns">
+    twitter:@sirokuma_8110F
+  </div>
+  <div class="output" id="output">
+  </div>
+  <img class="preview" id="preview" src="./img/def.png">
+  <div class="topic" id="topic"></div>
+  <div class="camera" id="canvasPreview">
+  </div>
+</div>
+<div class="system">
+  <textarea rows="5" cols="13" id="input" class="input" placeholder="comment"></textarea>
+  <br>
+  <input type="text" placeholder="題名" id="ct_header" onchange="header()">
+  <input type="color" name="color" id="color_header" onchange="color_header()">
+  <br>
+  <textarea id="ct_topic" cols="10" rows="5" placeholder="Topic!" onchange="topic()"></textarea>
+  <br>
+  <select name="list" id="list">
+    <option value="SE0">標準</option>
+    <option value="SE1">チーン</option>
+    <option value="SE2">パフ</option>
+    <option value="SE3">ドドン</option>
+  </select>
+  <button type="button" class="btn" id="send" onclick="preview()">送信(happy)</button>
+  <button type="button" class="btn" id="send0" onclick="preview_guruguru()">送信(guruguru)</button>
+  <button type="button" class="btn" id="btn1" onclick="text_000()">挨拶</button>
+  <button type="button" class="btn" id="btn2" onclick="end()">終了</button>
+  <br>
+  <button type="button" onclick="BGM_start()">BGM-start</button>
+  <button type="button" onclick="BGM_stop()">BGM-stop</button>
+  <button type="button" onclick="op_st()">op-start</button>
+  <br>
+  <input type="button" value="カメラ起動-縦画面" onclick="camera1()">
+  <input type="button" value="カメラ起動-横画面" onclick="camera0()">
+  <br>
+  <button onclick="hide()">hide</button>
+  <button onclick="display()">display</button>
+  <audio src="./mp3/send.mp3" id="SE0"></audio>
+    <audio src="./mp3/チーン1.mp3" id="SE1"></audio>
+    <audio src="./mp3/パフ.mp3" id="SE2"></audio>
+    <audio src="./mp3/和太鼓でドドン.mp3" id="SE3"></audio>
+    <audio src="./mp3/のんきな日常.mp3" id="BGM" preload="auto" loop></audio>
+    <video src="./op.mp4" id="op" preload="auto"></video>
+    <div id="videoPreview">
+      <p>video preview</p>
+    </div>
+</div>
+</body>
+</html>
