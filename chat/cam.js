@@ -1,3 +1,4 @@
+function start_stream() {
 const cameraSize = { w: 1600, h: 900 };
 const canvasSize = { w: 16, h: 9 };
 const resolution = { w: 1600, h: 900 };
@@ -39,8 +40,10 @@ canvasCtx.scale(10,10);
 // video要素の映像をcanvasに描画する
 _canvasUpdate();
 setInterval(function(){
-    _canvasUpdate();
+  canvasCtx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  requestAnimationFrame(_canvasUpdate);
 }, 1000/30);
+}
 
 function _canvasUpdate() {
   canvasCtx.drawImage(video, 0, 0, canvas.width, canvas.height);
