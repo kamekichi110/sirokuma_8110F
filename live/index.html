@@ -5,7 +5,7 @@
 </head>
 <body>
     <video id="webcam" autoplay playsinline></video>
-    <canvas id="live2d-canvas" width="800" height="600"></canvas>
+    <canvas id="live2d-canvas" width="2048" height="2048"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@4.0.3"></script>
     <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
     <script>
@@ -36,7 +36,7 @@
             Live2D.init();
 
             // モデルの読み込み
-            const modelDef = '/しーくま(Live2D用).moc3'; // モデルファイルのパス
+            const modelDef = '/model.moc3'; // モデルファイルのパス
             const model = Live2D.Model.load(modelDef, () => {
                 // モデル読み込み後の処理
                 model.addTo(canvas);

@@ -1,7 +1,7 @@
 {
 	"Version": 3,
 	"FileReferences": {
-		"Moc": "しーくま(Live2D用).moc3",
+		"Moc": "model.moc3",
 		"Textures": [
 			"texture_00.png"
 		]
