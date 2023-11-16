@@ -111,6 +111,7 @@
     chatOutputSound.currentTime = 0;
     chatOutputSound.play();
     ChatEntityPreview.src = ChatOutputImage1;
+    ChatTextInput.focus();
     setTimeout(() => {
       ChatEntityPreview.src = ChatOutputImage0;
       ChatOutputText.innerHTML = "";
