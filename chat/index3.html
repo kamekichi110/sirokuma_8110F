@@ -26,11 +26,18 @@
     <script src="./html2canvas.js"></script>
     <script src="./video.js"></script>
     <script src="./audio-chat.js"></script>
+    <style>
+      .helloText {
+        width: 100%;
+        overflow-x: scroll;
+        height: 32px;
+      }
+    </style>
 </head>
 <body>
   <div class="display" id="bg">
   <div class="header" id="header">
-    live配信！
+    REC
   </div>
   <div class="sns">
     &nbsp;
@@ -58,7 +65,18 @@
   <button type="button" class="btn" id="btn1" onclick="text_000()">挨拶</button>
   <button type="button" class="btn" id="btn2" onclick="end()">終了</button>
   <br>
-  <button id="startButton"></button>
+  <button onclick="chatStart()"></button>
+  <br>
+  <hr>
+  <div class="helloText">
+    <p>
+      <button type="button" onclick="chatStart(0)">挨拶パターン0(ぱにこれ無)</button>
+      <button type="button" onclick="chatStart(1)">挨拶パターン0(ぱにこれ有)</button>
+      <button type="button" onclick="chatStart(2)">挨拶パターン0(ぱにこれ無)</button>
+      <button type="button" onclick="chatStart(3)">挨拶パターン0(ぱにこれ無)</button>
+    </p>
+  </div>
+  <hr>
   <br>
   <button type="button" onclick="BGM_start()">BGM-start</button>
   <button type="button" onclick="BGM_stop()">BGM-stop</button>
@@ -70,5 +88,34 @@
     <audio src="./mp3/のんきな日常.mp3" id="BGM" preload="auto" loop></audio>
     <video src="./op.mp4" id="op" preload="auto"></video>
 </div>
+<script>
+  const ChatOutputText = document.getElementById("output");
+  const ChatOutputImage0 = "./img2/def.png";
+  const ChatOutputImage1 = "./img2/happy.png";
+  const chatOutputSound = document.getElementById("SE0");
+  const ChatTextInput = document.getElementById("input");
+  const ChatLog_A = "どうもこんにちは！<br>しーくまです！";
+  const ChatLog_B = "どうもこんにちは！<br>緑クローバー担当の<br>しーくまです！";
+  const ChatLog_C = "どうもこんにちは！<br>しーくまだよ！";
+  const ChatEntityPreview = document.getElementById("preview");
+  function chatStart(ChatLog) {
+    if (ChatLog === 0) {
+      ChatOutputText.innerHTML = ChatLog_A;
+    } else if (ChatLog === 1) {
+      ChatOutputText.innerHTML = ChatLog_B;
+    } else if (ChatLog === 2) {
+      ChatOutputText.innerHTML = ChatLog_C;
+    } else if (chatLog === 3) {
+      ChatOutputText.innerHTML = "どうも！<br>みなさんこんにちは！<br>しーくまです！";
+    }
+    chatOutputSound.currentTime = 0;
+    chatOutputSound.play();
+    ChatEntityPreview.src = ChatOutputImage1;
+    setTimeout(() => {
+      ChatEntityPreview.src = ChatOutputImage0;
+      ChatOutputText.innerHTML = "";
+    }, 700);
+  }
+</script>
 </body>
 </html>
