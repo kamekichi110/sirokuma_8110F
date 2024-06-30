@@ -1,0 +1,100 @@
+{
+    "type": "object",
+    "properties": {
+        "background_color": {
+            "type": "string"
+        },
+        "categories": {
+            "type": "array",
+            "minItems": 0
+        },
+        "description": {
+            "type": "string"
+        },
+        "display": {
+            "type": "string",
+            "enum": [
+                "fullscreen",
+                "standalone",
+                "minimal-ui",
+                "browser"
+            ]
+        },
+        "icons": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "required": ["src", "sizes", "type"],
+                "additionalProperties": false,
+                "properties": {
+                    "src": {
+                        "type": "string"
+                    },
+                    "sizes": {
+                        "type": "string",
+                        "pattern": "[0-9a-z]+"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": ["image/png"]
+                    }
+                }
+            }
+        },
+        "name": {
+            "type": "string"
+        },
+        "orientation": {
+            "type": "string",
+            "enum": [
+                "any",
+                "natural",
+                "landscape",
+                "landscape-primary",
+                "landscape-secondary",
+                "portrait",
+                "portrait-primary",
+                "portrait-secondary"
+            ]
+        },
+        "scope": {
+            "type": "string"
+        },
+        "short_name": {
+            "type": "string"
+        },
+        "shortcuts": {
+            "type": "array",
+            "minItems": 0,
+            "items": {
+                "type": "object",
+                "required": ["name", "url"],
+                "additionalProperties": false,
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "short_name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "url": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "start_url": {
+            "type": "string"
+        },
+        "theme_color": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        }
+    }
+}
