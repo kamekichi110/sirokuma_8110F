@@ -1,0 +1,31 @@
+{
+    "title": "Stations",
+    "description": "A list of stations and their lines",
+    "type": "object",
+    "properties": {
+      "stations": {
+        "type": "array",
+        "description": "List of stations",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The name of the station"
+            },
+            "lines": {
+              "type": "array",
+              "description": "List of lines that pass through the station",
+              "items": {
+                "type": "string",
+                "description": "The name of a line"
+              }
+            }
+          },
+          "required": ["name", "lines"]
+        }
+      }
+    },
+    "required": ["stations"]
+  }
+  
