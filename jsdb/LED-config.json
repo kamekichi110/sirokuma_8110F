@@ -1,0 +1,10 @@
+{
+    "title": "LED for 3DS json config",
+    "description": "LED for 3DSで使用するJSONのフォーマット情報です。",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": ""
+        }
+    }
+}
