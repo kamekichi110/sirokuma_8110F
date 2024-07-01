@@ -1,3 +1,32 @@
 {
-    "$schema": "https://web.3ds.f5.si/jsdb/sta-rote.json"
+    "$schema": "https://web.3ds.f5.si/jsdb/sta-rote.json",
+    "stations": [
+        {
+            "name": "大宮(埼玉)",
+            "lines": [
+                "JR埼京線",
+                "JR京浜東北線",
+                "JR高崎線",
+                "JR宇都宮線",
+                "湘南新宿ライン",
+                "上野東京ライン",
+                "東武野田線"
+            ]
+        },
+        {
+            "name": "さいたま新都心",
+            "lines": [
+                "JR京浜東北線",
+                "上野東京ライン"
+            ]
+        },
+        {
+            "name": "与野",
+            "lines": ["JR京浜東北線"]
+        },
+        {
+            "name": "北浦和",
+            "lines": ["JR京浜東北線"]
+        }
+    ]
 }
