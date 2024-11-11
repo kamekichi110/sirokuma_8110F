@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
    cmd.style.display = "block";
    setTimeout(() => {
     bat.style.display = "block";
-   }, 1280);
-  }, 1000);
- }, 500);
+   }, 1500);
+  }, 1280);
+ }, 1500);
 });
