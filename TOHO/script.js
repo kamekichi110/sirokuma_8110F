@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typingSpeed = 50;
   let memoryCheckComplete = false;
   let memoryAmount = 0;
-  const maxMemory = 256;
+  const maxMemory = 512;
 
   function typeBootMessage() {
     if (!memoryCheckComplete) {
@@ -58,10 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function performMemoryCheck() {
     if (memoryAmount < maxMemory) {
       bootElement.innerHTML = `Memory Test : ${memoryAmount} MB OK<br>`;
-      memoryAmount += 1; // 16MBずつ増加させる
-      setTimeout(performMemoryCheck, 100); // メモリチェックの速度
+      memoryAmount += 8; // 16MBずつ増加させる
+      setTimeout(performMemoryCheck, 1); // メモリチェックの速度
     } else {
-      bootElement.innerHTML += `Memory Test : ${maxMemory} MB OK<br>`;
+      bootElement.innerHTML = `Memory Test : ${maxMemory} MB OK<br>`;
       memoryCheckComplete = true;
       setTimeout(typeBootMessage, typingSpeed);
     }
