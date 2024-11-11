@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function typeMainMessage() {
-    const allMessages = mainMessages.join("<br>") + "<br><br>D:\\>OPT.BAT<br>This is a program for selecting old Touhou game titles.<br>Click to select your favorite program.<br>-------------------------------------------<br>>TH1.BAT<br>>TH2.BAT<br>>TH3.BAT<br>>TH4.BAT<br>>TH5.BAT<br>-------------------------------------------<br>COPYRIGHT TOBU8";
+    const allMessages = mainMessages.join("<br>") + mainMessages.join("<br>") + mainMessages.join("<br>") + "D:\\>OPT.BAT" + mainMessages.join("<br>") + "This is a program for selecting old Touhou game titles." + mainMessages.join("<br>") + "Click to select your favorite program." + mainMessages.join("<br>") + "-------------------------------------------" + mainMessages.join("<br>") + ">TH1.BAT" + mainMessages.join("<br>") + ">TH2.BAT" + mainMessages.join("<br>") + ">TH3.BAT" + mainMessages.join("<br>") + ">TH4.BAT" + mainMessages.join("<br>") + ">TH5.BAT" + mainMessages.join("<br>") + "-------------------------------------------" + mainMessages.join("<br>") + "COPYRIGHT TOBU8";
     if (charIndex < allMessages.length) {
       cmdElement.innerHTML += allMessages[charIndex];
       charIndex++;
