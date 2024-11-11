@@ -1,6 +1,6 @@
 @font-face {
  font-family: "DOS";
- src: url("https://sirokuma.cloudfree.jp/data/woff/dos19.woff") format("woff");
+ src: url("./dos19.woff") format("woff");
 }
 * {
  margin: 0;
