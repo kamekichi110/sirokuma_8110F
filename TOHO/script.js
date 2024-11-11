@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typingSpeed = 50;
   let memoryCheckComplete = false;
   let memoryAmount = 0;
-  const maxMemory = 1024;
+  const maxMemory = 262144;
 
   function typeBootMessage() {
     if (!memoryCheckComplete) {
@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function performMemoryCheck() {
     if (memoryAmount < maxMemory) {
-      bootElement.innerHTML = `Memory Test : ${memoryAmount} MB OK<br>`;
-      memoryAmount += 16;
+      bootElement.innerHTML = `Memory Test : ${memoryAmount} KB OK<br>`;
+      memoryAmount += 32;
       setTimeout(performMemoryCheck, 100);
     } else {
-      bootElement.innerHTML += `Memory Test : ${maxMemory} MB OK<br>`;
+      bootElement.innerHTML += `Memory Test : ${maxMemory} KB OK<br>`;
       memoryCheckComplete = true;
       setTimeout(typeBootMessage, typingSpeed);
     }
