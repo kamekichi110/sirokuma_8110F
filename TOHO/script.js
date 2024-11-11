@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const bootMessages = [
-    "Microsoft(R) TOHO-DOS(R) Version 5.0.0",
+    "ZUN(C) TOHO-DOS(C) Version 5.0.0",
     "Copyright (c) TOBU8 2024.",
     "",
     "C:\\>boot Z:",
@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "This web site is Touhou old games emulator.",
     "The games included on this site are as follows.",
     "-------------------------------------------",
-    "<p>><a href='./TH1/' target='_blank'>TH1.BAT</a>(PC only.)</p>",
-    "<p>><a href='./TH2/' target='_blank'>TH2.BAT</a>(mobile OK.)</p>",
-    "<p>><a href='./TH3/' target='_blank'>TH3.BAT</a>(mobile OK.)</p>",
-    "<p>><a href='./TH4/' target='_blank'>TH4.BAT</a>(mobile OK.)</p>",
+    "<p>><a href='./TH1/' target='_blank'>TH1.BAT</a>(PC only. mobile is not supported)</p>",
+    "<p>><a href='./TH2/' target='_blank'>TH2.BAT</a>(PC and mobile supported.)</p>",
+    "<p>><a href='./TH3/' target='_blank'>TH3.BAT</a>(PC and mobile supported.)</p>",
+    "<p>><a href='./TH4/' target='_blank'>TH4.BAT</a>(PC and mobile supported.)</p>",
     "-------------------------------------------"
   ];
 
