@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   OUT.style.imageRendering = 'pixelated';
   },2560);
 });
-    window.addEventListener("DOMContentLoaded", () => {
+    
       // 無音の音声を生成して再生する関数
       function playSilentAudio() {
         try {
@@ -30,4 +30,4 @@ document.addEventListener("DOMContentLoaded", () => {
       // アラートを表示し、無音の音声を再生
       alert("東方旧作エミュレーターです。\n音声が流れるため、注意してください。");
       playSilentAudio();
-    });
+  
