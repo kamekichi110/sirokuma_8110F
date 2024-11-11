@@ -4,9 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "Microsoft(R) MS-DOS(R) Version 6.22",
     "Copyright (c) Microsoft Corp 1981-1993.",
     "",
-    "C:\\> Loading TOHO-DOS...",
-    "C:\\> Initializing...",
-    "C:\\> Ready."
+    "C:\\>boot Z:",
+    "Z:\\> Loading TOHO-DOS...",
+    "Z:\\> Initializing...",
+    "Z:\\> Ready."
   ];
   const mainMessages = [
     "Welcome to TOHO-DOS!",
@@ -57,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function performMemoryCheck() {
     if (memoryAmount < maxMemory) {
       bootElement.innerHTML = `Memory Test : ${memoryAmount} MB OK<br>`;
-      memoryAmount += 16; // 16MBずつ増加させる
+      memoryAmount += 1; // 16MBずつ増加させる
       setTimeout(performMemoryCheck, 100); // メモリチェックの速度
     } else {
       bootElement.innerHTML += `Memory Test : ${maxMemory} MB OK<br>`;
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function typeMainMessage() {
-    const allMessages = mainMessages.join("<br>") + "<br><br>C:\\>OPT.BAT<br>This is a program for selecting old Touhou game titles.<br>Click to select your favorite program.<br>-------------------------------------------<br>>TH1.BAT<br>>TH2.BAT<br>>TH3.BAT<br>>TH4.BAT<br>>TH5.BAT<br>-------------------------------------------<br>COPYRIGHT TOBU8";
+    const allMessages = mainMessages.join("<br>") + "<br><br>D:\\>OPT.BAT<br>This is a program for selecting old Touhou game titles.<br>Click to select your favorite program.<br>-------------------------------------------<br>>TH1.BAT<br>>TH2.BAT<br>>TH3.BAT<br>>TH4.BAT<br>>TH5.BAT<br>-------------------------------------------<br>COPYRIGHT TOBU8";
     if (charIndex < allMessages.length) {
       cmdElement.innerHTML += allMessages[charIndex];
       charIndex++;
