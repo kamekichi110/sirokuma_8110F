@@ -3,4 +3,5 @@ canvas {
   height: auto;
   aspect-ratio: 5 / 4;
   margin: 0px auto;
+  image-rendering: pixelated;
 }
