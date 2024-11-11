@@ -9,57 +9,19 @@
  transition: all 1s 1s ease;
 }
 body {
- background: #000000;
+  background-color: black;
+  color: #00FF00;
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 20px;
 }
-p {
- font-weight: 600;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
- font-weight: 900;
-}
-header {
- width: 100%;
- height: 36px;
- background: #eaeaea;
- text-align: center;
-}
+
 header h1 {
- font-size: 32px;
- line-height: 36px;
- color: #000000;
- font-weight: 900;
+  color: #00FF00;
+  font-size: 20px;
+  margin: 0 0 20px;
 }
-.cmd-msg {
- width: calc(100% - 24px);
- background: #080;
- outline: 4px solid white;
- outline-offset: -8px;
- margin: 0 auto;
- padding: 12px;
-}
-hr {
- border: none;
- width: 100%;
- height: 1px;
- background: white;
- margin: 4px auto;
-}
-.opt-bat {
- width: calc(100% - 24px);
- background: #880;
- outline: 4px solid white;
- outline-offset: -8px;
- margin: 0 auto;
- padding: 12px;
-}
-#msg,
-#cmd,
-#bat {
- display: none;
- transition: all 1s 1s ease;
+
+#bootText, #msgText, #cmdText {
+  white-space: pre-wrap;
 }
