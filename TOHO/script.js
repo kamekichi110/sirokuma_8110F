@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typingSpeed = 4
   let memoryCheckComplete = false;
   let memoryAmount = 0;
-  const maxMemory = 131072;
+  const maxMemory = 65536;
 
   function typeBootMessage() {
     if (!memoryCheckComplete) {
