@@ -6,6 +6,7 @@
  margin: 0;
  font-family: "DOS";
  transition: all 1s 1s ease;
+ font-weight: 900;
 }
 body {
   background-color: black;
@@ -24,3 +25,4 @@ header h1 {
 #bootText, #msgText, #cmdText {
   white-space: pre-wrap;
 }
+a {color:#ffdc00}
