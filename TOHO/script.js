@@ -1,36 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 起動メッセージとメモリチェック設定
   const bootMessages = [
-    "Microsoft(R) MS-DOS(R) Version 6.22",
-    "Copyright (c) Microsoft Corp 1981-1993.",
+    "Microsoft(R) TOHO-DOS(R) Version 5.0.0",
+    "Copyright (c) TOBU8 2024.",
     "",
     "C:\\>boot Z:",
     "Z:\\> Loading TOHO-DOS...",
     "Z:\\> Initializing...",
-    "Z:\\> Ready."
+    "Z:\\> Ready.",
+    "Z:\\> TOHO.BAT",
   ];
+
   const mainMessages = [
     "Welcome to TOHO-DOS!",
     "This web site is Touhou old games emulator.",
     "The games included on this site are as follows.",
     "-------------------------------------------",
-    "TH1 > Touhou Reiiden ~ Highly Responsive to Prayers",
-    "TH2 > Touhou Humaroku ~ the Story of Eastern Wonderland",
-    "TH3 > Touhou Yumeziku ~ Phantasmagoria of Dim.Dream",
-    "TH4 > Touhou Gensokyo ~ Lotus Land Story",
-    "TH5 > Touhou Kaikidan ~ Mystic Square",
+    "<p>><a href='./TH1/' target='_blank'>TH1.BAT</a>(PC only.)</p>",
+    "<p>><a href='./TH2/' target='_blank'>TH2.BAT</a>(mobile OK.)</p>",
+    "<p>><a href='./TH3/' target='_blank'>TH3.BAT</a>(mobile OK.)</p>",
+    "<p>><a href='./TH4/' target='_blank'>TH4.BAT</a>(mobile OK.)</p>",
     "-------------------------------------------"
   ];
 
   const bootElement = document.getElementById("bootText");
-  const msgElement = document.getElementById("msgText");
   const cmdElement = document.getElementById("cmdText");
   let messageIndex = 0;
   let charIndex = 0;
   const typingSpeed = 50;
   let memoryCheckComplete = false;
   let memoryAmount = 0;
-  const maxMemory = 512;
+  const maxMemory = 256;
 
   function typeBootMessage() {
     if (!memoryCheckComplete) {
@@ -58,31 +57,43 @@ document.addEventListener("DOMContentLoaded", () => {
   function performMemoryCheck() {
     if (memoryAmount < maxMemory) {
       bootElement.innerHTML = `Memory Test : ${memoryAmount} MB OK<br>`;
-      memoryAmount += 8; // 16MBずつ増加させる
-      setTimeout(performMemoryCheck, 100); // メモリチェックの速度
+      memoryAmount += 16;
+      setTimeout(performMemoryCheck, 100);
     } else {
-      bootElement.innerHTML = `Memory Test : ${maxMemory} MB OK<br>`;
+      bootElement.innerHTML += `Memory Test : ${maxMemory} MB OK<br>`;
       memoryCheckComplete = true;
       setTimeout(typeBootMessage, typingSpeed);
     }
   }
 
   function displayMainContent() {
-    document.getElementById("msg").style.display = "block";
     document.getElementById("cmd").style.display = "block";
     typeMainMessage();
   }
 
   function typeMainMessage() {
-    const allMessages = mainMessages.join("<br>") + mainMessages.join("<br>") + mainMessages.join("<br>") + "D:\\>OPT.BAT" + mainMessages.join("<br>") + "This is a program for selecting old Touhou game titles." + mainMessages.join("<br>") + "Click to select your favorite program." + mainMessages.join("<br>") + "-------------------------------------------" + mainMessages.join("<br>") + ">TH1.BAT" + mainMessages.join("<br>") + ">TH2.BAT" + mainMessages.join("<br>") + ">TH3.BAT" + mainMessages.join("<br>") + ">TH4.BAT" + mainMessages.join("<br>") + ">TH5.BAT" + mainMessages.join("<br>") + "-------------------------------------------" + mainMessages.join("<br>") + "COPYRIGHT TOBU8";
-    if (charIndex < allMessages.length) {
-      cmdElement.innerHTML += allMessages[charIndex];
-      charIndex++;
-      setTimeout(typeMainMessage, typingSpeed);
+    if (messageIndex < mainMessages.length) {
+      const currentMessage = mainMessages[messageIndex];
+      if (charIndex < currentMessage.length) {
+        // HTMLタグをそのまま表示するために、正規表現を使ってチェック
+        if (currentMessage.slice(charIndex).startsWith("<p")) {
+          const endIdx = currentMessage.indexOf("</p>", charIndex) + 4;
+          cmdElement.innerHTML += currentMessage.slice(charIndex, endIdx);
+          charIndex = endIdx;
+        } else {
+          cmdElement.innerHTML += currentMessage[charIndex];
+          charIndex++;
+        }
+        setTimeout(typeMainMessage, typingSpeed);
+      } else {
+        cmdElement.innerHTML += "<br>";
+        messageIndex++;
+        charIndex = 0;
+        setTimeout(typeMainMessage, typingSpeed);
+      }
     }
   }
 
-  document.getElementById("msg").style.display = "none";
   document.getElementById("cmd").style.display = "none";
 
   // タイピングエフェクト開始
