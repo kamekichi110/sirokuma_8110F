@@ -4,5 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   OUT.style.margin = "0px auto";
   OUT.style.width "100%";
   OUT.style.aspectRatio = "5 / 4";
+  OUT.style.imageRendering = 'pixelated';
   },2560);
 });
