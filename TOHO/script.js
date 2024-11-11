@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function performMemoryCheck() {
     if (memoryAmount < maxMemory) {
       bootElement.innerHTML = `Memory Test : ${memoryAmount} KB OK<br>`;
-      memoryAmount += 128;
+      memoryAmount += 512;
       setTimeout(performMemoryCheck, 100);
     } else {
       bootElement.innerHTML += `Memory Test : ${maxMemory} KB OK<br>`;
