@@ -10,7 +10,22 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/trereco/TOHO/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="TOHO-DOS" />
 <link rel="manifest" href="/trereco/TOHO/site.webmanifest" />
-
+<script>
+  // Service Workerがサポートされているか確認
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    // Service Workerを登録
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then((registration) => {
+        console.log('Service Worker Registered with scope: ', registration.scope);
+      })
+      .catch((error) => {
+        console.log('Service Worker registration failed: ', error);
+      });
+  });
+}
+</script>
 </head>
 <body>
 <!-- partial:index.partial.html -->
