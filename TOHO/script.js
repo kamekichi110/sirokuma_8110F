@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cmdElement = document.getElementById("cmdText");
   let messageIndex = 0;
   let charIndex = 0;
-  const typingSpeed = 16;
+  const typingSpeed = 4
   let memoryCheckComplete = false;
   let memoryAmount = 0;
   const maxMemory = 131072;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function performMemoryCheck() {
     if (memoryAmount < maxMemory) {
       bootElement.innerHTML = `Memory Test : ${memoryAmount} KB OK<br>`;
-      memoryAmount += 512;
+      memoryAmount += 128;
       setTimeout(performMemoryCheck, 100);
     } else {
       bootElement.innerHTML += `Memory Test : ${maxMemory} KB OK<br>`;
