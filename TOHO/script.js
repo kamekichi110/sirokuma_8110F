@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "<p>><a href='./TH2/' target='_blank'>TH2.BAT</a>(PC and mobile supported.)</p>",
     "<p>><a href='./TH3/' target='_blank'>TH3.BAT</a>(PC and mobile supported.)</p>",
     "<p>><a href='./TH4/' target='_blank'>TH4.BAT</a>(PC and mobile supported.)</p>",
+    "<p>><a href='./TH5/' target='_blank'>TH5.BAT</a>(PC and mobile supported.)</p>",
     "-------------------------------------------"
   ];
 
