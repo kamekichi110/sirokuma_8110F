@@ -1,0 +1,46 @@
+.skey {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding: 10px;
+  width:100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.key {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+  background-color: #ccc;
+  border: 1px solid #999;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.key:active {
+  background-color: #aaa;
+}
+
+.key:focus {
+  outline: none;
+  border-color: #333;
+}
+
+@media (max-width: 600px) {
+  .key {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+}
