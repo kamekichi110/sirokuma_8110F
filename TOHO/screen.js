@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
           const source = audioContext.createBufferSource();
           source.buffer = buffer;
           source.connect(audioContext.destination);
+          gainNode.connect(audioCtx.destination);
+          gainNode.gain.value(20);
 
           // 無音の音声を再生
           source.start(0);
@@ -28,6 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // アラートを表示し、無音の音声を再生
-      alert("東方旧作エミュレーターです。\n音声が流れるため、注意してください。");
+      console.log("東方旧作エミュレーターです。\n音声が流れるため、注意してください。");
       playSilentAudio();
   
