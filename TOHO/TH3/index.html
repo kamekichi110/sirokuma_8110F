@@ -46,45 +46,87 @@
 		touch-action: none;
       }
 
-	    .skey {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  overflow-y: auto;
-  padding: 10px;
-  width:100%;
+	    body {
+ font-family: Arial, sans-serif;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ margin: 0;
+ background-color: #f0f0f0;
+}
+
+.keyboard {
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ background: #ffffff;
+ padding: 20px;
+ border: 1px solid #ccc;
+ border-radius: 10px;
+ user-select: none; /* 標準ブラウザ用 */
+ -webkit-user-select: none; /* Safari用 */
+ -moz-user-select: none; /* Firefox用 */
+ -ms-user-select: none; /* IE/Edge用 */
+}
+.keybord * {
+ user-select: none; /* 標準ブラウザ用 */
+ -webkit-user-select: none; /* Safari用 */
+ -moz-user-select: none; /* Firefox用 */
+ -ms-user-select: none; /* IE/Edge用 */
 }
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;
+ display: flex;
+ gap: 5px;
 }
 
 .key {
-  width: 40px;
-  height: 40px;
-  font-size: 14px;
-  background-color: #ccc;
-  border: 1px solid #999;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
+ display: inline-flex;
+ justify-content: center;
+ align-items: center;
+ width: 40px;
+ height: 40px;
+ background-color: #e0e0e0;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: background-color 0.1s;
 }
 
-
-
-@media (max-width: 600px) {
-  .key {
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
-  }
+.key:active {
+ background-color: #c0c0c0;
 }
+
+.backspace {
+ width: 80px;
+}
+
+.shift,
+.caps-lock,
+.enter,
+.ctrl {
+ width: 60px;
+}
+
+.space {
+ width: 240px;
+}
+
+.arrow-keys {
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+}
+
+.arrow-keys .vertical {
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+ align-items: center;
+}
+
+	    
       .emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
       div.emscripten { text-align: center; }      
       div.emscripten_border { border: 0px solid black; }
@@ -1374,88 +1416,97 @@
 	</table>
 	<div style="height: 30pt;" />
 	</div>
-<div class="skey">
-    <!-- 数字とアルファベット -->
-    <div class="row">
-      <div class="key" data-key="1">1</div>
-      <div class="key" data-key="2">2</div>
-      <div class="key" data-key="3">3</div>
-      <div class="key" data-key="4">4</div>
-      <div class="key" data-key="5">5</div>
-      <div class="key" data-key="6">6</div>
-      <div class="key" data-key="7">7</div>
-      <div class="key" data-key="8">8</div>
-      <div class="key" data-key="9">9</div>
-      <div class="key" data-key="0">0</div>
-    </div>
-    
-    <div class="row">
-      <div class="key" data-key="a">A</div>
-      <div class="key" data-key="b">B</div>
-      <div class="key" data-key="c">C</div>
-      <div class="key" data-key="d">D</div>
-      <div class="key" data-key="e">E</div>
-      <div class="key" data-key="f">F</div>
-      <div class="key" data-key="g">G</div>
-      <div class="key" data-key="h">H</div>
-      <div class="key" data-key="i">I</div>
-      <div class="key" data-key="j">J</div>
-    </div>
-    
-    <div class="row">
-      <div class="key" data-key="k">K</div>
-      <div class="key" data-key="l">L</div>
-      <div class="key" data-key="m">M</div>
-      <div class="key" data-key="n">N</div>
-      <div class="key" data-key="o">O</div>
-      <div class="key" data-key="p">P</div>
-      <div class="key" data-key="q">Q</div>
-      <div class="key" data-key="r">R</div>
-      <div class="key" data-key="s">S</div>
-      <div class="key" data-key="t">T</div>
-    </div>
+<div class="keyboard">
+ <!-- Function row -->
+ <div class="row function-row">
+  <div class="key" onpointerdown="kd(this, 27);event.preventDefault();" onpointerup="ku(this, 27);event.preventDefault();">Esc</div>
+  <div class="gap"></div>
+  <div class="key" onpointerdown="kd(this, 112);event.preventDefault();" onpointerup="ku(this, 112);event.preventDefault();">F1</div>
+  <div class="key" onpointerdown="kd(this, 113);event.preventDefault();" onpointerup="ku(this, 113);event.preventDefault();">F2</div>
+  <div class="key" onpointerdown="kd(this, 114);event.preventDefault();" onpointerup="ku(this, 114);event.preventDefault();">F3</div>
+  <div class="key" onpointerdown="kd(this, 115);event.preventDefault();" onpointerup="ku(this, 115);event.preventDefault();">F4</div>
+  <div class="gap"></div>
+  <div class="key" onpointerdown="kd(this, 116);event.preventDefault();" onpointerup="ku(this, 116);event.preventDefault();">F5</div>
+  <div class="key" onpointerdown="kd(this, 117);event.preventDefault();" onpointerup="ku(this, 117);event.preventDefault();">F6</div>
+  <div class="key" onpointerdown="kd(this, 118);event.preventDefault();" onpointerup="ku(this, 118);event.preventDefault();">F7</div>
+  <div class="key" onpointerdown="kd(this, 119);event.preventDefault();" onpointerup="ku(this, 119);event.preventDefault();">F8</div>
+  <div class="gap"></div>
+  <div class="key" onpointerdown="kd(this, 120);event.preventDefault();" onpointerup="ku(this, 120);event.preventDefault();">F9</div>
+  <div class="key" onpointerdown="kd(this, 121);event.preventDefault();" onpointerup="ku(this, 121);event.preventDefault();">F10</div>
+  <div class="key" onpointerdown="kd(this, 122);event.preventDefault();" onpointerup="ku(this, 122);event.preventDefault();">F11</div>
+  <div class="key" onpointerdown="kd(this, 123);event.preventDefault();" onpointerup="ku(this, 123);event.preventDefault();">F12</div>
+ </div>
 
-    <div class="row">
-      <div class="key" data-key="u">U</div>
-      <div class="key" data-key="v">V</div>
-      <div class="key" data-key="w">W</div>
-      <div class="key" data-key="x">X</div>
-      <div class="key" data-key="y">Y</div>
-      <div class="key" data-key="z">Z</div>
-    </div>
+ <!-- Number row -->
+ <div class="row number-row">
+  <div class="key" onpointerdown="kd(this, 192);event.preventDefault();" onpointerup="ku(this, 192);event.preventDefault();">`</div>
+  <div class="key" onpointerdown="kd(this, 49);event.preventDefault();" onpointerup="ku(this, 49);event.preventDefault();">1</div>
+  <div class="key" onpointerdown="kd(this, 50);event.preventDefault();" onpointerup="ku(this, 50);event.preventDefault();">2</div>
+  <div class="key" onpointerdown="kd(this, 51);event.preventDefault();" onpointerup="ku(this, 51);event.preventDefault();">3</div>
+  <div class="key" onpointerdown="kd(this, 52);event.preventDefault();" onpointerup="ku(this, 52);event.preventDefault();">4</div>
+  <div class="key" onpointerdown="kd(this, 53);event.preventDefault();" onpointerup="ku(this, 53);event.preventDefault();">5</div>
+  <div class="key" onpointerdown="kd(this, 54);event.preventDefault();" onpointerup="ku(this, 54);event.preventDefault();">6</div>
+  <div class="key" onpointerdown="kd(this, 55);event.preventDefault();" onpointerup="ku(this, 55);event.preventDefault();">7</div>
+  <div class="key" onpointerdown="kd(this, 56);event.preventDefault();" onpointerup="ku(this, 56);event.preventDefault();">8</div>
+  <div class="key" onpointerdown="kd(this, 57);event.preventDefault();" onpointerup="ku(this, 57);event.preventDefault();">9</div>
+  <div class="key" onpointerdown="kd(this, 48);event.preventDefault();" onpointerup="ku(this, 48);event.preventDefault();">0</div>
+  <div class="key" onpointerdown="kd(this, 189);event.preventDefault();" onpointerup="ku(this, 189);event.preventDefault();">-</div>
+  <div class="key" onpointerdown="kd(this, 187);event.preventDefault();" onpointerup="ku(this, 187);event.preventDefault();">=</div>
+  <div class="key backspace" onpointerdown="kd(this, 8);event.preventDefault();" onpointerup="ku(this, 8);event.preventDefault();">Backspace</div>
+ </div>
 
-    <!-- Function Keys -->
-    <div class="row">
-      <div class="key" data-key="F1">F1</div>
-      <div class="key" data-key="F2">F2</div>
-      <div class="key" data-key="F3">F3</div>
-      <div class="key" data-key="F4">F4</div>
-      <div class="key" data-key="F5">F5</div>
-      <div class="key" data-key="F6">F6</div>
-      <div class="key" data-key="F7">F7</div>
-      <div class="key" data-key="F8">F8</div>
-      <div class="key" data-key="F9">F9</div>
-      <div class="key" data-key="F10">F10</div>
-    </div>
-    <div class="row">
-      <div class="key" data-key="F11">F11</div>
-      <div class="key" data-key="F12">F12</div>
-    </div>
+ <!-- Caps Lock row -->
+ <div class="row caps-row">
+  <div class="key caps-lock" onpointerdown="kd(this, 20);event.preventDefault();" onpointerup="ku(this, 20);event.preventDefault();">Caps Lock</div>
+  <div class="key" onpointerdown="kd(this, 65);event.preventDefault();" onpointerup="ku(this, 65);event.preventDefault();">A</div>
+  <div class="key" onpointerdown="kd(this, 83);event.preventDefault();" onpointerup="ku(this, 83);event.preventDefault();">S</div>
+  <div class="key" onpointerdown="kd(this, 68);event.preventDefault();" onpointerup="ku(this, 68);event.preventDefault();">D</div>
+  <div class="key" onpointerdown="kd(this, 70);event.preventDefault();" onpointerup="ku(this, 70);event.preventDefault();">F</div>
+  <div class="key" onpointerdown="kd(this, 71);event.preventDefault();" onpointerup="ku(this, 71);event.preventDefault();">G</div>
+  <div class="key" onpointerdown="kd(this, 72);event.preventDefault();" onpointerup="ku(this, 72);event.preventDefault();">H</div>
+  <div class="key" onpointerdown="kd(this, 74);event.preventDefault();" onpointerup="ku(this, 74);event.preventDefault();">J</div>
+  <div class="key" onpointerdown="kd(this, 75);event.preventDefault();" onpointerup="ku(this, 75);event.preventDefault();">K</div>
+  <div class="key" onpointerdown="kd(this, 76);event.preventDefault();" onpointerup="ku(this, 76);event.preventDefault();">L</div>
+  <div class="key" onpointerdown="kd(this, 186);event.preventDefault();" onpointerup="ku(this, 186);event.preventDefault();">;</div>
+  <div class="key" onpointerdown="kd(this, 222);event.preventDefault();" onpointerup="ku(this, 222);event.preventDefault();">'</div>
+  <div class="key enter" onpointerdown="kd(this, 13);event.preventDefault();" onpointerup="ku(this, 13);event.preventDefault();">Enter</div>
+ </div>
 
-    <!-- Directional and Modifier Keys -->
-    <div class="row">
-      <div class="key" data-key="ArrowUp">↑</div>
-      <div class="key" data-key="ArrowDown">↓</div>
-      <div class="key" data-key="ArrowLeft">←</div>
-      <div class="key" data-key="ArrowRight">→</div>
-    </div>
-    <div class="row">
-      <div class="key" data-key="Shift">Shift</div>
-      <div class="key" data-key="Control">Ctrl</div>
-      <div class="key" data-key="Alt">Alt</div>
-      <div class="key" data-key="Delete">Del</div>
-    </div>
+ <!-- Shift row -->
+ <div class="row shift-row">
+  <div class="key shift" onpointerdown="kd(this, 16);event.preventDefault();" onpointerup="ku(this, 16);event.preventDefault();">Shift</div>
+  <div class="key" onpointerdown="kd(this, 90);event.preventDefault();" onpointerup="ku(this, 90);event.preventDefault();">Z</div>
+  <div class="key" onpointerdown="kd(this, 88);event.preventDefault();" onpointerup="ku(this, 88);event.preventDefault();">X</div>
+  <div class="key" onpointerdown="kd(this, 67);event.preventDefault();" onpointerup="ku(this, 67);event.preventDefault();">C</div>
+  <div class="key" onpointerdown="kd(this, 86);event.preventDefault();" onpointerup="ku(this, 86);event.preventDefault();">V</div>
+  <div class="key" onpointerdown="kd(this, 66);event.preventDefault();" onpointerup="ku(this, 66);event.preventDefault();">B</div>
+  <div class="key" onpointerdown="kd(this, 78);event.preventDefault();" onpointerup="ku(this, 78);event.preventDefault();">N</div>
+  <div class="key" onpointerdown="kd(this, 77);event.preventDefault();" onpointerup="ku(this, 77);event.preventDefault();">M</div>
+  <div class="key" onpointerdown="kd(this, 188);event.preventDefault();" onpointerup="ku(this, 188);event.preventDefault();">,</div>
+  <div class="key" onpointerdown="kd(this, 190);event.preventDefault();" onpointerup="ku(this, 190);event.preventDefault();">.</div>
+  <div class="key" onpointerdown="kd(this, 191);event.preventDefault();" onpointerup="ku(this, 191);event.preventDefault();">/</div>
+  <div class="key shift" onpointerdown="kd(this, 16);event.preventDefault();" onpointerup="ku(this, 16);event.preventDefault();">Shift</div>
+ </div>
+
+ <!-- Arrow keys and Control row -->
+ <div class="row control-row">
+  <div class="key ctrl" onpointerdown="kd(this, 17);event.preventDefault();" onpointerup="ku(this, 17);event.preventDefault();">Ctrl</div>
+  <div class="key" onpointerdown="kd(this, 91);event.preventDefault();" onpointerup="ku(this, 91);event.preventDefault();">Win</div>
+  <div class="key" onpointerdown="kd(this, 18);event.preventDefault();" onpointerup="ku(this, 18);event.preventDefault();">Alt</div>
+  <div class="key space" onpointerdown="kd(this, 32);event.preventDefault();" onpointerup="ku(this, 32);event.preventDefault();"></div>
+  <div class="key" onpointerdown="kd(this, 18);event.preventDefault();" onpointerup="ku(this, 18);event.preventDefault();">Alt</div>
+  <div class="key" onpointerdown="kd(this, 92);event.preventDefault();" onpointerup="ku(this, 92);event.preventDefault();">Win</div>
+  <div class="key ctrl" onpointerdown="kd(this, 17);event.preventDefault();" onpointerup="ku(this, 17);event.preventDefault();">Ctrl</div>
+  <div class="arrow-keys">
+   <div class="key" onpointerdown="kd(this, 37);event.preventDefault();" onpointerup="ku(this, 37);event.preventDefault();">←</div>
+   <div class="vertical">
+    <div class="key" onpointerdown="kd(this, 38);event.preventDefault();" onpointerup="ku(this, 38);event.preventDefault();">↑</div>
+    <div class="key" onpointerdown="kd(this, 40);event.preventDefault();" onpointerup="ku(this, 40);event.preventDefault();">↓</div>
+   </div>
+   <div class="key" onpointerdown="kd(this, 39);event.preventDefault();" onpointerup="ku(this, 39);event.preventDefault();">→</div>
   </div>
+ </div>
+</div>
 <script type="text/javascript">
 const keyCodeMap = {
   "1": 49, "2": 50, "3": 51, "4": 52, "5": 53, "6": 54, "7": 55, "8": 56, "9": 57, "0": 48,
