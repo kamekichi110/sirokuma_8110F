@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
           source.buffer = buffer;
           source.connect(audioContext.destination);
           gainNode.connect(audioCtx.destination);
-          gainNode.gain.value(20);
+          gainNode.gain.value = 20;
 
           // 無音の音声を再生
           source.start(0);

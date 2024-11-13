@@ -1,6 +1,15 @@
 {
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
   "name": "TOHO-DOS",
   "short_name": "東方DOS",
+  "description": "東方旧作ゲームをブラウザ上でエミュレートできるツールです。",
+  "orientation": "any",
+  "lang": "ja",
+  "scope": "/trereco/TOHO/",
+  "categories": ["game", "emulator", "tools"],
+  "start_url": "/trereco/TOHO/",
+  "dir": "auto",
+  "shortcuts": [],
   "icons": [
     {
       "src": "/trereco/TOHO/web-app-manifest-192x192.png",
