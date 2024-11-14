@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="TOHO-DOS" />
 <link rel="manifest" href="../site.webmanifest" />
-	  <script>
+	  <script type="text/javascript">
 
       // 無音の音声を生成して再生する関数
       function playSilentAudio() {
@@ -65,16 +65,16 @@ div#fullscreenItem * {
  width: 100vw; /* ビューポート幅の100% */
  height: calc(100vw * 9 / 16); /* 幅の75%（4:3比率） */
 }
-.fullscreenButtons {
+#fullscreenButtons {
  position: absolute;
  top: 0px;
  width: 100vw; /* ビューポート幅の100% */
- height: calc(100vw * 9 / 16); /* 幅の75%（4:3比率） */
+ height: calc(100vw * 3 / 4); margin: 0 auto; /* 幅の75%（4:3比率） */
  background: none;
  opacity: 1;
  display: none;
 }
-#fullscreenItem:fullscreen .fullscreenButtons {
+#fullscreenItem:fullscreen #fullscreenButtons {
  position: absolute;
  top: 0px;
  display: block;
@@ -90,7 +90,7 @@ div#fullscreenItem * {
  height: 100%;
  background: gray;
 }
-.fullscreenButtons input {
+#fullscreenButtons input {
  position: absolute;
  width: 64px;
  height: 32px;
@@ -103,35 +103,35 @@ div#fullscreenItem * {
  background: gray;
  color: white;
 }
-.fullscreenButtons input[value="^"] {
+#fullscreenButtons input[value="^"] {
  bottom: 94px;
  left: 48px;
  width: 48px;
  height: 48px;
  text-align: center;
 }
-.fullscreenButtons input[value="v"] {
+#fullscreenButtons input[value="v"] {
  bottom: 4px;
  left: 48px;
  width: 48px;
  height: 48px;
  text-align: center;
 }
-.fullscreenButtons input[value="<"] {
+#fullscreenButtons input[value="<"] {
  bottom: 48px;
  left: 4px;
  width: 48px;
  height: 48px;
  text-align: center;
 }
-.fullscreenButtons input[value=">"] {
+#fullscreenButtons input[value=">"] {
  bottom: 48px;
  left: 94px;
  width: 48px;
  height: 48px;
  text-align: center;
 }
-.fullscreenButtons input[value="Esc"] {
+#fullscreenButtons input[value="Esc"] {
  bottom: 72px;
  right: 24px;
  width: 48px;
@@ -139,7 +139,7 @@ div#fullscreenItem * {
  text-align: center;
  font-size: 12px;
 }
-.fullscreenButtons input[value="Return"] {
+#fullscreenButtons input[value="Return"] {
  bottom: 72px;
  right: 74px;
  width: 48px;
@@ -147,7 +147,7 @@ div#fullscreenItem * {
  text-align: center;
  font-size: 12px;
 }
-.fullscreenButtons input[value="Shift"] {
+#fullscreenButtons input[value="Shift"] {
  bottom: 192px;
  right: 24px;
  width: 48px;
@@ -155,7 +155,7 @@ div#fullscreenItem * {
  text-align: center;
  font-size: 12px;
 }
-.fullscreenButtons input[value="Space"] {
+#fullscreenButtons input[value="Space"] {
  top: 12px;
  right: 12px;
  width: 48px;
@@ -163,7 +163,7 @@ div#fullscreenItem * {
  text-align: center;
  font-size: 12px;
 }
-.fullscreenButtons input[value="Z"] {
+#fullscreenButtons input[value="Z"] {
  bottom: 32px;
  right: 24px;
  width: 48px;
@@ -171,7 +171,7 @@ div#fullscreenItem * {
  text-align: center;
  font-size: 12px;
 }
-.fullscreenButtons input[value="X"] {
+#fullscreenButtons input[value="X"] {
  bottom: 32px;
  right: 74px;
  width: 48px;
@@ -1502,7 +1502,7 @@ div#fullscreenItem * {
     <div id="fullscreenItem">
       <div class="emscripten_border">
        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
-       <div class="fullscreenButtons">
+       <div id="fullscreenButtons">
         <input class='inputbutton1' type="button" value="^" onpointerdown='kd(this, 38);' onpointerup='ku(this, 38);'>
      
         <input class='inputbutton3' type="button" value="Esc" onpointerdown='kd(this, 27);' onpointerup='ku(this, 27);'>
@@ -1524,10 +1524,19 @@ div#fullscreenItem * {
         <input class='inputbutton2' type="button" value="Z" onpointerdown='kd(this, 90);' onpointerup='ku(this, 90);'>
        </div>
        <div>
-        <button onclick="fullView()">FullScreen⁺</button>
-     <script>
-     function fullView() {
+        <button onclick="fullView(43)">FullScreen⁺[4:3]</button>
+        <button onclick="fullView(169)">FullScreen⁺[16:9]</button>
+     <script type="text/javascript">
+     function fullView(aspect) {
       const element = document.getElementById("fullscreenItem");
+if(aspect === 43) {
+  changeAspect(4, 3);
+} else if (aspect === 169) {
+  changeAspect(16, 9);
+} else {
+  changeAspect(4, 3);
+  console.log('アスペクトプロパティが指定されていないため、4:3プロパティとして処理を行いました。');
+}
       if (element.requestFullscreen) {
        element.requestFullscreen();
       } else if (element.mozRequestFullScreen) {
@@ -1619,17 +1628,17 @@ div#fullscreenItem * {
  </div>
 
  <div class="row caps-row">
-  <div class="key caps-lock" onpointerdown="kd(this, 54);event.preventDefault();" onpointerup="ku(this, 54);event.preventDefault();">Tab</div>
-  <div class="key" onpointerdown="kd(this, 55);event.preventDefault();" onpointerup="ku(this, 55);event.preventDefault();">Q</div>
-  <div class="key" onpointerdown="kd(this, 56);event.preventDefault();" onpointerup="ku(this, 56);event.preventDefault();">W</div>
-  <div class="key" onpointerdown="kd(this, 57);event.preventDefault();" onpointerup="ku(this, 57);event.preventDefault();">E</div>
-  <div class="key" onpointerdown="kd(this, 58);event.preventDefault();" onpointerup="ku(this, 58);event.preventDefault();">R</div>
-  <div class="key" onpointerdown="kd(this, 59);event.preventDefault();" onpointerup="ku(this, 59);event.preventDefault();">T</div>
-  <div class="key" onpointerdown="kd(this, 60);event.preventDefault();" onpointerup="ku(this, 60);event.preventDefault();">Y</div>
-  <div class="key" onpointerdown="kd(this, 61);event.preventDefault();" onpointerup="ku(this, 61);event.preventDefault();">U</div>
-  <div class="key" onpointerdown="kd(this, 62);event.preventDefault();" onpointerup="ku(this, 62);event.preventDefault();">I</div>
-  <div class="key" onpointerdown="kd(this, 63);event.preventDefault();" onpointerup="ku(this, 63);event.preventDefault();">O</div>
-  <div class="key" onpointerdown="kd(this, 64);event.preventDefault();" onpointerup="ku(this, 64);event.preventDefault();">P</div>
+  <div class="key caps-lock" onpointerdown="kd(this, 9);event.preventDefault();" onpointerup="ku(this, 9);event.preventDefault();">Tab</div>
+  <div class="key" onpointerdown="kd(this, 81);event.preventDefault();" onpointerup="ku(this, 81);event.preventDefault();">Q</div>
+  <div class="key" onpointerdown="kd(this, 87);event.preventDefault();" onpointerup="ku(this, 87);event.preventDefault();">W</div>
+  <div class="key" onpointerdown="kd(this, 69);event.preventDefault();" onpointerup="ku(this, 69);event.preventDefault();">E</div>
+  <div class="key" onpointerdown="kd(this, 82);event.preventDefault();" onpointerup="ku(this, 82);event.preventDefault();">R</div>
+  <div class="key" onpointerdown="kd(this, 84);event.preventDefault();" onpointerup="ku(this, 84);event.preventDefault();">T</div>
+  <div class="key" onpointerdown="kd(this, 89);event.preventDefault();" onpointerup="ku(this, 89);event.preventDefault();">Y</div>
+  <div class="key" onpointerdown="kd(this, 85);event.preventDefault();" onpointerup="ku(this, 85);event.preventDefault();">U</div>
+  <div class="key" onpointerdown="kd(this, 73);event.preventDefault();" onpointerup="ku(this, 73);event.preventDefault();">I</div>
+  <div class="key" onpointerdown="kd(this, 79);event.preventDefault();" onpointerup="ku(this, 79);event.preventDefault();">O</div>
+  <div class="key" onpointerdown="kd(this, 80);event.preventDefault();" onpointerup="ku(this, 80);event.preventDefault();">P</div>
   <div class="key" onpointerdown="kd(this, 65);event.preventDefault();" onpointerup="ku(this, 65);event.preventDefault();">[</div>
   <div class="key" onpointerdown="kd(this, 66);event.preventDefault();" onpointerup="ku(this, 66);event.preventDefault();">]</div>
   <button class="key" onpointerdown="kd(this, 67);event.preventDefault();" onpointerup="ku(this, 67);event.preventDefault();">\</div>
@@ -1638,7 +1647,7 @@ div#fullscreenItem * {
  <!-- Caps Lock row -->
  <div class="row caps-row">
   <div class="key caps-lock" onpointerdown="kd(this, 20);event.preventDefault();" value="" onpointerup="ku(this, 20);event.preventDefault();" value="">Caps Lock</div>
-  <div class="key" onpointerdown="kd(this, 65);event.preventDefault();" value="" onpointerup="ku(this, 65);event.preventDefault();" value="">A</div>
+  <div class="key" onpointerdown="kd(this, 219);event.preventDefault();" value="" onpointerup="ku(this, 219);event.preventDefault();" value="">A</div>
   <div class="key" onpointerdown="kd(this, 83);event.preventDefault();" value="" onpointerup="ku(this, 83);event.preventDefault();" value="">S</div>
   <div class="key" onpointerdown="kd(this, 68);event.preventDefault();" value="" onpointerup="ku(this, 68);event.preventDefault();" value="">D</div>
   <div class="key" onpointerdown="kd(this, 70);event.preventDefault();" value="" onpointerup="ku(this, 70);event.preventDefault();" value="">F</div>
@@ -1659,7 +1668,7 @@ div#fullscreenItem * {
   <div class="key" onpointerdown="kd(this, 88);event.preventDefault();" value="" onpointerup="ku(this, 88);event.preventDefault();" value="">X</div>
   <div class="key" onpointerdown="kd(this, 67);event.preventDefault();" value="" onpointerup="ku(this, 67);event.preventDefault();" value="">C</div>
   <div class="key" onpointerdown="kd(this, 86);event.preventDefault();" value="" onpointerup="ku(this, 86);event.preventDefault();" value="">V</div>
-  <div class="key" onpointerdown="kd(this, 66);event.preventDefault();" value="" onpointerup="ku(this, 66);event.preventDefault();" value="">B</div>
+  <div class="key" onpointerdown="kd(this, 221);event.preventDefault();" value="" onpointerup="ku(this, 221);event.preventDefault();" value="">B</div>
   <div class="key" onpointerdown="kd(this, 78);event.preventDefault();" value="" onpointerup="ku(this, 78);event.preventDefault();" value="">N</div>
   <div class="key" onpointerdown="kd(this, 77);event.preventDefault();" value="" onpointerup="ku(this, 77);event.preventDefault();" value="">M</div>
   <div class="key" onpointerdown="kd(this, 188);event.preventDefault();" value="" onpointerup="ku(this, 188);event.preventDefault();" value="">,</div>

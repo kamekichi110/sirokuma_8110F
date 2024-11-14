@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   OUT.style.height = "100%";
   OUT.style.aspectRatio = "4 / 3";
   OUT.style.imageRendering = 'pixelated';
+  changeAspect(4, 3);
   },2560);
 });
     
@@ -33,3 +34,19 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("東方旧作エミュレーターです。\n音声が流れるため、注意してください。");
       playSilentAudio();
   
+function changeAspect(w, h) {
+  const canvas = document.getElementById('canvas');
+  const control = document.getElementById('fullscreenItem');
+  const buttons = document.getElementById('fullscreenButtons');
+  canvas.style.width = "auto";
+  canvas.style.height = "100%";
+  canvas.style.margin = "0 auto";
+  canvas.style.aspectRatio = "4 / 3";
+  buttons.style.width = "100%";
+  buttons.style.height = "calc(100vw * 3 / 4)";
+  buttons.style.margin = "0 auto";
+  control.style.width = "100%";
+  control.style.height = "calc(100vw * " + h + " / " + w + ")";
+  control.style.margin = "0 auto";
+  var logs = `CHANGE-ASPECT-SIZE: canvas and control area aspect = 4:3, screen area aspect = 16:9.`
+}
