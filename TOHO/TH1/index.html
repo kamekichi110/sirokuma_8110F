@@ -1378,7 +1378,7 @@
 
     
     <br><div class="emscripten_border">
-      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" width="540" height="405"></canvas>
     </div>
     <textarea id="output" rows="8"></textarea>
 
@@ -1609,12 +1609,10 @@ document.addEventListener('keyup', (event) => {
         },
         canvas: (function() {
           var canvas = document.getElementById('canvas');
-		const gl = canvas.getContext("webgl");
           // As a default initial behavior, pop up an alert when webgl context is lost. To make your
           // application robust, you may want to override this behavior before shipping!
           // See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
           canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
-		gl.viewport(0, 0, canvas.width, canvas.height);
           return canvas;
         })(),
         setStatus: function(text) {
