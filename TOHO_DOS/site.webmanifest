@@ -5,20 +5,20 @@
   "description": "東方旧作ゲームをブラウザ上でエミュレートできるツールです。",
   "orientation": "any",
   "lang": "ja",
-  "scope": "/trereco/TOHO/",
+  "scope": "/trereco/TOHO_DOS/",
   "categories": ["game", "emulator", "tools"],
-  "start_url": "/trereco/TOHO/",
+  "start_url": "/trereco/TOHO_DOS/",
   "dir": "auto",
   "shortcuts": [],
   "icons": [
     {
-      "src": "/trereco/TOHO/web-app-manifest-192x192.png",
+      "src": "/trereco/TOHO_DOS/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/trereco/TOHO/web-app-manifest-512x512.png",
+      "src": "/trereco/TOHO_DOS/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
