@@ -38,16 +38,6 @@ function changeAspect(w, h) {
   const canvas = document.getElementById('canvas');
   const control = document.getElementById('fullscreenItem');
   const buttons = document.getElementById('fullscreenButtons');
-  canvas.style.width = "auto";
-  canvas.style.height = "100%";
-  canvas.style.margin = "0 auto";
-  canvas.style.aspectRatio = "4 / 3";
-  buttons.style.width = "auto";
-  buttons.style.height = "100%";
-  buttons.style.margin = "0 auto";
-  buttons.style.aspectRatio = "4 / 3";
-  control.style.width = "100vw";
-  control.style.height = "calc(100vw * " + h + " / " + w + ")";
-  control.style.margin = "0 auto";
+  
   var logs = `CHANGE-ASPECT-SIZE: canvas and control area aspect = 4:3, screen area aspect = 16:9.`
 }
