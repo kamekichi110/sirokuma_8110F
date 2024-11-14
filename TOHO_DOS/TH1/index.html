@@ -78,8 +78,8 @@ div#fullscreenItem * {
  position: absolute;
  top: 0px;
  display: block;
- width: 100vw; /* ビューポート幅の100% */
- height: calc(100vw * 3 / 4); margin: 0 auto; /* 幅の75%（4:3比率） */
+ width: calc(100vh * 4 / 3); /* ビューポート幅の100% */
+ height: 100vh; /* 幅の75%（4:3比率） */
  background: none;
  opacity: 0.5;
 }
@@ -87,6 +87,7 @@ div#fullscreenItem * {
  position: relative;
  display: block;
  background: gray;
+	width:calc(100vh * 4 / 3);height:100vh
 }
 #fullscreenButtons input {
  position: absolute;
