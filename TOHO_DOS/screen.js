@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
   var OUT = document.getElementById('canvas');
   OUT.style.margin = "0px auto";
-  OUT.style.width = "100%";
+  OUT.style.height = "100%";
   OUT.style.aspectRatio = "4 / 3";
   OUT.style.imageRendering = 'pixelated';
   },2560);
