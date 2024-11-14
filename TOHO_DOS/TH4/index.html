@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=0.56, maximum-scale=0.56, user-scalable=no" />
 	<meta name="HandheldFriendly" content="true" />
-    <title>TH5</title>
+    <title>TH4</title>
 	  <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
 <link rel="shortcut icon" href="../favicon.ico" />
@@ -45,7 +45,7 @@
         padding: none;
 		touch-action: none;
       }
-      
+
 
 .keyboard {
  display: block;
@@ -205,7 +205,7 @@
         font-family: 'Lucida Console', Monaco, monospace;
         outline: none;
       }
-	  
+
       table
 	  {
 		border: none;
@@ -1405,7 +1405,7 @@
 	</table>
 	<div style="height: 30pt;" />
 	</div>
-	<div class="keyboard">
+<div class="keyboard">
  <!-- Function row -->
  <div class="row function-row">
   <div class="key" onpointerdown="kd(this, 27);event.preventDefault();" value="" onpointerup="ku(this, 27);event.preventDefault();" value="">Esc</div>
@@ -1443,7 +1443,21 @@
   <div class="key" onpointerdown="kd(this, 187);event.preventDefault();" value="" onpointerup="ku(this, 187);event.preventDefault();" value="">=</div>
   <div class="key backspace" onpointerdown="kd(this, 8);event.preventDefault();" value="" onpointerup="ku(this, 8);event.preventDefault();" value="">Backspace</div>
  </div>
-
+ <div class="row caps-row">
+  <div class="key" onpointerdown="kd(this, 16);event.preventDefault();" onpointerup="ku(this, 16);event.preventDefault();">Tab</div>
+  <div class="key" onpointerdown="kd(this, 17);event.preventDefault();" onpointerup="ku(this, 17);event.preventDefault();">Q</div>
+  <div class="key" onpointerdown="kd(this, 18);event.preventDefault();" onpointerup="ku(this, 18);event.preventDefault();">W</div>
+  <div class="key" onpointerdown="kd(this, 19);event.preventDefault();" onpointerup="ku(this, 19);event.preventDefault();">E</div>
+  <div class="key" onpointerdown="kd(this, 20);event.preventDefault();" onpointerup="ku(this, 20);event.preventDefault();">R</div>
+  <div class="key" onpointerdown="kd(this, 21);event.preventDefault();" onpointerup="ku(this, 21);event.preventDefault();">T</div>
+  <div class="key" onpointerdown="kd(this, 22);event.preventDefault();" onpointerup="ku(this, 22);event.preventDefault();">Y</div>
+  <div class="key" onpointerdown="kd(this, 23);event.preventDefault();" onpointerup="ku(this, 23);event.preventDefault();">U</div>
+  <div class="key" onpointerdown="kd(this, 24);event.preventDefault();" onpointerup="ku(this, 24);event.preventDefault();">I</div>
+  <div class="key" onpointerdown="kd(this, 25);event.preventDefault();" onpointerup="ku(this, 25);event.preventDefault();">O</div>
+  <div class="key" onpointerdown="kd(this, 26);event.preventDefault();" onpointerup="ku(this, 26);event.preventDefault();">P</div>
+  <div class="key" onpointerdown="kd(this, 27);event.preventDefault();" onpointerup="ku(this, 27);event.preventDefault();">[</div>
+  <div class="key" onpointerdown="kd(this, 28);event.preventDefault();" onpointerup="ku(this, 28);event.preventDefault();">]</div>
+ </div>
  <!-- Caps Lock row -->
  <div class="row caps-row">
   <div class="key caps-lock" onpointerdown="kd(this, 20);event.preventDefault();" value="" onpointerup="ku(this, 20);event.preventDefault();" value="">Caps Lock</div>
@@ -1643,10 +1657,10 @@ document.addEventListener('keyup', (event) => {
           if (text) Module.printErr('[post-exception status] ' + text);
         };
       };
-	  
+
 	  var oldBkColor = null ;
 	  	function kd(e, keyCode)
-		{	
+		{
 			if (oldBkColor == null)
 				oldBkColor = e.style.background;
 			e.style.background="red";
@@ -1679,13 +1693,8 @@ document.addEventListener('keyup', (event) => {
 		document.getElementById('softkbd').addEventListener("touchmove", function(e){
 			e.preventDefault();
 		},{passive: false});
-		
-		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-		if ((!isMobile && (typeof window.orientation == 'undefined')) || Math.abs(window.orientation) === 90) {
-			//document.getElementById('softkbd').style.opacity=0.5;
-		}
     </script>
-    <script async type="text/javascript" src="th5e.js"></script>
+    <script async type="text/javascript" src="th4e.js"></script>
   </body>
 </html>
 
