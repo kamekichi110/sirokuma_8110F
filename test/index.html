@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>TOHO-DOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="./style.css">
+<link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+<link rel="shortcut icon" href="./favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="TOHO-DOS" />
+<link rel="manifest" href="./site.webmanifest" /><meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  // Service Workerがサポートされているか確認
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    // Service Workerを登録
+    navigator.serviceWorker
+      .register('./sw.js')
+      .then((registration) => {
+        console.log('Service Worker Registered with scope: ', registration.scope);
+      })
+      .catch((error) => {
+        console.log('Service Worker registration failed: ', error);
+      });
+  });
+}
+</script>
+  <style>
+    iframe {width:1px;height:1px;opacity:0;}
+  </style>
+</head>
+<body>
+  
+  <!-- Booting and Memory Check Section -->
+<div id="boot">
+  <p id="bootText"></p>
+</div>
+
+<!-- Main Content Section -->
+<div id="msg">
+  <p id="msgText"></p>
+</div>
+
+<div id="cmd">
+  <p id="cmdText"></p>
+</div>
+  
+  <script  src="./script.js"></script>
+
+</body>
+</html>

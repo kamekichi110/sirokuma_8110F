@@ -1,0 +1,28 @@
+@font-face {
+ font-family: "DOS";
+ src: url("./dos16.woff") format("woff");
+}
+* {
+ margin: 0;
+ font-family: "DOS";
+ transition: all 1s 1s ease;
+ font-weight: 900;
+}
+body {
+  background-color: black;
+  color: #00FF00;
+  font-size: 24;
+  line-height: 1.4;
+  padding: 20px;
+}
+
+header h1 {
+  color: #00FF00;
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+
+#bootText, #msgText, #cmdText {
+  white-space: pre-wrap;
+}
+a {color:#ffdc00}
