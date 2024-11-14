@@ -46,9 +46,141 @@
 		touch-action: none;
       }
 
-
-.keyboard {
+	    body {
+ font-family: Arial, sans-serif;
  display: block;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
+ margin: 0;
+ background-color: #f0f0f0;
+}
+div#fullscreenItem * {
+ user-select: none; /* 標準ブラウザ用 */
+ -webkit-user-select: none; /* Safari用 */
+ -moz-user-select: none; /* Firefox用 */
+ -ms-user-select: none; /* IE/Edge用 */
+}
+#fullscreenItem {
+ width: 100vw; /* ビューポート幅の100% */
+ height: calc(100vw * 3 / 4); /* 幅の75%（4:3比率） */
+}
+.fullscreenButtons {
+ position: absolute;
+ top: 0px;
+ width: 100vw; /* ビューポート幅の100% */
+ height: calc(100vw * 3 / 4); /* 幅の75%（4:3比率） */
+ background: none;
+ opacity: 1;
+ display: none;
+}
+#fullscreenItem:fullscreen .fullscreenButtons {
+ position: absolute;
+ top: 0px;
+ display: block;
+ width: 100%;
+ height: 100%;
+ background: none;
+ opacity: 0.5;
+}
+#fullscreenItem:fullscreen {
+ position: relative;
+ display: block;
+ width: 100%;
+ height: 100%;
+ background: gray;
+}
+.fullscreenButtons input {
+ position: absolute;
+ width: 64px;
+ height: 32px;
+ font-size: 18px;
+ font-weight: 900;
+ border-radius: 48px;
+ padding: 0;
+ margin: 0;
+ border: none;
+ background: gray;
+ color: white;
+}
+.fullscreenButtons input[value="^"] {
+ bottom: 94px;
+ left: 48px;
+ width: 48px;
+ height: 48px;
+ text-align: center;
+}
+.fullscreenButtons input[value="v"] {
+ bottom: 4px;
+ left: 48px;
+ width: 48px;
+ height: 48px;
+ text-align: center;
+}
+.fullscreenButtons input[value="<"] {
+ bottom: 48px;
+ left: 4px;
+ width: 48px;
+ height: 48px;
+ text-align: center;
+}
+.fullscreenButtons input[value=">"] {
+ bottom: 48px;
+ left: 94px;
+ width: 48px;
+ height: 48px;
+ text-align: center;
+}
+.fullscreenButtons input[value="Esc"] {
+ bottom: 72px;
+ right: 24px;
+ width: 48px;
+ height: 24px;
+ text-align: center;
+ font-size: 12px;
+}
+.fullscreenButtons input[value="Return"] {
+ bottom: 72px;
+ right: 74px;
+ width: 48px;
+ height: 24px;
+ text-align: center;
+ font-size: 12px;
+}
+.fullscreenButtons input[value="Shift"] {
+ bottom: 192px;
+ right: 24px;
+ width: 48px;
+ height: 24px;
+ text-align: center;
+ font-size: 12px;
+}
+.fullscreenButtons input[value="Space"] {
+ top: 12px;
+ right: 12px;
+ width: 48px;
+ height: 24px;
+ text-align: center;
+ font-size: 12px;
+}
+.fullscreenButtons input[value="Z"] {
+ bottom: 32px;
+ right: 24px;
+ width: 48px;
+ height: 24px;
+ text-align: center;
+ font-size: 12px;
+}
+.fullscreenButtons input[value="X"] {
+ bottom: 32px;
+ right: 74px;
+ width: 48px;
+ height: 24px;
+ text-align: center;
+ font-size: 12px;
+}
+.keyboard {
+ display: none;
  flex-direction: column;
  gap: 10px;
  background: #ffffff;
@@ -117,7 +249,6 @@
  align-items: center;
 }
 
-	    
       .emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
       div.emscripten { text-align: center; }      
       div.emscripten_border { border: 0px solid black; }
@@ -248,11 +379,12 @@
 	  {
 		width: 90%;
 		position: fixed;
+		
 		left: 5%;
 		opacity: 0.5;
 	  }
     </style>
-	  <link rel="stylesheet" href="../screen.css">
+<link rel="stylesheet" href="../screen.css">
     <script src="../screen.js"></script>
   </head>
   <body>
@@ -1367,10 +1499,51 @@
       <progress value="0" max="100" id="progress" hidden=1></progress>
     </div>
 
+    <div id="fullscreenItem">
+      <div class="emscripten_border">
+       <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+       <div class="fullscreenButtons">
+        <input class='inputbutton1' type="button" value="^" onpointerdown='kd(this, 38);' onpointerup='ku(this, 38);'>
+     
+        <input class='inputbutton3' type="button" value="Esc" onpointerdown='kd(this, 27);' onpointerup='ku(this, 27);'>
+     
+        <input class='inputbutton3' type="button" value="Shift" onpointerdown='kd(this, 16);' onpointerup='ku(this, 16);'>
+     
+        <input class='inputbutton1' type="button" value="<" onpointerdown='kd(this, 37);' onpointerup='ku(this, 37);'>
+     
+        <input class='inputbutton1' type="button" value=">" onpointerdown='kd(this, 39);' onpointerup='ku(this, 39);'>
+     
+        <input class='inputbutton3' type="button" value="Space" onpointerdown='kd(this, 32);' onpointerup='ku(this, 32);'>
+     
+        <input class='inputbutton3' type="button" value="Return" onpointerdown='kd(this, 13);' onpointerup='ku(this, 13);'>
+     
+        <input class='inputbutton1' type="button" value="v" onpointerdown='kd(this, 40);' onpointerup='ku(this, 40);'>
+     
+        <input class='inputbutton2' type="button" value="X" onpointerdown='kd(this, 88);' onpointerup='ku(this, 88);'>
+     
+        <input class='inputbutton2' type="button" value="Z" onpointerdown='kd(this, 90);' onpointerup='ku(this, 90);'>
+       </div>
+       <div>
+        <button onclick="fullView()">FullScreen⁺</button>
+     <script>
+     function fullView() {
+      const element = document.getElementById("fullscreenItem");
+      if (element.requestFullscreen) {
+       element.requestFullscreen();
+      } else if (element.mozRequestFullScreen) {
+       // Firefox
+       element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullscreen) {
+       // Chrome, Safari and Opera
+       element.webkitRequestFullscreen();
+      } else if (element.msRequestFullscreen) {
+       // IE/Edge
+       element.msRequestFullscreen();
+      }
+     }
+     </script>
     
-    <br><div class="emscripten_border">
-      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
-    </div>
+    <br>
     <textarea id="output" rows="8"></textarea>
 
 	<div id="softkbd" class="softkbd">
@@ -1405,6 +1578,7 @@
 	</table>
 	<div style="height: 30pt;" />
 	</div>
+  <br>
 <div class="keyboard">
  <!-- Function row -->
  <div class="row function-row">
@@ -1443,6 +1617,7 @@
   <div class="key" onpointerdown="kd(this, 187);event.preventDefault();" value="" onpointerup="ku(this, 187);event.preventDefault();" value="">=</div>
   <div class="key backspace" onpointerdown="kd(this, 8);event.preventDefault();" value="" onpointerup="ku(this, 8);event.preventDefault();" value="">Backspace</div>
  </div>
+
  <div class="row caps-row">
   <div class="key caps-lock" onpointerdown="kd(this, 54);event.preventDefault();" onpointerup="ku(this, 54);event.preventDefault();">Tab</div>
   <div class="key" onpointerdown="kd(this, 55);event.preventDefault();" onpointerup="ku(this, 55);event.preventDefault();">Q</div>
@@ -1459,6 +1634,7 @@
   <div class="key" onpointerdown="kd(this, 66);event.preventDefault();" onpointerup="ku(this, 66);event.preventDefault();">]</div>
   <button class="key" onpointerdown="kd(this, 67);event.preventDefault();" onpointerup="ku(this, 67);event.preventDefault();">\</div>
  </div>
+
  <!-- Caps Lock row -->
  <div class="row caps-row">
   <div class="key caps-lock" onpointerdown="kd(this, 20);event.preventDefault();" value="" onpointerup="ku(this, 20);event.preventDefault();" value="">Caps Lock</div>
@@ -1578,6 +1754,7 @@ document.addEventListener('keyup', (event) => {
   console.log(`Keyup event: ${event.key}, Code: ${event.code}, KeyCode: ${event.keyCode}`);
 });
 </script>
+
     <script type='text/javascript'>
       var statusElement = document.getElementById('status');
       var progressElement = document.getElementById('progress');
@@ -1690,7 +1867,7 @@ document.addEventListener('keyup', (event) => {
 
 		document.getElementById('softkbd').addEventListener("touchstart", function(e){
 			e.preventDefault();
-		},{passive: false});		
+		},{passive: false});
 		document.getElementById('softkbd').addEventListener("touchmove", function(e){
 			e.preventDefault();
 		},{passive: false});
