@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       playSilentAudio();
   
 function changeAspect(w, h) {
+  console.log(w,h);
   var logs = `CHANGE-ASPECT-SIZE: canvas and control area aspect = 4:3, screen area aspect = 16:9.`
 }
 
