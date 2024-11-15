@@ -181,6 +181,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // 画面サイズ変更時や向き変更時にスタイルを適用
     window.addEventListener('resize', applyStyles);
     window.addEventListener('orientationchange', applyStyles);
-  window.addEventListener('fullscreenchange', applyStyles);
+    document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+            // 全画面時にもスタイルを適用
+            applyStyles();
+        }
+    });
+
+    // 全画面開始時にスタイルを適用
+    if (document.fullscreenElement) {
+        applyStyles();
+    }
 });
 
