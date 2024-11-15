@@ -45,6 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const fullscreenItem = document.getElementById('fullscreenItem');
         const fullscreenButtons = document.getElementById('fullscreenButtons');
         const canvas = document.querySelector('canvas.emscripten');
+      if (document.getElementById('fullscreenItem')) {
+    document.querySelectorAll('.softkbd, .keyboard').forEach(function(element) {
+        element.style.display = 'none';
+    });
+}
 
         // 全画面表示スタイルを適用
         fullscreenItem.style.position = 'relative';
