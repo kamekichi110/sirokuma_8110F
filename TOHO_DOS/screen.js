@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const fullscreenItem = document.getElementById('fullscreenItem');
         const fullscreenButtons = document.getElementById('fullscreenButtons');
         const canvas = document.querySelector('canvas.emscripten');
-        const buttons = fullscreenButtons.querySelectorAll('input');
 
         // 全画面表示スタイルを適用
         fullscreenItem.style.position = 'relative';
@@ -74,31 +73,23 @@ document.addEventListener('DOMContentLoaded', () => {
             fullscreenButtons.style.background = 'none';
             fullscreenButtons.style.opacity = '1';
             fullscreenButtons.style.display = 'block';
-
-            
-
-          
-                
-            });
         }
-    
+    }
 
     // ページ読み込み後にスタイルを適用
-    setTimeout(applyStyles, 512); // 0.5s wait
+    setTimeout(applyStyles, 2000); // 2秒待機
 
     // 画面サイズ変更時や向き変更時にスタイルを適用
     window.addEventListener('resize', applyStyles);
     window.addEventListener('orientationchange', applyStyles);
+
+    // 全画面開始時にスタイルを適用
     document.addEventListener('fullscreenchange', () => {
         if (document.fullscreenElement) {
-            // 全画面時にもスタイルを適用
-            applyStyles();
+            applyStyles(); // 全画面モードに入った時にスタイルを適用
         }
     });
 
-    // 全画面開始時にスタイルを適用
-    if (document.fullscreenElement) {
-        applyStyles();
-    }
+    // 2秒後にスタイルを適用
+    setTimeout(applyStyles, 1);
 });
-
