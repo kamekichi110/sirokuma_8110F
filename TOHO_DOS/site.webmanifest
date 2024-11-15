@@ -3,7 +3,7 @@
   "name": "TOHO-DOS",
   "short_name": "東方DOS",
   "description": "東方旧作ゲームをブラウザ上でエミュレートできるツールです。",
-  "orientation": "any",
+  "orientation": "landscape",
   "lang": "ja",
   "scope": "/trereco/TOHO_DOS/",
   "categories": ["game", "emulator", "tools"],
@@ -26,5 +26,5 @@
   ],
   "theme_color": "#000000",
   "background_color": "#000000",
-  "display": "standalone"
+  "display": "fullscreen"
 }
