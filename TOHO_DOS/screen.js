@@ -75,108 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
             fullscreenButtons.style.opacity = '1';
             fullscreenButtons.style.display = 'block';
 
-            // ボタンのスタイルを設定
-            buttons.forEach(button => {
-                button.style.position = 'absolute';
-                button.style.width = '64px';
-                button.style.height = '32px';
-                button.style.fontSize = '18px';
-                button.style.fontWeight = '900';
-                button.style.borderRadius = '48px';
-                button.style.padding = '0';
-                button.style.margin = '0';
-                button.style.border = 'none';
-                button.style.background = 'gray';
-                button.style.color = 'white';
-            });
+            
 
-            // 各ボタンの位置を調整
-            buttons.forEach(button => {
-                const value = button.value;
-                switch (value) {
-                    case '^':
-                        button.style.bottom = '10%';
-                        button.style.left = '10%';
-                        button.style.width = '48px';
-                        button.style.height = '48px';
-                        button.style.textAlign = 'center';
-                        break;
-                    case 'v':
-                        button.style.bottom = '10%';
-                        button.style.left = '10%';
-                        button.style.width = '48px';
-                        button.style.height = '48px';
-                        button.style.textAlign = 'center';
-                        break;
-                    case '<':
-                        button.style.bottom = '20%';
-                        button.style.left = '4%';
-                        button.style.width = '48px';
-                        button.style.height = '48px';
-                        button.style.textAlign = 'center';
-                        break;
-                    case '>':
-                        button.style.bottom = '20%';
-                        button.style.left = '20%';
-                        button.style.width = '48px';
-                        button.style.height = '48px';
-                        button.style.textAlign = 'center';
-                        break;
-                    case 'Esc':
-                        button.style.bottom = '72px';
-                        button.style.right = '24px';
-                        button.style.width = '48px';
-                        button.style.height = '24px';
-                        button.style.textAlign = 'center';
-                        button.style.fontSize = '12px';
-                        break;
-                    case 'Return':
-                        button.style.bottom = '72px';
-                        button.style.right = '74px';
-                        button.style.width = '48px';
-                        button.style.height = '24px';
-                        button.style.textAlign = 'center';
-                        button.style.fontSize = '12px';
-                        break;
-                    case 'Shift':
-                        button.style.bottom = '192px';
-                        button.style.right = '24px';
-                        button.style.width = '48px';
-                        button.style.height = '24px';
-                        button.style.textAlign = 'center';
-                        button.style.fontSize = '12px';
-                        break;
-                    case 'Space':
-                        button.style.top = '12px';
-                        button.style.right = '12px';
-                        button.style.width = '48px';
-                        button.style.height = '24px';
-                        button.style.textAlign = 'center';
-                        button.style.fontSize = '12px';
-                        break;
-                    case 'Z':
-                        button.style.bottom = '32px';
-                        button.style.right = '24px';
-                        button.style.width = '48px';
-                        button.style.height = '24px';
-                        button.style.textAlign = 'center';
-                        button.style.fontSize = '12px';
-                        break;
-                    case 'X':
-                        button.style.bottom = '32px';
-                        button.style.right = '74px';
-                        button.style.width = '48px';
-                        button.style.height = '24px';
-                        button.style.textAlign = 'center';
-                        button.style.fontSize = '12px';
-                        break;
-                }
+          
+                
             });
         }
-    }
+    
 
     // ページ読み込み後にスタイルを適用
-    setTimeout(applyStyles, 2000); // 2秒待機
+    setTimeout(applyStyles, 512); // 0.5s wait
 
     // 画面サイズ変更時や向き変更時にスタイルを適用
     window.addEventListener('resize', applyStyles);
