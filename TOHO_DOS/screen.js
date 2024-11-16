@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   OUT.style.imageRendering = 'pixelated';
   changeAspect(4, 3);
   },2560);
+  document.body.style.width = "100%";
 });
     
       // 無音の音声を生成して再生する関数
@@ -78,7 +79,7 @@ function applyStyles() {
           fullscreenButtons.style.right = '0';
             fullscreenButtons.style.width = 'auto';
             fullscreenButtons.style.height = '100%';
-            fullscreenButtons.style.background = 'rgba(0, 0, 0, 0)';
+            fullscreenButtons.style.background = 'none';
             fullscreenButtons.style.opacity = '1';
             fullscreenButtons.style.display = 'block';
             fullscreenButtons.aspectRatio = '4 / 3';
