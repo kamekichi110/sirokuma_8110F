@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
       playSilentAudio();
   
 function changeAspect(w, h) {
-  console.log(w,h);
-  var logs = `CHANGE-ASPECT-SIZE: canvas and control area aspect = 4:3, screen area aspect = 16:9.`
+  console.log(w, h);
+  var logs = `CHANGE-ASPECT-SIZE: canvasとコントロールエリアの比率 = 4:3, 画面エリアの比率 = 16:9.`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -45,11 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const fullscreenItem = document.getElementById('fullscreenItem');
         const fullscreenButtons = document.getElementById('fullscreenButtons');
         const canvas = document.querySelector('canvas.emscripten');
-      if (document.getElementById('fullscreenItem')) {
-    document.querySelectorAll('.softkbd, .keyboard').forEach(function(element) {
-        element.style.display = 'none';
-    });
-}
+
+        if (document.getElementById('fullscreenItem')) {
+            document.querySelectorAll('.softkbd, .keyboard').forEach(function(element) {
+                element.style.display = 'none';
+            });
+        }
 
         // 全画面表示スタイルを適用
         fullscreenItem.style.position = 'relative';
@@ -57,6 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fullscreenItem.style.background = 'gray';
         fullscreenItem.style.width = '100vw';
         fullscreenItem.style.height = '100vh';
+        fullscreenItem.style.willChange = 'transform';  // レンダリングのパフォーマンスを最適化
+        fullscreenItem.style.zIndex = 100;
 
         // 横画面時のスタイルを適用
         if (window.matchMedia('(orientation: landscape)').matches) {
@@ -69,6 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.style.height = '100%';
             canvas.style.maxWidth = '133.33%'; // 4:3比率の最大幅
             canvas.style.aspectRatio = '4 / 3';
+            canvas.style.willChange = 'transform, width, height'; // リサイズ時のレンダリング最適化
+            canvas.style.zIndex = 50;
 
             // コントローラーのスタイルを変更
             fullscreenButtons.style.position = 'absolute';
