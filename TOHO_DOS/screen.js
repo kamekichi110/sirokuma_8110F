@@ -9,7 +9,29 @@ document.addEventListener("DOMContentLoaded", () => {
   },2560);
   document.body.style.width = "100%";
 });
-    
+    document.addEventListener('DOMContentLoaded', () => {
+    // 全画面のアイテムとボタンの要素を取得
+    const fullscreenItem = document.getElementById('fullscreenItem');
+    const fullscreenButtons = document.getElementById('fullscreenButtons');
+
+    // #fullscreenItem と #fullscreenButtons およびその子要素以外のクリックを無効化
+    document.body.addEventListener('mousedown', (event) => {
+        // イベントが #fullscreenItem や #fullscreenButtons の子要素から来た場合は無視
+        if (!fullscreenItem.contains(event.target) && !fullscreenButtons.contains(event.target)) {
+            event.preventDefault(); // クリックを無効化
+            event.stopPropagation(); // イベントの伝播を停止
+        }
+    });
+
+    document.body.addEventListener('mouseup', (event) => {
+        // 同様に #fullscreenItem や #fullscreenButtons の子要素以外のクリックを無効化
+        if (!fullscreenItem.contains(event.target) && !fullscreenButtons.contains(event.target)) {
+            event.preventDefault(); // クリックを無効化
+            event.stopPropagation(); // イベントの伝播を停止
+        }
+    });
+});
+
       // 無音の音声を生成して再生する関数
       function playSilentAudio() {
         try {
