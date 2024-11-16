@@ -73,8 +73,9 @@ function applyStyles() {
             fullscreenButtons.style.position = 'absolute';
             fullscreenButtons.style.top = '0';
             fullscreenButtons.style.left = '0';
-            fullscreenButtons.style.width = canvas.width;
-            fullscreenButtons.style.height = '100vh';
+            var intHeight = window.innerHeight / 3;
+            fullscreenButtons.style.width = (intHeight * 4) + "px";
+            fullscreenButtons.style.height = window.innerHeight;
             fullscreenButtons.style.background = 'none';
             fullscreenButtons.style.opacity = '1';
             fullscreenButtons.style.display = 'block';
