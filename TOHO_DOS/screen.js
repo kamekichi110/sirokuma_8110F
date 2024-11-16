@@ -68,12 +68,12 @@ function applyStyles() {
             canvas.style.aspectRatio = '4 / 3';
             canvas.style.willChange = 'transform, width, height'; // リサイズ時のレンダリング最適化
             canvas.style.zIndex = 50;
-          fullscreenItem.style.width = canvas.width;
+          
             // コントローラーのスタイルを変更
             fullscreenButtons.style.position = 'absolute';
             fullscreenButtons.style.top = '0';
             fullscreenButtons.style.left = '0';
-            fullscreenButtons.style.width = '100vw';
+            fullscreenButtons.style.width = canvas.width;
             fullscreenButtons.style.height = '100vh';
             fullscreenButtons.style.background = 'none';
             fullscreenButtons.style.opacity = '1';
