@@ -34,14 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("東方旧作エミュレーターです。\n音声が流れるため、注意してください。");
       playSilentAudio();
   
-function changeAspect(w, h) {
-  console.log(w, h);
-  var logs = `CHANGE-ASPECT-SIZE: canvasとコントロールエリアの比率 = 4:3, 画面エリアの比率 = 16:9.`;
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-    // スタイルを適用する関数
-    function applyStyles() {
+function applyStyles() {
         const fullscreenItem = document.getElementById('fullscreenItem');
         const fullscreenButtons = document.getElementById('fullscreenButtons');
         const canvas = document.querySelector('canvas.emscripten');
@@ -86,21 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
             fullscreenButtons.style.display = 'block';
         }
     }
-
-    // ページ読み込み後にスタイルを適用
-    setTimeout(applyStyles, 2000); // 2秒待機
-
-    // 画面サイズ変更時や向き変更時にスタイルを適用
-    window.addEventListener('resize', applyStyles);
-    window.addEventListener('orientationchange', applyStyles);
-
-    // 全画面開始時にスタイルを適用
-    document.addEventListener('fullscreenchange', () => {
-        if (document.fullscreenElement) {
-            applyStyles(); // 全画面モードに入った時にスタイルを適用
-        }
-    });
-
-    // 2秒後にスタイルを適用
-    setTimeout(applyStyles, 1);
-});
+function changeAspect(w, h) {
+  applyStyles();
+  console.log(w, h);
+  var logs = `CHANGE-ASPECT-SIZE: canvasとコントロールエリアの比率 = 4:3, 画面エリアの比率 = 16:9.`;
+}
