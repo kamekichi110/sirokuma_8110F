@@ -1,49 +1,4 @@
-// Emscriptenが使用しているキャンバスを取得
-const canvasDOS = document.getElementById('canvas');
-if(!canvasDOS) {console.log("can't get #canvas");
-// WebGLコンテキストを取得
-const gl = canvasDOS.getContext('webgl') || canvasDOS.getContext('experimental-webgl');
-                if(!gl) {console.log("can't get webgl data");
-// WebGLコンテキストが失われた場合のイベント処理
-canvasDOS.addEventListener('webglcontextlost', (event) => {
-  event.preventDefault();
-  console.log('WebGL context lost');
-  // 必要なら再初期化処理をここに記述
-});
 
-// WebGLコンテキストが復元された場合のイベント処理
-canvasDOS.addEventListener('webglcontextrestored', () => {
-  console.log('WebGL context restored');
-  // 再描画の初期化を実行
-});
-function renderLoop() {
-  // WebGL描画処理をここに記述
-  if (gl) {
-    gl.clearColor(0.0, 0.0, 0.0, 1.0); // 黒にクリア
-    gl.clear(gl.COLOR_BUFFER_BIT);
-  }
-  requestAnimationFrame(renderLoop); // 次フレームの描画
-}
-
-// 描画ループを開始
-renderLoop();
-function handleContextLost(event) {
-  event.preventDefault();
-  console.log('WebGL context lost');
-}
-
-function handleContextRestored() {
-  console.log('WebGL context restored');
-  initializeWebGL(canvas); // 再初期化
-  render(); // 再描画ループの開始
-}
-
-// キャンバスのイベントリスナーを設定
-canvasDOS.addEventListener('webglcontextlost', handleContextLost, false);
-canvasDOS.addEventListener('webglcontextrestored', handleContextRestored, false);
-
-// 初期化と描画ループの開始
-initializeWebGL(canvas);
 
 
 document.addEventListener("DOMContentLoaded", () => {
