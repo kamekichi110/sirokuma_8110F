@@ -71,7 +71,11 @@ function applyStyles() {
           
             // コントローラーのスタイルを変更
             fullscreenButtons.style.position = 'absolute';
-            fullscreenButtons.style.margin = '0 auto';
+            fullscreenButtons.style.margin = 'auto';
+            fullscreenButtons.style.top = '0';
+          fullscreenButtons.style.bottom = '0';
+          fullscreenButtons.style.left = '0';
+          fullscreenButtons.style.right = '0';
             fullscreenButtons.style.width = 'auto';
             fullscreenButtons.style.height = '100%';
             fullscreenButtons.style.background = 'rgba(0, 0, 0, 0)';
