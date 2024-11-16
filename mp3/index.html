@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>MP3-PLAYER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>MP3 プレイヤー</h1>
+<input type="file" id="file-input" accept="audio/mp3" multiple>
+<div id="file-list"></div>
+<img id="cover" class="cover" src="" alt="カバー画像">
+<h2 id="title">曲タイトル</h2>
+<audio id="audio-player" controls></audio>
+<div class="controls">
+ <button id="play-shuffle">シャッフル再生</button>
+ <button id="loop-toggle">ループ再生: OFF</button>
+</div>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/jsmediatags/dist/jsmediatags.min.js'></script><script  src="./script.js"></script>
+</body>
+</html>
