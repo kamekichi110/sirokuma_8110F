@@ -11,6 +11,22 @@ document.body.style.background = "black";
             e.preventDefault();  // touchmoveイベントのデフォルト動作をキャンセル
         }, { passive: false });
     });
+    const vmControl = document.getElementById('fullscreenButtons');
+    vmControl.addEventListener('touchstart', function(e) {
+            e.preventDefault();  // touchstartイベントのデフォルト動作をキャンセル
+        }, { passive: false });
+
+        vmControl.addEventListener('touchmove', function(e) {
+            e.preventDefault();  // touchmoveイベントのデフォルト動作をキャンセル
+        }, { passive: false });
+    const vmControlArea = document.getElementById('fullscreenItem');
+    vmControlArea.addEventListener('touchstart', function(e) {
+            e.preventDefault();  // touchstartイベントのデフォルト動作をキャンセル
+        }, { passive: false });
+
+        vmControlArea.addEventListener('touchmove', function(e) {
+            e.preventDefault();  // touchmoveイベントのデフォルト動作をキャンセル
+        }, { passive: false });
 });
 
 
