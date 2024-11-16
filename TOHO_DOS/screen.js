@@ -82,7 +82,8 @@ function applyStyles() {
             fullscreenButtons.style.background = 'none';
             fullscreenButtons.style.opacity = '1';
             fullscreenButtons.style.display = 'block';
-            fullscreenButtons.aspectRatio = '4 / 3';
+            fullscreenButtons.style.aspectRatio = '4 / 3';
+            fullscreenButtons.style.zIndex = 400;
         }
     }
 function changeAspect(w, h) {
