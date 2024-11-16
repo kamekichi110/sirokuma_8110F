@@ -64,21 +64,22 @@ function applyStyles() {
             canvas.style.transform = 'translate(-50%, -50%)';
             canvas.style.width = 'auto';
             canvas.style.height = '100%';
-            canvas.style.maxWidth = '133.33%'; // 4:3比率の最大幅
+            
             canvas.style.aspectRatio = '4 / 3';
             canvas.style.willChange = 'transform, width, height'; // リサイズ時のレンダリング最適化
             canvas.style.zIndex = 50;
           
             // コントローラーのスタイルを変更
             fullscreenButtons.style.position = 'absolute';
-            fullscreenButtons.style.top = '0';
-            fullscreenButtons.style.left = '0';
-            var intHeight = window.innerHeight / 3;
-            fullscreenButtons.style.width = (intHeight * 4) + "px";
-            fullscreenButtons.style.height = window.innerHeight;
-            fullscreenButtons.style.background = 'none';
+            fullscreenButtons.style.top = '50%';
+            fullscreenButtons.style.left = '50%';
+            
+            fullscreenButtons.style.width = 'auto';
+            fullscreenButtons.style.height = '100%';
+            fullscreenButtons.style.background = 'rgba(0, 0, 0, 0)';
             fullscreenButtons.style.opacity = '1';
             fullscreenButtons.style.display = 'block';
+            fullscreenButtons.aspectRatio = '4 / 3';
         }
     }
 function changeAspect(w, h) {
