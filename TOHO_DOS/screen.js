@@ -40,8 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
   OUT.style.imageRendering = 'pixelated';
   changeAspect(4, 3);
       window.alert('全画面表示ボタン「FullScreen[4:3]」または\n「FullScreen[16:9]」を押して\nプレイしてください。\nコントローラーが表示されます。');
-      (function() {
-  try {
     const findCanvas = () => {
       const canvases = document.getElementsByTagName('canvas');
       if (canvases.length === 0) {
@@ -161,9 +159,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } catch (error) {
     console.error('エラーが発生しました:', error);
     alert('エラーが発生しました。詳細はコンソールを確認してください。');
-  }
-})();
-
   },2560);
   document.body.style.width = "100%";
 });
