@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // #fullscreenButtons内のすべてのinput要素にtouchstartとtouchmoveイベントを追加
     const inputs = document.querySelectorAll('#fullscreenButtons input');
-
+document.body.style.background = "black";
     inputs.forEach(input => {
         input.addEventListener('touchstart', function(e) {
             e.preventDefault();  // touchstartイベントのデフォルト動作をキャンセル
