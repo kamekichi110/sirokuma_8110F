@@ -69,7 +69,7 @@ function applyStyles() {
             canvas.style.aspectRatio = '4 / 3';
             canvas.style.willChange = 'transform, width, height'; // リサイズ時のレンダリング最適化
             canvas.style.zIndex = 50;
-          
+          document.getElementById('canvas').style.pointerEvents = 'none';
             // コントローラーのスタイルを変更
             fullscreenButtons.style.position = 'absolute';
             fullscreenButtons.style.margin = 'auto';
