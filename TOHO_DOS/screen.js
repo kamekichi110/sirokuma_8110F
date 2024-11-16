@@ -1,3 +1,14 @@
+let shouldContinueRendering = true;
+
+function renderLoop() {
+  if (shouldContinueRendering) {
+    // WebGLの描画処理
+    requestAnimationFrame(renderLoop);
+  }
+}
+
+renderLoop(); // 描画ループ開始
+
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
   var OUT = document.getElementById('canvas');
