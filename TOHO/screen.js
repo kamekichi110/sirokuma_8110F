@@ -32,10 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // アラートを表示し、無音の音声を再生
       console.log("東方旧作エミュレーターです。\n音声が流れるため、注意してください。");
       playSilentAudio();
-  
-(function() {
+document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
-  try {
     const findCanvas = () => {
       const canvases = document.getElementsByTagName('canvas');
       if (canvases.length === 0) {
@@ -157,4 +155,4 @@ document.addEventListener("DOMContentLoaded", () => {
     alert('エラーが発生しました。詳細はコンソールを確認してください。');
   }
   }, 2000);
-})();
+});
