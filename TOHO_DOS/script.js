@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "The games included on this site are as follows.",
     "-------------------------------------------",
     
-    "<p>><a href='./TH2/' target='_blank'>TH2.BAT</a>(PC and mobile supported.)</p>",
-    "<p>><a href='./TH3/' target='_blank'>TH3.BAT</a>(PC and mobile supported.)</p>",
-    "<p>><a href='./TH4/' target='_blank'>TH4.BAT</a>(PC and mobile supported.)</p>",
-    "<p>><a href='./TH5/' target='_blank'>TH5.BAT</a>(PC and mobile supported.)</p>",
+    "<p>:> <a href='./TH2/'>TH2.BAT</a>(PC and mobile supported.)</p>",
+    "<p>:> <a href='./TH3/'>TH3.BAT</a>(PC and mobile supported.)</p>",
+    "<p>:> <a href='./TH4/'>TH4.BAT</a>(PC and mobile supported.)</p>",
+    "<p>:> <a href='./TH5/'>TH5.BAT</a>(PC and mobile supported.)</p>",
     "-------------------------------------------"
   ];
 
@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const cmdElement = document.getElementById("cmdText");
   let messageIndex = 0;
   let charIndex = 0;
-  const typingSpeed = 1
+  const typingSpeed = 2
   let memoryCheckComplete = false;
   let memoryAmount = 0;
-  const maxMemory = 65536;
+  const maxMemory = 64000;
 
   function typeBootMessage() {
     if (!memoryCheckComplete) {
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (memoryAmount < maxMemory) {
       bootElement.innerHTML = `Memory Test : ${memoryAmount} KB OK<br>`;
       memoryAmount += 1024;
-      setTimeout(performMemoryCheck, 100);
+      setTimeout(performMemoryCheck, 50);
     } else {
       bootElement.innerHTML += `Memory Test : ${maxMemory} KB OK<br>`;
       memoryCheckComplete = true;
