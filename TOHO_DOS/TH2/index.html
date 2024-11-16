@@ -39,6 +39,8 @@
     
 </script>
     <style>
+            .btns {width:100%;height:100%;position:relative;}
+
       body {
         font-family: arial;
         margin: 0;
@@ -1503,7 +1505,7 @@ div#fullscreenItem * {
     <div id="fullscreenItem">
       <div class="emscripten_border">
        <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
-       <div id="fullscreenButtons">
+       <div id="fullscreenButtons"><div class="btns">
         <input class='inputbutton1' type="button" value="^" onpointerdown='kd(this, 38);' onpointerup='ku(this, 38);'>
      
         <input class='inputbutton3' type="button" value="Esc" onpointerdown='kd(this, 27);' onpointerup='ku(this, 27);'>
@@ -1523,7 +1525,7 @@ div#fullscreenItem * {
         <input class='inputbutton2' type="button" value="X" onpointerdown='kd(this, 88);' onpointerup='ku(this, 88);'>
      
         <input class='inputbutton2' type="button" value="Z" onpointerdown='kd(this, 90);' onpointerup='ku(this, 90);'>
-       </div>
+       </div></div>
        <div>
         <button onclick="fullView(43)">FullScreen⁺[4:3]</button>
         <button onclick="fullView(169)">FullScreen⁺[16:9]</button>
@@ -1629,7 +1631,7 @@ if(aspect === 43) {
  </div>
 
  <div class="row caps-row">
-  <div class="key caps-lock" onpointerdown="kd(this, 9);event.preventDefault();" onpointerup="ku(this, 9event.preventDefault();">Tab</div>
+  <div class="key caps-lock" onpointerdown="kd(this, 9);event.preventDefault();" onpointerup="ku(this, 9);event.preventDefault();">Tab</div>
   <div class="key" onpointerdown="kd(this, 81);event.preventDefault();" onpointerup="ku(this, 81);event.preventDefault();">Q</div>
   <div class="key" onpointerdown="kd(this, 87);event.preventDefault();" onpointerup="ku(this, 87);event.preventDefault();">W</div>
   <div class="key" onpointerdown="kd(this, 69);event.preventDefault();" onpointerup="ku(this, 69);event.preventDefault();">E</div>
