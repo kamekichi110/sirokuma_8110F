@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   OUT.style.aspectRatio = "4 / 3";
   OUT.style.imageRendering = 'pixelated';
   changeAspect(4, 3);
-      window.alert('全画面表示ボタン「FullScreen[4:3]」または\n「FullScreen[16:9]」を押して\nプレイしてください。\nコントローラーが表示されます。');
+      console.log('全画面表示ボタン「FullScreen[4:3]」または\n「FullScreen[16:9]」を押して\nプレイしてください。\nコントローラーが表示されます。');
   },2560);
   document.body.style.width = "100%";
 });
