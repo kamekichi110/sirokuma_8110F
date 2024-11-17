@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "<p>:> <a href='./TH3/'>TH3.BAT</a>(PC and mobile supported.)</p>",
     "<p>:> <a href='./TH4/'>TH4.BAT</a>(PC and mobile supported.)</p>",
     "<p>:> <a href='./TH5/'>TH5.BAT</a>(PC and mobile supported.)</p>",
-    "-------------------------------------------"
+    "-------------------------------------------",
+    "全画面表示ボタン「FullScreen[4:3]」または<br>「FullScreen[16:9]」を押してプレイしてください。<br>コントローラーが表示されます。"
   ];
 
   const bootElement = document.getElementById("bootText");
