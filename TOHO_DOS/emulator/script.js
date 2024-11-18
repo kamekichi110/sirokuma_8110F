@@ -1,5 +1,5 @@
 // script.js
-
+"use strict";
 // エラーハンドリングのための関数
 function handleError(error) {
   console.error(error.message || error);
@@ -13,28 +13,26 @@ function handleError(error) {
 // v86エミュレータの設定
 let emulator;
 try {
-  emulator = new v86({
-    memory_size: 192 * 1024 * 1024, // メモリ 192MB
-    cpu: {
-      model: 'pentium', // Pentium CPU
-      speed: 600, // 600MHz
-      features: ['sse'],
-    },
-    vga: {
-      graphics_mode: 'high', // 高画質
-      vga_memory: 8 * 1024 * 1024, // VRAM 8MB
-    },
-    display: {
-      canvas: document.getElementById('emulator'),
-      width: 480,
-      height: 320,
-      scaling: 'nearest', // 高画質スケーリング
-    },
-    hard_disk: {
-      'hda': { url: 'https://sirokuma.cloudfree.jp/data/your_hard_disk_image.img' }, // ハードディスクイメージ
-    },
-    boot_from_hard_disk: true, // ハードディスクから起動
-  });
+window.onload = function() {
+    var emulator = window.emulator = new V86Starter({
+        wasm_path: "./v86.wasm", // v86.wasmのパス
+        memory_size: 256 * 1024 * 1024, // メモリサイズ 256MB
+        vga_memory_size: 2 * 1024 * 1024, // VGAメモリサイズ 2MB
+        screen_container: document.getElementById("screen_container"), // エミュレータ表示領域
+        bios: {
+            url: "./seabios.bin", // BIOSファイルのパス
+        },
+        vga_bios: {
+            url: "./vgabios.bin", // VGA BIOSファイルのパス
+        },
+        // ハードディスクイメージのURLを設定
+        hda: {
+            url: "https://sirokuma.cloudfree.jp/data/win98.img", // ハードディスクイメージのパス
+        },
+        autostart: true, // 自動起動
+        acpi: true, // ACPIの有効化
+    });
+}
 } catch (error) {
   handleError(error);  // エラー発生時の処理
 }
