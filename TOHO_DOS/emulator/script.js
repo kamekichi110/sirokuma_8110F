@@ -15,22 +15,26 @@ let emulator;
 try {
 window.onload = function() {
     var emulator = window.emulator = new V86Starter({
-        wasm_path: "./v86.wasm", // v86.wasmのパス
-        memory_size: 256 * 1024 * 1024, // メモリサイズ 256MB
-        vga_memory_size: 2 * 1024 * 1024, // VGAメモリサイズ 2MB
-        screen_container: document.getElementById("screen_container"), // エミュレータ表示領域
+        wasm_path: "../build/v86.wasm", 
+        memory_size: 256 * 1024 * 1024, 
+        vga_memory_size: 2 * 1024 * 1024, 
+        screen_container: document.getElementById("screen_container"),
         bios: {
-            url: "./seabios.bin", // BIOSファイルのパス
+            url: "./seabios.bin",
         },
         vga_bios: {
-            url: "./vgabios.bin", // VGA BIOSファイルのパス
+            url: "./vgabios.bin",
         },
-        // ハードディスクイメージのURLを設定
         hda: {
-            url: "https://sirokuma.cloudfree.jp/data/win98.img", // ハードディスクイメージのパス
+            url: "https://sirokuma.cloudfree.jp/data/win98.img",
         },
-        autostart: true, // 自動起動
-        acpi: true, // ACPIの有効化
+        autostart: true, 
+        acpi: true,
+    });
+
+    emulator.on("ready", function() {
+        console.log("Emulator is ready");
+        console.log(emulator.config); // 初期化後にアクセス
     });
 }
 } catch (error) {
