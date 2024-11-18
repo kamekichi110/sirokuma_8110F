@@ -13,24 +13,27 @@ function handleError(error) {
 // v86エミュレータの設定
 let emulator;
 try {
-window.onload = function() {
-    var emulator = window.emulator = new V86Starter({
-        wasm_path: "../build/v86.wasm", 
-        memory_size: 256 * 1024 * 1024, 
-        vga_memory_size: 2 * 1024 * 1024, 
-        screen_container: document.getElementById("screen_container"),
-        bios: {
-            url: "./seabios.bin",
-        },
-        vga_bios: {
-            url: "./vgabios.bin",
-        },
-        hda: {
-            url: "https://sirokuma.cloudfree.jp/data/win98.img",
-        },
-        autostart: true, 
-        acpi: true,
-    });
+        "use strict";
+
+        window.onload = function()
+        {
+            var emulator = window.emulator = new V86Starter({
+                    wasm_path: "./v86.wasm",
+                    memory_size: 256 * 1024 * 1024,
+                    vga_memory_size: 2 * 1024 * 1024,
+                    screen_container: document.getElementById("screen_container"),
+                    bios: {
+                        url: "./seabios.bin",
+                    },
+                    vga_bios: {
+                        url: "./vgabios.bin",
+                    },
+                    hda: {
+                        url: "https://sirokuma.cloudfree.jp/data/win98.img",
+                    },
+                    autostart: true,
+                    acpi: true,
+             });
 
     emulator.on("ready", function() {
         console.log("Emulator is ready");
