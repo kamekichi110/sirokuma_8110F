@@ -9,6 +9,9 @@
   <script src="v86_all.js"></script>
 </head>
 <body>
+  <!-- エミュレータ用Canvas -->
+  <canvas id="emulator" width="480" height="320"></canvas>
+  <br>
   <!-- ソフトキーボード -->
   <div class="keyboard">
     <div class="row">
@@ -97,9 +100,9 @@
     </div>
   </div>
 
-  <!-- エミュレータ用Canvas -->
-  <canvas id="emulator" width="480" height="320"></canvas>
-
+  
+  <div id="debug"></div>
+  <div id="logs"></div>
   <script src="script.js"></script>
 </body>
 </html>
