@@ -10,6 +10,16 @@
     logMessage.textContent = message;
     logElement.appendChild(logMessage);
   };
+
+  const originalConsoleError = console.error;
+  console.error = function(message) {
+    originalConsoleError(message);
+    const logElement = document.getElementById('logs');
+    const errorMessage = document.createElement('div');
+    errorMessage.style.color = 'red';
+    errorMessage.textContent = `Error: ${message}`;
+    logElement.appendChild(errorMessage);
+  };
 })();
 
 // デバッグ情報をdiv#debugに表示
@@ -20,11 +30,11 @@ function displayDebugInfo(info) {
   debugElement.appendChild(debugMessage);
 }
 
-// エミュレータの状態などをデバッグ用に表示
-function emulatorDebugInfo() {
-  // ここにエミュレータの状態や重要な情報を表示する処理を追加
-  displayDebugInfo('エミュレータ起動中...');
+// エラーハンドリングのための関数
+function handleError(error) {
+  console.error(error.message || error);
+  displayDebugInfo(`Error: ${error.message || error}`);
 }
 
 // 初期デバッグ表示
-emulatorDebugInfo();
+displayDebugInfo('デバッグ開始...');
