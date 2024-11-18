@@ -16,6 +16,10 @@ body {
   justify-content: center;
   height: 100vh;
   background-color: #f0f0f0;
+  user-select: none; /* 全ての要素で選択を無効化 */
+    -webkit-user-select: none; /* Safari 用 */
+    -moz-user-select: none; /* Firefox 用 */
+    -ms-user-select: none; /* Internet Explorer 用 */
 }
 
 #emulator-container {
@@ -48,7 +52,12 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
 }
-
+input {
+  user-select: none; /* 全ての要素で選択を無効化 */
+    -webkit-user-select: none; /* Safari 用 */
+    -moz-user-select: none; /* Firefox 用 */
+    -ms-user-select: none; /* Internet Explorer 用 */
+}
 /* 縦画面の場合 */
 @media screen and (orientation: portrait) {
   #emulator-container {
