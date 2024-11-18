@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v86 エミュレータ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ソフトキーボード -->
+  <div class="keyboard">
+    <div class="row">
+      <button class="key" id="key_esc">Esc</button>
+      <button class="key" id="key_f1">F1</button>
+      <button class="key" id="key_f2">F2</button>
+      <button class="key" id="key_f3">F3</button>
+      <button class="key" id="key_f4">F4</button>
+      <button class="key" id="key_f5">F5</button>
+      <button class="key" id="key_f6">F6</button>
+      <button class="key" id="key_f7">F7</button>
+      <button class="key" id="key_f8">F8</button>
+      <button class="key" id="key_f9">F9</button>
+      <button class="key" id="key_f10">F10</button>
+    </div>
+    <div class="row">
+      <button class="key" id="key_1">1</button>
+      <button class="key" id="key_2">2</button>
+      <button class="key" id="key_3">3</button>
+      <button class="key" id="key_4">4</button>
+      <button class="key" id="key_5">5</button>
+      <button class="key" id="key_6">6</button>
+      <button class="key" id="key_7">7</button>
+      <button class="key" id="key_8">8</button>
+      <button class="key" id="key_9">9</button>
+      <button class="key" id="key_0">0</button>
+      <button class="key" id="key_minus">-</button>
+      <button class="key" id="key_equals">=</button>
+    </div>
+    <div class="row">
+      <button class="key" id="key_q">Q</button>
+      <button class="key" id="key_w">W</button>
+      <button class="key" id="key_e">E</button>
+      <button class="key" id="key_r">R</button>
+      <button class="key" id="key_t">T</button>
+      <button class="key" id="key_y">Y</button>
+      <button class="key" id="key_u">U</button>
+      <button class="key" id="key_i">I</button>
+      <button class="key" id="key_o">O</button>
+      <button class="key" id="key_p">P</button>
+      <button class="key" id="key_left_bracket">[</button>
+      <button class="key" id="key_right_bracket">]</button>
+    </div>
+    <div class="row">
+      <button class="key" id="key_a">A</button>
+      <button class="key" id="key_s">S</button>
+      <button class="key" id="key_d">D</button>
+      <button class="key" id="key_f">F</button>
+      <button class="key" id="key_g">G</button>
+      <button class="key" id="key_h">H</button>
+      <button class="key" id="key_j">J</button>
+      <button class="key" id="key_k">K</button>
+      <button class="key" id="key_l">L</button>
+      <button class="key" id="key_semicolon">;</button>
+      <button class="key" id="key_apostrophe">'</button>
+      <button class="key" id="key_enter">Enter</button>
+    </div>
+    <div class="row">
+      <button class="key" id="key_shift">Shift</button>
+      <button class="key" id="key_z">Z</button>
+      <button class="key" id="key_x">X</button>
+      <button class="key" id="key_c">C</button>
+      <button class="key" id="key_v">V</button>
+      <button class="key" id="key_b">B</button>
+      <button class="key" id="key_n">N</button>
+      <button class="key" id="key_m">M</button>
+      <button class="key" id="key_comma">,</button>
+      <button class="key" id="key_period">.</button>
+      <button class="key" id="key_slash">/</button>
+      <button class="key" id="key_shift_right">Shift</button>
+    </div>
+    <div class="row">
+      <button class="key" id="key_ctrl_left">Ctrl</button>
+      <button class="key" id="key_win">Win</button>
+      <button class="key" id="key_alt_left">Alt</button>
+      <button class="key" id="key_space">Space</button>
+      <button class="key" id="key_alt_right">Alt</button>
+      <button class="key" id="key_win_right">Win</button>
+      <button class="key" id="key_ctrl_right">Ctrl</button>
+    </div>
+    <div class="row">
+      <button class="key" id="key_up">↑</button>
+      <button class="key" id="key_left">←</button>
+      <button class="key" id="key_down">↓</button>
+      <button class="key" id="key_right">→</button>
+    </div>
+  </div>
+
+  <!-- エミュレータ用Canvas -->
+  <canvas id="emulator" width="480" height="320"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
