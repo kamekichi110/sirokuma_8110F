@@ -1499,88 +1499,120 @@ div#fullscreenItem * {
         <button onclick="fullView(169)">FullScreen⁺[16:9]</button>
   <p id="status0">コントローラーの状態: 未接続</p>
 
-  <script>
-    // コントローラーが接続されているか確認
-    let gamepadIndex = null;
-    let keyMap = {
-      0: 'z', // B0 -> z
-      1: 'x', // B1 -> x
-      3: 'Esc', // B3 -> Esc
-      4: 'Shift', // B4 -> Shift
-    };
+<script>
+  const keyMap = {
+    0: 90, // B0 -> z (キーコード: 90)
+    1: 88, // B1 -> x (キーコード: 88)
+    3: 27, // B3 -> Esc (キーコード: 27)
+    4: 16, // B4 -> Shift (キーコード: 16)
+    14: 37, // 左十字キー -> ArrowLeft (キーコード: 37)
+    15: 39, // 右十字キー -> ArrowRight (キーコード: 39)
+    12: 38, // 上十字キー -> ArrowUp (キーコード: 38)
+    13: 40, // 下十字キー -> ArrowDown (キーコード: 40)
+  };
 
-    // コントローラーのボタンが押されたときに対応するキーを押す
-    function emulateKeyPress(buttonIndex) {
-      const key = keyMap[buttonIndex];
-      if (key) {
-        const event = new KeyboardEvent('keydown', { key: key });
-        document.dispatchEvent(event);
-      }
-    }
+  const pressedKeys = new Set(); // 現在押されているキーを追跡
 
-    // 十字キーと左スティックで方向を管理
-    function handleDpadAndStick(gamepad) {
-      const dpad = gamepad.axes; // 十字キーやスティックの情報はaxesに格納される
-      const threshold = 0.5; // 十字キーの操作を検出するための閾値
+  // キーイベントをエミュレート
+  function ctrl_emulateKeyEvent(keyCode, type) {
+    if (!keyCode) return;
+    const event = new KeyboardEvent(type, {
+      keyCode: keyCode,
+      which: keyCode,
+      bubbles: true,
+    });
+    document.dispatchEvent(event);
+  }
 
-      // 上下左右の十字キーをキーボードの矢印キーにマッピング
-      if (dpad[0] < -threshold) {
-        const event = new KeyboardEvent('keydown', { key: 'ArrowLeft' });
-        document.dispatchEvent(event);
+  // ゲームパッドボタンの押下を処理
+  function ctrl_handleGamepadButtons(gamepad) {
+    gamepad.buttons.forEach((button, index) => {
+      const keyCode = keyMap[index];
+      if (button.pressed && !pressedKeys.has(keyCode)) {
+        ctrl_emulateKeyEvent(keyCode, 'keydown');
+        pressedKeys.add(keyCode);
+      } else if (!button.pressed && pressedKeys.has(keyCode)) {
+        ctrl_emulateKeyEvent(keyCode, 'keyup');
+        pressedKeys.delete(keyCode);
       }
-      if (dpad[0] > threshold) {
-        const event = new KeyboardEvent('keydown', { key: 'ArrowRight' });
-        document.dispatchEvent(event);
-      }
-      if (dpad[1] < -threshold) {
-        const event = new KeyboardEvent('keydown', { key: 'ArrowUp' });
-        document.dispatchEvent(event);
-      }
-      if (dpad[1] > threshold) {
-        const event = new KeyboardEvent('keydown', { key: 'ArrowDown' });
-        document.dispatchEvent(event);
-      }
-    }
+    });
+  }
 
-    // コントローラーの接続状態を監視
-    function findController() {
-      const gamepads = navigator.getGamepads();
-      for (let i = 0; i < gamepads.length; i++) {
-        if (gamepads[i]) {
-          gamepadIndex = i;
-          document.getElementById('status0').textContent = 'コントローラー接続中';
-          return;
+  // 十字キーやスティックの操作をキーコードに変換
+  function ctrl_handleDpadAndStick(gamepad) {
+    const { axes } = gamepad;
+    const threshold = 0.5;
+
+    const dpadMappings = [
+      { axis: 0, value: -threshold, keyCode: 37 }, // ArrowLeft
+      { axis: 0, value: threshold, keyCode: 39 }, // ArrowRight
+      { axis: 1, value: -threshold, keyCode: 38 }, // ArrowUp
+      { axis: 1, value: threshold, keyCode: 40 }, // ArrowDown
+    ];
+
+    dpadMappings.forEach(({ axis, value, keyCode }) => {
+      if ((value < 0 && axes[axis] < value) || (value > 0 && axes[axis] > value)) {
+        if (!pressedKeys.has(keyCode)) {
+          ctrl_emulateKeyEvent(keyCode, 'keydown');
+          pressedKeys.add(keyCode);
         }
+      } else if (pressedKeys.has(keyCode)) {
+        ctrl_emulateKeyEvent(keyCode, 'keyup');
+        pressedKeys.delete(keyCode);
       }
+    });
+  }
+
+  // ゲームパッドの状態を更新
+  function ctrl_updateGamepadStatus() {
+    const gamepads = navigator.getGamepads();
+    const gamepad = gamepads ? gamepads[0] : null;
+
+    if (gamepad) {
+      document.getElementById('status0').textContent = 'コントローラー接続中';
+      ctrl_handleGamepadButtons(gamepad);
+      ctrl_handleDpadAndStick(gamepad);
+    } else {
       document.getElementById('status0').textContent = 'コントローラー未接続';
-      gamepadIndex = null;
+      pressedKeys.forEach((keyCode) => {
+        ctrl_emulateKeyEvent(keyCode, 'keyup');
+        pressedKeys.delete(keyCode);
+      });
     }
+  }
 
-    // ゲームパッドの状態を監視し、ボタンが押された場合に対応するキーをエミュレート
-    function updateGamepadStatus() {
-      if (gamepadIndex !== null) {
-        const gamepad = navigator.getGamepads()[gamepadIndex];
-        
-        // ボタンの押下状態を確認
-        gamepad.buttons.forEach((button, index) => {
-          if (button.pressed) {
-            emulateKeyPress(index); // ボタンが押されていればエミュレート
-          }
-        });
+  // ゲームパッド接続イベントの監視
+  function ctrl_onGamepadConnected() {
+    document.getElementById('status0').textContent = 'コントローラー接続中';
+  }
 
-        // 十字キーと左スティックを処理
-        handleDpadAndStick(gamepad);
-      }
+  function ctrl_onGamepadDisconnected() {
+    document.getElementById('status0').textContent = 'コントローラー未接続';
+  }
+
+  // ソフトウェアキーボードのタッチイベントを無効化
+  function ctrl_disableSoftKeyboardTouch() {
+    const softKeyboard = document.getElementById('softkbd');
+    if (softKeyboard) {
+      ['touchstart', 'touchmove'].forEach((event) => {
+        softKeyboard.addEventListener(
+          event,
+          (e) => e.preventDefault(),
+          { passive: false }
+        );
+      });
     }
+  }
 
-    // コントローラーの接続を監視
-    window.addEventListener('gamepadconnected', findController);
-    window.addEventListener('gamepaddisconnected', findController);
+  // イベントリスナーの設定
+  window.addEventListener('gamepadconnected', ctrl_onGamepadConnected);
+  window.addEventListener('gamepaddisconnected', ctrl_onGamepadDisconnected);
 
-    // ゲームパッドの状態を定期的に更新
-    setInterval(updateGamepadStatus, 100); // 100msごとに状態を確認
+  // 初期化処理
+  ctrl_disableSoftKeyboardTouch();
+  setInterval(ctrl_updateGamepadStatus, 100); // 定期的にゲームパッドの状態を確認
+</script>
 
-  </script>
 </span>
 
     <div class="emscripten">
@@ -1973,3 +2005,4 @@ document.addEventListener('keyup', (event) => {
     <script async type="text/javascript" src="th4e.js"></script>
   </body>
 </html>
+
