@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v1-dos'; // キャッシュの名前
+const CACHE_NAME = 'v2-dos'; // キャッシュの名前
 const ASSETS = [
   '/',
   '/index.html',

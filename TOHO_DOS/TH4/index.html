@@ -1497,6 +1497,122 @@ div#fullscreenItem * {
   </span>
 	<button onclick="fullView(43)">FullScreen⁺[4:3]</button>
         <button onclick="fullView(169)">FullScreen⁺[16:9]</button>
+        <br>
+        <p id="status0" style="color: #00ff00;">コントローラーの状態: 未接続</p>
+<script>
+  const keyMap = {
+    0: 90, // B0 -> z (キーコード: 90)
+    1: 88, // B1 -> x (キーコード: 88)
+    3: 27, // B3 -> Esc (キーコード: 27)
+    4: 16, // B4 -> Shift (キーコード: 16)
+    14: 37, // 左十字キー -> ArrowLeft (キーコード: 37)
+    15: 39, // 右十字キー -> ArrowRight (キーコード: 39)
+    12: 38, // 上十字キー -> ArrowUp (キーコード: 38)
+    13: 40, // 下十字キー -> ArrowDown (キーコード: 40)
+  };
+
+  const pressedKeys = new Set(); // 現在押されているキーを追跡
+
+  // キーイベントをエミュレート
+  function ctrl_emulateKeyEvent(keyCode, type) {
+    if (!keyCode) return;
+    const event = new KeyboardEvent(type, {
+      keyCode: keyCode,
+      which: keyCode,
+      bubbles: true,
+    });
+    document.dispatchEvent(event);
+  }
+
+  // ゲームパッドボタンの押下を処理
+  function ctrl_handleGamepadButtons(gamepad) {
+    gamepad.buttons.forEach((button, index) => {
+      const keyCode = keyMap[index];
+      if (button.pressed && !pressedKeys.has(keyCode)) {
+        ctrl_emulateKeyEvent(keyCode, 'keydown');
+        pressedKeys.add(keyCode);
+      } else if (!button.pressed && pressedKeys.has(keyCode)) {
+        ctrl_emulateKeyEvent(keyCode, 'keyup');
+        pressedKeys.delete(keyCode);
+      }
+    });
+  }
+
+  // 十字キーやスティックの操作をキーコードに変換
+  function ctrl_handleDpadAndStick(gamepad) {
+    const { axes } = gamepad;
+    const threshold = 0.5;
+
+    const dpadMappings = [
+      { axis: 0, value: -threshold, keyCode: 37 }, // ArrowLeft
+      { axis: 0, value: threshold, keyCode: 39 }, // ArrowRight
+      { axis: 1, value: -threshold, keyCode: 38 }, // ArrowUp
+      { axis: 1, value: threshold, keyCode: 40 }, // ArrowDown
+    ];
+
+    dpadMappings.forEach(({ axis, value, keyCode }) => {
+      if ((value < 0 && axes[axis] < value) || (value > 0 && axes[axis] > value)) {
+        if (!pressedKeys.has(keyCode)) {
+          ctrl_emulateKeyEvent(keyCode, 'keydown');
+          pressedKeys.add(keyCode);
+        }
+      } else if (pressedKeys.has(keyCode)) {
+        ctrl_emulateKeyEvent(keyCode, 'keyup');
+        pressedKeys.delete(keyCode);
+      }
+    });
+  }
+
+  // ゲームパッドの状態を更新
+  function ctrl_updateGamepadStatus() {
+    const gamepads = navigator.getGamepads();
+    const gamepad = gamepads ? gamepads[0] : null;
+
+    if (gamepad) {
+      document.getElementById('status0').textContent = 'コントローラー接続中';
+      ctrl_handleGamepadButtons(gamepad);
+      ctrl_handleDpadAndStick(gamepad);
+    } else {
+      document.getElementById('status0').textContent = 'コントローラー未接続';
+      pressedKeys.forEach((keyCode) => {
+        ctrl_emulateKeyEvent(keyCode, 'keyup');
+        pressedKeys.delete(keyCode);
+      });
+    }
+  }
+
+  // ゲームパッド接続イベントの監視
+  function ctrl_onGamepadConnected() {
+    document.getElementById('status0').textContent = 'コントローラー接続中';
+  }
+
+  function ctrl_onGamepadDisconnected() {
+    document.getElementById('status0').textContent = 'コントローラー未接続';
+  }
+
+  // ソフトウェアキーボードのタッチイベントを無効化
+  function ctrl_disableSoftKeyboardTouch() {
+    const softKeyboard = document.getElementById('softkbd');
+    if (softKeyboard) {
+      ['touchstart', 'touchmove'].forEach((event) => {
+        softKeyboard.addEventListener(
+          event,
+          (e) => e.preventDefault(),
+          { passive: false }
+        );
+      });
+    }
+  }
+
+  // イベントリスナーの設定
+  window.addEventListener('gamepadconnected', ctrl_onGamepadConnected);
+  window.addEventListener('gamepaddisconnected', ctrl_onGamepadDisconnected);
+
+  // 初期化処理
+  ctrl_disableSoftKeyboardTouch();
+  setInterval(ctrl_updateGamepadStatus, 100); // 定期的にゲームパッドの状態を確認
+</script>
+
 </span>
 
     <div class="emscripten">
